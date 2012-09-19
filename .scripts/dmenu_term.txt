@@ -1,0 +1,7 @@
+centerim
+gcalcli
+mocp
+mutt
+newsbeuter
+ranger
+turses

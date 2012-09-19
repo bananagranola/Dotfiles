@@ -1,0 +1,88 @@
+
+# Background
+"/home/amytcheng/.scripts/randombackground.sh"
+	m:0x8 + c:56
+	Alt + b
+
+
+# Chat Client
+"urxvtc -title centerim -e centerim"
+	m:0x8 + c:54
+	Alt + c
+
+# Email Client
+"urxvtc -title mutt -e mutt"
+    m:0x8 + c:26
+	Alt + e
+
+# Exit
+"/home/amytcheng/.scripts/exit.sh"
+    m:0x40 + c:9
+	Mod4 + Escape
+
+# File Manager
+"urxvtc -title ranger -e ranger"
+    m:0x8 + c:41
+    Alt + f 
+
+#Music Player
+"urxvtc -title mocp -e mocp"
+    m:0x8 + c:58
+	Alt + m
+
+# News Reader
+"urxvtc -title newsbeuter -e newsbeuter"
+    m:0x8 + c:57
+	Alt + n
+
+# Print Screenshot
+"scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Downloads'"
+    m:0x8 + c:33
+	Alt + p
+
+# Run Launcher
+"/home/amytcheng/.scripts/dmenu.sh"
+	m:0x8 + c:27
+	Alt + r
+
+# Terminal Emulator
+"urxvtc"
+    m:0x8 + c:28
+    Alt + t
+
+# Web Browser
+"firefox"
+    m:0x8 + c:25
+    Alt + w 
+
+
+# Music Next
+"/home/amytcheng/.scripts/music_control.sh previous"
+    m:0x4 + c:95
+    Control + F11
+
+# Music Pause
+"/home/amytcheng/.scripts/music_control.sh pause"
+    m:0x4 + c:76
+    Control + F10 
+
+# Music Previous
+"/home/amytcheng/.scripts/music_control.sh next"
+    m:0x4 + c:75
+    Control + F9
+
+# Volume Up
+"amixer -q set Master 10%+"
+	m:0x4 + c:68
+	Control + F2
+
+# Volume Down
+"amixer -q set Master 10%-"
+	m:0x4 + c:67
+	Control + F1
+
+# Volume Mute
+"amixer -q set Master toggle"
+	m:0x4 + c:9
+	Control + Escape
+

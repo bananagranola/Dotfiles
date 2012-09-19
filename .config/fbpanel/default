@@ -1,0 +1,135 @@
+Global {
+    edge = top
+    align = center
+    margin = 1
+    widthtype = percent
+    width = 100
+    height = 10
+    transparent = true
+    tintcolor = #1F1F1F
+    alpha = 200
+    setdocktype = true
+    setpartialstrut = true
+    autohide = false
+    heightWhenHidden = 2
+    roundcorners = false
+    roundcornersradius = 7
+    layer = above
+    MaxElemHeight = 10
+    setlayer = true
+}
+
+Plugin {
+    type = space
+    config {
+        size = 2
+    }
+}
+
+Plugin {
+    type = menu
+    config {
+        IconSize = 20
+        icon = start-here
+        systemmenu {
+        }
+        separator {
+        }
+	item {
+	    name = Logout
+	    icon = gnome-session-halt
+	    action = /home/amytcheng/.scripts/exit.sh
+	}
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 5
+    }
+}
+
+Plugin {
+    type = launchbar
+    config {
+        button {
+            icon = file-manager
+            tooltip = File Manager
+            action = urxvtc -e ranger
+        }
+        button {
+            icon = web-browser
+            tooltip = Web Browser
+            action = dwb
+        }
+        button {
+            icon = terminal
+            tooltip = Terminal Emulator
+            action = urxvtc
+        }
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 5
+    }
+}
+
+Plugin {
+    type = taskbar
+    expand = true
+    config {
+        ShowIconified = true
+        ShowMapped = true
+        ShowAllDesks = false
+        tooltips = true
+        IconsOnly = false
+        MaxTaskWidth = 150
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 5
+    }
+}
+
+Plugin {
+    type = pager
+    config {
+        showwallpaper = false
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 5
+    }
+}
+
+Plugin {
+    type = tray
+}
+
+Plugin {
+    type = space
+    config {
+        size = 5
+    }
+}
+
+Plugin {
+    type = tclock
+    config {
+        ClockFmt = %-l:%M %P
+        TooltipFmt = %A %x
+        Action = /home/amycheng/.scripts/exit.sh 
+        ShowCalendar = false
+        ShowTooltip = true
+    }
+}

@@ -1,0 +1,5 @@
+audio_format = mp3-hifi
+event_command = /home/amytcheng/.scripts/pianobar.sh
+fifo = /home/amytcheng/.config/pianobar/ctl
+format_nowplaying_song = "%t" by %a (%l)
+user = amezster@gmail.com

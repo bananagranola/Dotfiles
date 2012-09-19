@@ -1,0 +1,90 @@
+! ----------------------------------------------------------------------------
+! file:     ~/.Xresources
+! vim: set fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+! ----------------------------------------------------------------------------
+
+*font:          -*-termsyn-medium-*-*-*-14-*-*-*-*-*-*-1
+
+! ----------------------------------------------------------------------------
+! URxvt settings
+! ----------------------------------------------------------------------------i
+
+URxvt.perl-ext: 
+URxvt.perl-ext-common:
+URxvt.scrollstyle:              plain
+URxvt.scrollTtyOutput:          false
+URxvt.scrollBar_right:          true
+URxvt.visualBell:               true
+
+! home/end keys
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
+
+! ----------------------------------------------------------------------------
+! colorscheme: solarized
+! source: http://github.com/altercation/solarized
+! ----------------------------------------------------------------------------
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+*background:            S_base03
+*foreground:            S_base00
+*fading:                40
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+*transparent:			true
+*tintColor:				S_base03
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+!*color10:               S_base01
+*color10:				#559542
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+!*color12:               S_base0
+*color12:				S_blue
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+!*color14:               S_base1
+*color14:				S_cyan
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
+
