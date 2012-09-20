@@ -5,11 +5,7 @@
 # 
 # symlink files in a dotfiles folder to where they belong in the home folder
 # preserves folder structure
-# 
 # very quick and very hacky
-# in general, uses utilities' own options
-# for example, ln --interactive --verbose
-# therefore, output will not look uniform
 
 DOTFILES_DIR="$HOME/.dotfiles/"
 DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
