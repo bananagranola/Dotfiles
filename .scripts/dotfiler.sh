@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR="$HOME/$.dotfiles/"
+DOTFILES_DIR="$HOME/.dotfiles/"
 DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
 # recurse through $DOTFILES_DIR and get list of dotfiles
