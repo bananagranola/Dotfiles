@@ -10,6 +10,18 @@
 DOTFILES_DIR="$HOME/.dotfiles/"
 DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
+VERBOSE=0
+
+log_verbose() {
+	if [ $VERBOSE -eq 1 ]; then
+		echo "$@"
+	fi
+}
+
+log_error() {
+	echo "\033[31m$@\033[0m"
+}
+
 # recurse through $DOTFILES_DIR and get list of dotfiles
 dotfiles=$(find "$DOTFILES_DIR" -type f)
 
@@ -33,9 +45,9 @@ for src_dotfile in $dotfiles; do
 			mkdir_output="$(mkdir --parents --verbose $(dirname "$dest_dotfile"))"
 			# parent folder creation error check
 			if [ $? -eq 0 ]; then
-				echo "DOTFILER: $mkdir_output FOLDER(S) CREATED"
+				log_verbose "DOTFILER: $mkdir_output FOLDER(S) CREATED"
 			else
-				echo "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
+				log_error "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
 			fi
 
 			# symlink the file
@@ -44,29 +56,29 @@ for src_dotfile in $dotfiles; do
 			ln_output="$(ln --interactive --symbolic --verbose "$src_dotfile" "$HOME/$dest_dotfile")"
 			# symlink error check
 			if [ $? -eq 0 ]; then
-				echo "DOTFILER: $ln_output LINKED"
+				log_verbose "DOTFILER: $ln_output LINKED"
 			else
-				echo "DOTFILER: $dest_dotfile LINKING FAILED"
+				log_error "DOTFILER: $dest_dotfile LINKING FAILED"
 			fi
 
 		else
-			echo "DOTFILER: $dest_dotfile IGNORED"
+			log_verbose "DOTFILER: $dest_dotfile IGNORED"
 		fi
 	else
-		echo "DOTFILER: $dest_dotfile ALREADY LINKED"
+		log_verbose "DOTFILER: $dest_dotfile ALREADY LINKED"
 	fi
 done
 
 # remove dangling symlinks
-echo "DOTFILER: REMOVING DANGLING SYMLINKS"
+log_verbose "DOTFILER: CHECKING DANGLING SYMLINKS"
 danglers=$(find -L "$HOME" -type l)
 for dangler in $danglers; do
 	rm $dangler
 	# remove danglers error check
 	if [ $? -eq 0 ]; then
-		echo "DOTFILER: $dangler DANGLER REMOVED"
+		log_verbose "DOTFILER: $dangler DANGLER REMOVED"
 	else
-		echo "DOTFILER: $dangler DANGLER REMOVE FAILED"
+		log_error "DOTFILER: $dangler DANGLER REMOVE FAILED"
 	fi
 done
 
