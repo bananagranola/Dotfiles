@@ -21,7 +21,7 @@ for src_dotfile in $dotfiles; do
 	# check if symlink to file already exists
 	if [ ! -h "$HOME/$dest_dotfile" ]; then
 		# check if file is in .git
-		if [[ ! $dest_dotfile == .git* ]]; then
+		if [[ ! $dest_dotfile == .git* && ! $dest_dotfile == *README ]]; then
 			# symlink the file
 			ln --symbolic --force "$src_dotfile" "$HOME/$dest_dotfile"
 			# notify if link succeeded
