@@ -25,7 +25,7 @@ for src_dotfile in $dotfiles; do
 			# symlink the file
 			ln --symbolic --force "$src_dotfile" "$HOME/$dest_dotfile"
 			# notify if link succeeded
-			if [$? -eq 0 ]; then
+			if [ $? -eq 0 ]; then
 				echo "$src_dotfile -> $HOME/$dest_dotfile"
 			else
 				echo "DOTFILER ERROR: $src_dotfile -!> $HOME/$dest_dotfile"
