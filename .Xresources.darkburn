@@ -1,32 +1,59 @@
 ! ----------------------------------------------------------------------------
-! colorschemeeme:	darkburn
+! file:     ~/.Xresources/darkburn
+! vim: set fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
 ! ----------------------------------------------------------------------------
 
-!basics
-*foreground:		#A5A5A5
-*background:		#1F1F1F
-!black
+*font:          -*-termsyn-medium-*-*-*-14-*-*-*-*-*-*-1
+
+! ----------------------------------------------------------------------------
+! URxvt settings
+! ----------------------------------------------------------------------------i
+
+URxvt.perl-ext: 
+URxvt.perl-ext-common:
+URxvt.scrollstyle:              plain
+URxvt.scrollTtyOutput:          false
+URxvt.scrollBar_right:          true
+URxvt.visualBell:               true
+
+! home/end keys
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
+
+! ----------------------------------------------------------------------------
+! colorscheme:   darkburn
+! ----------------------------------------------------------------------------
+
+! basics
+*foreground:         #A5A5A5
+*background:         #1F1F1F
+
+! fun stuff
+*transparent:        true
+*tintColor: 		 #1F1F1F
+
+! black
 *color8 :            #353535
 *color0 :            #606060
-!red
+! red
 *color9 :            #AF7561
 *color1 :            #AF4E2C
-!green
+! green
 *color10:            #78956F
 *color2 :            #559542
-!yellow
+! yellow
 *color11:            #E5CB85
 *color3 :            #E5B840
-!blue
+! blue
 *color12:            #6A8D9B
 *color4 :            #3B809B
-!magenta
+! magenta
 *color13:            #94719D
 *color5 :            #9E4199
-!cyan
+! cyan
 *color14:            #8DBDC0
 *color6 :            #47A6AC
-!white
+! white
 *color15:            #A5A5A5
 *color7 :            #C0C0C0
 

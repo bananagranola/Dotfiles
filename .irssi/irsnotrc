@@ -1,0 +1,19 @@
+# use this to set the default notification time for private messages.
+# this shows the default of 5000ms or 5s
+# nick * 5000
+
+# and for messages received through a channel
+# this shows the default which disables notifications for channels
+# chan * 0
+
+# override the default channel timeout for #chilon to 5000
+#chan #chilon 5000
+#chan &bitlbee 5000
+
+# use this to ignore notifications from a nick
+#nick mrToms 0
+#nick root 0
+
+# work people with messages i cannot miss
+#nick bossman 50000000
+#nick hrbossman 50000000

@@ -1,26 +1,84 @@
 #!/bin/bash
 
-DOTFILES=".dotfiles"
-DOTFILES_DIR="$HOME/$DOTFILES/"
-DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
-dotfiles=$(find $DOTFILES_DIR -type f)
+# dotfiler.sh
+# latest: https://raw.github.com/bananagranola/dotfiles/master/.scripts/dotfiler.sh
+# 
+# symlink files in a dotfiles folder to where they belong in the home folder
+# preserves folder structure
+# very quick and very hacky
 
+DOTFILES_DIR="$HOME/.dotfiles/"
+DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
+
+VERBOSE=0
+
+log_verbose() {
+	if [ $VERBOSE -eq 1 ]; then
+		echo "$@"
+	fi
+}
+
+log_error() {
+	echo "\033[31m$@\033[0m"
+}
+
+# recurse through $DOTFILES_DIR and get list of dotfiles
+dotfiles=$(find "$DOTFILES_DIR" -type f)
+
+# iterate through dotfiles in $DOTFILES_DIR
 for src_dotfile in $dotfiles; do
-	dest_dotfile=${src_dotfile:$DOTFILES_DIR_LENGTH}
-	mkdir -p `dirname $dest_dotfile` # exclude .git/ from here
+
+	# strip name of dotfiles folder from source to get destination
+	# for example,
+	# 	source: ~/.dotfiles/.mydotfile 
+	# 	destination: ~/.mydotfile
+	dest_dotfile="${src_dotfile:$DOTFILES_DIR_LENGTH}"
+
+	# if symlink to file already exists, do not link
 	if [ ! -h "$HOME/$dest_dotfile" ]; then
-		if [[ ! $dest_dotfile == .git* ]]; then 
-			ln -s "$src_dotfile" "$HOME/$dest_dotfile"
+
+		# if dotfile is in .git or is the README file, do not link
+		if [[ ! "$dest_dotfile" == .git* && ! "$dest_dotfile" == *README ]]; then
+
+			# create parent folders if necessary
+			# print if creation is necessary
+			mkdir_output="$(mkdir --parents --verbose $(dirname "$dest_dotfile"))"
+			# parent folder creation error check
+			if [ $? -eq 0 ]; then
+				log_verbose "DOTFILER: $mkdir_output FOLDER(S) CREATED"
+			else
+				log_error "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
+			fi
+
+			# symlink the file
+			# ask to confirm overwrite if file exists
+			# print if linking succeeds
+			ln_output="$(ln --interactive --symbolic --verbose "$src_dotfile" "$HOME/$dest_dotfile")"
+			# symlink error check
+			if [ $? -eq 0 ]; then
+				log_verbose "DOTFILER: $ln_output LINKED"
+			else
+				log_error "DOTFILER: $dest_dotfile LINKING FAILED"
+			fi
+
+		else
+			log_verbose "DOTFILER: $dest_dotfile IGNORED"
 		fi
+	else
+		log_verbose "DOTFILER: $dest_dotfile ALREADY LINKED"
 	fi
 done
 
-find -L $HOME -type l -delete
+# remove dangling symlinks
+log_verbose "DOTFILER: CHECKING DANGLING SYMLINKS"
+danglers=$(find -L "$HOME" -type l)
+for dangler in $danglers; do
+	rm $dangler
+	# remove danglers error check
+	if [ $? -eq 0 ]; then
+		log_verbose "DOTFILER: $dangler DANGLER REMOVED"
+	else
+		log_error "DOTFILER: $dangler DANGLER REMOVE FAILED"
+	fi
+done
 
-#copy/remove
-#dotfiles=$(git ls-files)
-#dotfiles=$(git ls-files)
-#for dotfile in $dotfiles; do
-#	cp --parents $dotfile /home/amytcheng/.dotfiles
-#	rm $dotfile
-#done

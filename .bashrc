@@ -33,7 +33,8 @@ alias reflect='sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias packs='pacman -Q | wc -l'
 
 # git utilities
-alias gcom='git commit -v -a -m $HOSTNAME'
-alias gdif='git diff'
-alias gpul='git pull -v origin master'
-alias gpus='git push -v -u origin master'
+alias gadd='cd ~/.dotfiles && git add --all --verbose && cd -'
+alias gcom='cd ~/.dotfiles && git commit --verbose && cd -'
+alias gdif='cd ~/.dotfiles && git diff && cd -'
+alias gpul='cd ~/.dotfiles && git pull --verbose origin master && cd -'
+alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master && cd -'
