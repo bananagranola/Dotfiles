@@ -57,7 +57,7 @@ alias reflect='sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias packs='pacman -Q | wc -l'
 
 # git utilities
-alias gcom='git commit -v -a -m $(hostname)'
+alias gcom='git commit -v -a -m'
 alias gdif='git diff'
 alias gpul='git pull -v origin master'
 alias gpus='git push -v -u origin master'
