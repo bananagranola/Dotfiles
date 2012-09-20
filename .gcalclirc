@@ -1,8 +1,0 @@
-[gcalcli]
-user: amezster
-cals: all
-24hr: true
-details: true
-ignore-started: false
-width: 20
-nc: false
