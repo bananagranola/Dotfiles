@@ -12,6 +12,10 @@ DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
 VERBOSE=0
 
+log() {
+	echo "$@"
+}
+
 log_verbose() {
 	if [ $VERBOSE -eq 1 ]; then
 		echo "$@"
@@ -45,7 +49,7 @@ for src_dotfile in $dotfiles; do
 			mkdir_output="$(mkdir --parents --verbose $(dirname "$dest_dotfile"))"
 			# parent folder creation error check
 			if [ $? -eq 0 ]; then
-				log_verbose "DOTFILER: $mkdir_output FOLDER(S) CREATED"
+				log "DOTFILER: $mkdir_output FOLDER(S) CREATED"
 			else
 				log_error "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
 			fi
@@ -56,7 +60,7 @@ for src_dotfile in $dotfiles; do
 			ln_output="$(ln --interactive --symbolic --verbose "$src_dotfile" "$HOME/$dest_dotfile")"
 			# symlink error check
 			if [ $? -eq 0 ]; then
-				log_verbose "DOTFILER: $ln_output LINKED"
+				log "DOTFILER: $ln_output LINKED"
 			else
 				log_error "DOTFILER: $dest_dotfile LINKING FAILED"
 			fi
@@ -76,7 +80,7 @@ for dangler in $danglers; do
 	rm $dangler
 	# remove danglers error check
 	if [ $? -eq 0 ]; then
-		log_verbose "DOTFILER: $dangler DANGLER REMOVED"
+		log "DOTFILER: $dangler DANGLER REMOVED"
 	else
 		log_error "DOTFILER: $dangler DANGLER REMOVE FAILED"
 	fi
