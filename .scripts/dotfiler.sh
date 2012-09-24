@@ -10,7 +10,7 @@
 DOTFILES_DIR="$HOME/.dotfiles/"
 DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
-VERBOSE=1
+VERBOSE=0
 
 log() {
 	echo -e "\033[34m$@\033[0m"
