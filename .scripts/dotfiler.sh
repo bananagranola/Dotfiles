@@ -2,7 +2,8 @@
 
 # dotfiler.sh
 # latest: https://raw.github.com/bananagranola/dotfiles/master/.scripts/dotfiler.sh
-# 
+# author: rainermoerlinghartheim@yahoo.com
+
 # symlink files in a dotfiles folder to where they belong in the home folder
 # preserves folder structure
 # very quick and very hacky
@@ -26,7 +27,7 @@ log_error() {
 	echo -e "\033[31m$@\033[0m"
 }
 
-# recurse through $DOTFILES_DIR and get list of dotfiles
+# recurse through $DOTFILES_DIR and get list of dotfiles, including those in folders
 dotfiles=$(find "$DOTFILES_DIR" -type f)
 
 # iterate through dotfiles in $DOTFILES_DIR
@@ -35,7 +36,9 @@ for src_dotfile in $dotfiles; do
 	# strip name of dotfiles folder from source to get destination
 	# for example,
 	# 	source: ~/.dotfiles/.mydotfile 
-	# 	destination: ~/.mydotfile
+	# 	destination: .mydotfile
+	#	source: ~/.dotfiles/.mydotfolder/mydotfile
+	#	destination: .mydotfolder/mydotfile
 	dest_dotfile="${src_dotfile:$DOTFILES_DIR_LENGTH}"
 
 	# if symlink to file already exists, do not link
