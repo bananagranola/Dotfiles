@@ -13,12 +13,12 @@ DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 VERBOSE=1
 
 log() {
-	echo "$@"
+	echo "\033[34m$@\033[0m"
 }
 
 log_verbose() {
 	if [ $VERBOSE -eq 1 ]; then
-		echo "$@"
+		echo "\033[32m$@\033[0m"
 	fi
 }
 
