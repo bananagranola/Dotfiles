@@ -13,17 +13,17 @@ DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 VERBOSE=1
 
 log() {
-	echo "\033[34m$@\033[0m"
+	echo -e "\033[34m$@\033[0m"
 }
 
 log_verbose() {
 	if [ $VERBOSE -eq 1 ]; then
-		echo "\033[32m$@\033[0m"
+		echo -e "\033[32m$@\033[0m"
 	fi
 }
 
 log_error() {
-	echo "\033[31m$@\033[0m"
+	echo -e "\033[31m$@\033[0m"
 }
 
 # recurse through $DOTFILES_DIR and get list of dotfiles
@@ -85,4 +85,5 @@ for dangler in $danglers; do
 		log_error "DOTFILER: $dangler DANGLER REMOVE FAILED"
 	fi
 done
+log_verbose "DOTFILER: DONE CHECKING DANGLING SYMLINKS"
 
