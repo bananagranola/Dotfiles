@@ -2,7 +2,8 @@
 
 # dotfiler.sh
 # latest: https://raw.github.com/bananagranola/dotfiles/master/.scripts/dotfiler.sh
-# 
+# author: rainermoerlinghartheim@yahoo.com
+
 # symlink files in a dotfiles folder to where they belong in the home folder
 # preserves folder structure
 # very quick and very hacky
@@ -12,17 +13,21 @@ DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
 VERBOSE=1
 
+log() {
+	echo -e "\033[34m$@\033[0m"
+}
+
 log_verbose() {
 	if [ $VERBOSE -eq 1 ]; then
-		echo "$@"
+		echo -e "\033[32m$@\033[0m"
 	fi
 }
 
 log_error() {
-	echo "\033[31m$@\033[0m"
+	echo -e "\033[31m$@\033[0m"
 }
 
-# recurse through $DOTFILES_DIR and get list of dotfiles
+# recurse through $DOTFILES_DIR and get list of dotfiles, including those in folders
 dotfiles=$(find "$DOTFILES_DIR" -type f)
 
 # iterate through dotfiles in $DOTFILES_DIR
@@ -31,7 +36,9 @@ for src_dotfile in $dotfiles; do
 	# strip name of dotfiles folder from source to get destination
 	# for example,
 	# 	source: ~/.dotfiles/.mydotfile 
-	# 	destination: ~/.mydotfile
+	# 	destination: .mydotfile
+	#	source: ~/.dotfiles/.mydotfolder/mydotfile
+	#	destination: .mydotfolder/mydotfile
 	dest_dotfile="${src_dotfile:$DOTFILES_DIR_LENGTH}"
 
 	# if symlink to file already exists, do not link
@@ -45,7 +52,7 @@ for src_dotfile in $dotfiles; do
 			mkdir_output="$(mkdir --parents --verbose $(dirname "$dest_dotfile"))"
 			# parent folder creation error check
 			if [ $? -eq 0 ]; then
-				log_verbose "DOTFILER: $mkdir_output FOLDER(S) CREATED"
+				log "DOTFILER: $mkdir_output FOLDER(S) CREATED"
 			else
 				log_error "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
 			fi
@@ -56,7 +63,7 @@ for src_dotfile in $dotfiles; do
 			ln_output="$(ln --interactive --symbolic --verbose "$src_dotfile" "$HOME/$dest_dotfile")"
 			# symlink error check
 			if [ $? -eq 0 ]; then
-				log_verbose "DOTFILER: $ln_output LINKED"
+				log "DOTFILER: $ln_output LINKED"
 			else
 				log_error "DOTFILER: $dest_dotfile LINKING FAILED"
 			fi
@@ -76,9 +83,10 @@ for dangler in $danglers; do
 	rm $dangler
 	# remove danglers error check
 	if [ $? -eq 0 ]; then
-		log_verbose "DOTFILER: $dangler DANGLER REMOVED"
+		log "DOTFILER: $dangler DANGLER REMOVED"
 	else
 		log_error "DOTFILER: $dangler DANGLER REMOVE FAILED"
 	fi
 done
+log_verbose "DOTFILER: DONE CHECKING DANGLING SYMLINKS"
 

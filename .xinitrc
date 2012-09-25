@@ -6,7 +6,7 @@
 twmnd &
 urxvtd -f -o -q &
 xbindkeys &
-[[ -f ~/.Xresources ]] && xrdb ~/.Xresources.darkburn
+xrdb ~/.Xresources.darkburn
 xsetroot -cursor_name left_ptr &
 xscreensaver &
 
