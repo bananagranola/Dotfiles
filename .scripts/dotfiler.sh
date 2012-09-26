@@ -49,10 +49,16 @@ for src_dotfile in $dotfiles; do
 
 			# create parent folders if necessary
 			# print if creation is necessary
-			mkdir_output="$(mkdir --parents --verbose $(dirname "$dest_dotfile"))"
+			parent=$(dirname "$dest_dotfile")
+			parent="$HOME/$parent"
+			if [ ! -d "$parent" ]; then
+				mkdir_output=$(mkdir --parents --verbose "$parent")
+			fi
 			# parent folder creation error check
 			if [ $? -eq 0 ]; then
+				if [[ $mkdir_output == " " ]]; then
 				log "DOTFILER: $mkdir_output FOLDER(S) CREATED"
+			fi
 			else
 				log_error "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
 			fi
