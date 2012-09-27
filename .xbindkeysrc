@@ -25,6 +25,11 @@
     m:0x8 + c:41
     Alt + f 
 
+# IRC Client
+# "urxvtc -title irssi -e irssi"
+	m:0x8 + c:31
+	Alt + i
+
 #Music Player
 "urxvtc -title mocp -e mocp"
     m:0x8 + c:58
