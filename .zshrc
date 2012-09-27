@@ -10,6 +10,7 @@ prompt redhat
 
 # use vim key bindings
 bindkey -v
+bindkey '\e.' insert-last-word
 
 # disable beep
 unsetopt beep
