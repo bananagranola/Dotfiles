@@ -8,13 +8,6 @@ autoload -U promptinit
 promptinit 
 prompt redhat
 
-# use vim key bindings
-bindkey -v
-bindkey '\e.' insert-last-word
-
-# disable beep
-unsetopt beep
-
 # completion setup
 autoload -U compinit
 compinit
@@ -25,17 +18,26 @@ setopt extendedglob
 setopt auto_menu
 setopt correct
 
-# page up/down for command history
-bindkey "^[[5~" history-beginning-search-backward
-bindkey "^[[6~" history-beginning-search-forward
+# disable beep
+unsetopt beep
 
-# home/end keys
+# use vim key bindings
+bindkey -v
+
+# alt-. inserts last word
+bindkey '\e.' insert-last-word
+
+# home/end goes to beginning/end of line
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
+# page up/down cycles command history
+bindkey "^[[5~" history-beginning-search-backward
+bindkey "^[[6~" history-beginning-search-forward
+
 # default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/firefox"
+export BROWSER="/usr/bin/firefox -new-window"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
 # command-line calculator

@@ -3,7 +3,7 @@ bind-key LEFT					quit
 bind-key o 						open-in-browser-and-mark-read
 
 bookmark-interactive			yes
-browser							"firefox %u > /dev/null 2>&1 &"
+browser							"$BROWSER %u > /dev/null 2>&1 &"
 color article					white black invis
 color listfocus                 black white bold
 color info						white black bold
