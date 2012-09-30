@@ -1,14 +1,5 @@
 [timelines]
 home = true
-<<<<<<< HEAD
-own_tweets = true
-messages = true
-favorites = true
-mentions = true
-
-[twitter]
-update_frequency = 300
-=======
 own_tweets = false
 messages = false
 favorites = false
@@ -17,7 +8,6 @@ mentions = false
 [twitter]
 update_frequency = 300
 api_auth_retry_frequency = 10
->>>>>>> 44f453eddfcea46bd3ccabbd645577ba22eb31a8
 
 [bindings]
 up = k
@@ -51,14 +41,11 @@ tweet_hashtag = H
 fav = b
 delete_fav = ctrl b
 follow_selected = f
-<<<<<<< HEAD
 follow_user = F
 unfollow_selected = U
 unfollow_user = ctrl u
 user_info = i
-=======
 unfollow_selected = U
->>>>>>> 44f453eddfcea46bd3ccabbd645577ba22eb31a8
 home = .
 own_tweets = _
 favorites = B
@@ -73,10 +60,7 @@ help = ?
 reload_config = C
 quit = q
 openurl = o
-<<<<<<< HEAD
 open_status_url = O
-=======
->>>>>>> 44f453eddfcea46bd3ccabbd645577ba22eb31a8
 redraw = ctrl l
 
 [colors]
@@ -118,7 +102,6 @@ editor = white
 editor_bg = dark blue
 
 [styles]
-<<<<<<< HEAD
 status_divider_char = ─
 dm_template =  {sender_screen_name} => {recipient_screen_name} - {time} 
 tab_template = {timeline_name} [{unread}]
@@ -127,13 +110,10 @@ editor_vertical_align = bottom
 box_around_status = True
 status_bar = True
 status_divider = False
-=======
-status_divider = False
 box_around_status = True
 status_divider_char = ─
 dm_template =  {sender_screen_name} => {recipient_screen_name} - {time} 
 tab_template = {timeline_name} [{unread}]
->>>>>>> 44f453eddfcea46bd3ccabbd645577ba22eb31a8
 header_template =  {username}{retweeted}{retweeter} - {time}{reply} {retweet_count} 
 
 [debug]
