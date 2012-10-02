@@ -56,7 +56,7 @@ for src_dotfile in $dotfiles; do
 			fi
 			# parent folder creation error check
 			if [ $? -eq 0 ]; then
-				if [[ $mkdir_output != " " ]]; then
+				if [[ $mkdir_output != " " && $mkdir_output != "" ]]; then
 				log "DOTFILER: $mkdir_output FOLDER(S) CREATED"
 			fi
 			else
