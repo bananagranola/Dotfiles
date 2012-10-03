@@ -13,21 +13,24 @@ DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
 VERBOSE=0
 
-log() {
-	echo -e "\033[34m$@\033[0m"
-}
-
+# log verbose in green
 log_verbose() {
 	if [ $VERBOSE -eq 1 ]; then
 		echo -e "\033[32m$@\033[0m"
 	fi
 }
 
+# log error in red
 log_error() {
 	echo -e "\033[31m$@\033[0m"
 }
 
-# recurse through $DOTFILES_DIR and get list of dotfiles, including those in folders
+# log normal in blue
+log() {
+	echo -e "\033[34m$@\033[0m"
+}
+
+# recurse through $DOTFILES_DIR and get list of all files, including those in folders
 dotfiles=$(find "$DOTFILES_DIR" -type f)
 
 # iterate through dotfiles in $DOTFILES_DIR
