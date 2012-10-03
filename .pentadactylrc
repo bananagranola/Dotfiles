@@ -47,5 +47,5 @@ map -count -modes=n,v K <count>:tabprevious<Return>
 map -count -modes=n,v sh <count>:set<Space>nss!=<A-Tab>
 map -count -modes=n,v st <count>:set<Space>nst!=<A-Tab>
 map -count -modes=n,v q <count>:quitall<Return>
-set guioptions=bCrsT
+"set guioptions=bCrsT
 " vim: set ft=pentadactyl:
