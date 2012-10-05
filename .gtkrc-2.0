@@ -16,5 +16,4 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="rgb"
-gtk-color-scheme="theme_text_dark_color:#f0f0f0\ntooltip_fg_color:#ffffff\nlink_color:#4a90f9\nbase_color:#FAFAFA\ntext_color:#303030\nselected_fg_color:#242424\ntheme_bg_dark_color:#424242\nbg_color:#e3e4dE\ntooltip_bg_color:#161616\ntheme_fg_dark_color:#d8d8d8\nselected_bg_color:#888888888888\nfg_color:#424242\n"
 include "/home/amytcheng/.gtkrc-2.0.mine"
