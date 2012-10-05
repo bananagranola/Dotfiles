@@ -11,7 +11,7 @@ md5sums=('d12b33376c88bbf60444eb300bd2de57')
 
 package() {
 	cd "$srcdir"
-	tar -xvf "154296-FlatStudio.tar.gz"
+	tar -xf "154296-FlatStudio.tar.gz"
 	mkdir -p "$pkgdir/usr/share/themes"
 	cp -r "$srcdir/FlatStudio" "$pkgdir/usr/share/themes/FlatStudio"
 	cp -r "$srcdir/FlatStudioLight" "$pkgdir/usr/share/themes/FlatStudioLight"
