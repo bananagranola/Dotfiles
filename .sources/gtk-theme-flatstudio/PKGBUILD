@@ -1,0 +1,18 @@
+pkgname=gtk-theme-flatstudio
+pkgver=1.0
+pkgrel=1
+pkgdesc="FlatStudio GTK2 and GTK3 theme by trastes"
+arch=('any')
+url="http://gnome-look.org/content/show.php/FlatStudio?content=154296"
+license=('GPL')
+depends=('gtk-engine-murrine' 'gtk-engine-unico')
+source=('http://gnome-look.org/CONTENT/content-files/154296-FlatStudio.tar.gz')
+md5sums=('d12b33376c88bbf60444eb300bd2de57')
+
+package() {
+	cd "$srcdir"
+	tar -xvf "154296-FlatStudio.tar.gz"
+	mkdir -p "$pkgdir/usr/share/themes"
+	cp -r "$srcdir/FlatStudio" "$pkgdir/usr/share/themes/FlatStudio"
+	cp -r "$srcdir/FlatStudioLight" "$pkgdir/usr/share/themes/FlatStudioLight"
+}
