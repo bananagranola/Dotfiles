@@ -1,4 +1,4 @@
-centerim
+centerim5
 irssi
 mocp
 mutt
