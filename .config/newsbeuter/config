@@ -9,6 +9,7 @@ color info						white black bold
 googlereader-login				"amezster@gmail.com"
 googlereader-passwordfile		"/home/amytcheng/.scripts/pass.txt"
 googlereader-show-special-feeds	no
+history-limit					0
 notify-format					"newsbeuter: %f unread feeds"
 notify-program 					"notify-send"
 refresh-on-startup				no
