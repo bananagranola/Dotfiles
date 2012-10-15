@@ -2,24 +2,18 @@ bind-key RIGHT					open
 bind-key LEFT					quit
 bind-key o 						open-in-browser-and-mark-read
 
-bookmark-interactive			yes
 browser							"$BROWSER %u > /dev/null 2>&1 &"
 color article					white black invis
 color listfocus                 black white bold
 color info						white black bold
-download-full-page				yes
-feed-sort-order					firsttag
-googlereader-flag-star			"b"
 googlereader-login				"amezster@gmail.com"
 googlereader-passwordfile		"/home/amytcheng/.scripts/pass.txt"
 googlereader-show-special-feeds	no
-history-limit					0
 notify-format					"newsbeuter: %f unread feeds"
-notify-format					"notify-send"
-notify-always					yes
-pager							"less %f"
-refresh-on-startup				yes
-reload-threads					3
+notify-program 					"notify-send"
+refresh-on-startup				no
+reload-only-visible-feeds		yes
+reload-threads					5
 show-read-feeds					yes
 urls-source						"googlereader"
 
