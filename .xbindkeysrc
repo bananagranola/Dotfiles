@@ -4,7 +4,6 @@
 	m:0x8 + c:56
 	Alt + b
 
-
 # Chat Client
 "urxvtc -title centerim -e centerim"
 	m:0x8 + c:54
@@ -59,7 +58,6 @@
 "firefox"
     m:0x8 + c:25
     Alt + w 
-
 
 # Music Next
 "/home/amytcheng/.scripts/music_control.sh previous"
