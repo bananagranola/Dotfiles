@@ -101,3 +101,4 @@ for dangler in $danglers; do
 done
 log_verbose "DOTFILER: DONE CHECKING DANGLING SYMLINKS"
 
+log "DOTFILER: DONE DOTFILING!"
