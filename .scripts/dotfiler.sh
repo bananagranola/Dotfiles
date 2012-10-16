@@ -30,6 +30,8 @@ log() {
 	echo -e "\033[34m$@\033[0m"
 }
 
+log "DOTFILER: DOTFILING!"
+
 # recurse through $DOTFILES_DIR and get list of all files, including those in folders
 dotfiles=$(find "$DOTFILES_DIR" -type f)
 
