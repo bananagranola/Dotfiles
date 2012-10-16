@@ -1,7 +1,8 @@
-centerim
+centerim5
 irssi
 mocp
 mutt
 newsbeuter
 ranger
 turses
+vim
