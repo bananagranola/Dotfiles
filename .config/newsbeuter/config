@@ -3,9 +3,6 @@ bind-key LEFT					quit
 bind-key o 						open-in-browser-and-mark-read
 
 browser							"$BROWSER %u > /dev/null 2>&1 &"
-color article					white black invis
-color listfocus                 black white bold
-color info						white black bold
 googlereader-login				"amezster@gmail.com"
 googlereader-passwordfile		"/home/amytcheng/.scripts/pass.txt"
 googlereader-show-special-feeds	no
@@ -18,4 +15,8 @@ reload-only-visible-feeds		yes
 reload-threads					5
 show-read-feeds					yes
 urls-source						"googlereader"
+
+color 		article					white black invis
+color 		listfocus				black white bold
+color 		info					white black bold
 
