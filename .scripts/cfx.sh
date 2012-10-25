@@ -4,7 +4,7 @@ page="synergye.codefi.re"
 cfx="codefireX-Ace"
 kb="KangBang-Ace-Kernels"
 atb="Ace-TestBuilds"
-text="codefireX.txt"
+text="cfx.txt"
 
 apikey="e0e5d265dee9dc4c872900c531c62583bac7e9816f951202"
 nma="https://www.notifymyandroid.com/publicapi/notify"
