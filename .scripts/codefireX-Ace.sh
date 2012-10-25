@@ -27,35 +27,35 @@ parse () {
 	echo $latest
 }
 
-# $1: application
-# $2: event
-# #3: description
-request() {
-	curl --data \
-		apikey=$apikey&\
-		application=$1&\
-		event=$2&\
-		description=$3&\
-		url=$page/$1\
-		$nma
-}
-
 i=0
 while read -r line; do
 	prevs[i]="$line"
 	i=$(($i+1))
-done < codefireX.txt
+done < $text
 
-cfxLatest=$cfx:$(parse $cfx)
+if [ -f $text ]; then
+   cat /dev/null > $text
+else
+   touch $text
+fi
+
+
+cfxLatest=$(parse $cfx)
 if [[ "$cfxLatest" != ${prevs[0]} ]]; then
-    request $cfx $cfxLatest $cfxLatest
+    ./nma.sh $cfx $cfxLatest $page/$cfx 0
+	echo "$cfx: $cfxLatest"
 fi
-kbLatest=$kb:$(parse $kb)
+kbLatest=$(parse $kb)
 if [[ "$kbLatest" != ${prevs[1]} ]]; then
-    request $kb $kbLatest $kbLatest
+    ./nma.sh $kb $kbLatest $page/$kb 0
+	echo "$kb: $kbLatest"
 fi
-atbLatest=$atb:$(parse $atb)
+atbLatest=$(parse $atb)
 if [[ "$atbLatest" != ${prevs[2]} ]]; then
-    request $atb $atbLatest $atbLatest
+    ./nma.sh $atb $atbLatest $page/$atb 0
+	echo "$atb: $atbLatest"
 fi
 
+echo -e "$cfxLatest
+$kbLatest
+$atbLatest" > $text
