@@ -202,6 +202,7 @@ while true; do
     if [ $lithCounter -ge $LITHVAL ]; then
         if $(ping -q -W5 -c1 google.com &> /dev/null); then
             lith=$(/home/amytcheng/.scripts/lith.py)
+			get_cfx=$(/home/amytcheng/.scripts/get_cfx.sh)
 			lithCounter=0
         else
             lithCounter=$(( $lithCounter-$INTERVAL ))

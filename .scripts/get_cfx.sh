@@ -11,8 +11,8 @@
 # CUSTOMIZE HERE
 # register at https://www.notifymyandroid.com/register.jsp 
 # go to "my account" and get an api key
-# put the api key in a text file named nma_api.txt 
-# place nma_api.txt in the folder containing this script
+# put the api key in a text file named nma_api.txt and put it in a folder containing this script
+# alternatively, comment the first line, uncomment the second line and hardcode it here
 apikey="$(cat nma_api.txt)"
 #apikey="XXXXX"
 
@@ -105,8 +105,8 @@ compareAndNotify() {
 	while [ $i -lt $size ]; do
 		if [[ "${currs[$i]}" != "${prevs[$i]}" ]]; then
 			# notifies using notifymyandroid api
-    		#./nma.sh ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
-    		echo "nma.sh ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0"
+    		./nma.sh ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
+			notify-send "${currs[$i]}"
 		fi
 		i=$(($i+1))
 	done
@@ -125,7 +125,7 @@ save() {
 	# prints current newest zips into saved text file
 	i=0
 	while [ $i -le ${#currs[$i]} ]; do
-		echo -e "${folders[$i]}: ${currs[$i]}" >> $text
+		echo -e "${currs[$i]}" >> $text
 		i=$(($i+1))
 	done
 }
