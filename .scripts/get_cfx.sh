@@ -13,8 +13,9 @@
 # register at https://www.notifymyandroid.com/register.jsp 
 # go to "my account" and get an api key
 # download nma.sh from http://storage.locked.io/files/nma.sh
-# save nma.sh to the folder containing this script
 # pop the apikey into nma.sh
+# change the $nmash value below to the location of nma.sh
+nmash="$HOME/.scripts/nma.sh"
 
 # CUSTOMIZE HERE
 # add a field to the array for each folder you want to check on synergye.codefi.re
@@ -25,11 +26,10 @@ folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
 
-# (OPTIONALLY) CUSTOMIZE HERE
-# name of file used to save previous newest zip
-text="get_cfx.txt"
+# AND CUSTOMIZE HERE
+# change the $text value to a text file used to save previous newest zip
+text="$HOME/.scripts/get_cfx.txt"
 
-# YOU CAN LEAVE EVERYTHING BELOW THIS UNCHANGED
 
 # creates 2 arrays of the same length of folders
 # used to store current and previous newest zips
@@ -40,6 +40,7 @@ prevs[$size]=""
 # some hardcoded string variables
 nma="https://www.notifymyandroid.com/publicapi/notify"
 page="synergye.codefi.re"
+nmash="$HOME/.scripts/nma.sh"
 
 # parses folder page
 # outputs name of newest zip on synergye.codefi.re
@@ -109,7 +110,7 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		./nma.sh ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
+    		sh $nmash ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
 			notify-send "${currs[$i]}"
 			echo "$currs[$i]}"
 		fi
