@@ -1,23 +1,23 @@
 #!/bin/bash
 
-# get_cfx.sh script
+# getCfx.sh
 # by bananagranola @ http://forum.xda-developers.com/member.php?u=4733042 
-# DESCRIPTION
+
 # gets the relevant pages at synergye.codefi.re
 # extracts the filenames and finds the newest ones
 # compares the current newest files to the previous newest files from a text file
 # notifies you with notifymyandroid
 # saves the current newest files to a text file
 
-# SET UP NOTIFYMYANDROID
-# register at https://www.notifymyandroid.com/register.jsp 
-# go to "my account" and get an api key
-# download nma.sh from http://storage.locked.io/files/nma.sh
-# pop the apikey into nma.sh
-# change the $nmash value below to the location of nma.sh
+# CUSTOMIZE HERE
+# location of notifymyandroid script
 nmash="$HOME/.scripts/nma.sh"
 
-# CUSTOMIZE HERE
+# AND CUSTOMIZE HERE
+# location of persistent text file containing newest zips
+text="$HOME/.scripts/getCfx.txt"
+
+# FINALLY CUSTOMIZE HERE
 # add a field to the array for each folder you want to check on synergye.codefi.re
 # note: assumes that you use the same folders between executions
 # if you change folders or their order, you might get a false positive the first time
@@ -26,17 +26,11 @@ folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
 
-# AND CUSTOMIZE HERE
-# change the $text value to a text file used to save previous newest zip
-text="$HOME/.scripts/get_cfx.txt"
-
 # (OPTIONALLY) CUSTOMIZE HERE
-# if you want this script to run automatically
-# comment main and
-# uncomment mainLoop at the bottom
-# and change the $poll below to your polling interval
-poll="30m"
+poll="" 	# execute once
+#poll="30m"	# poll continuously, in date format
 
+# DONE CUSTOMIZING
 
 # creates 2 arrays of the same length of folders
 # used to store current and previous newest zips
@@ -48,6 +42,36 @@ prevs[$size]=""
 nma="https://www.notifymyandroid.com/publicapi/notify"
 page="synergye.codefi.re"
 nmash="$HOME/.scripts/nma.sh"
+
+# retrieves nma.sh script
+# asks for apikey
+# no arguments
+getNma() {
+	if [ ! -x $nmash ]; then
+		echo "nma.sh not found"
+		echo "getting nma.sh"
+		# retrieve nma.sh script, save it, make executable
+		wget http://storage.locked.io/files/nma.sh
+		mv nma.sh $nmash
+		chmod 755 $nmash
+		
+		echo "register notifymyandroid at https://www.notifymyandroid.com/register.jsp"
+		echo "then go to my account to get an api key"
+		# get apikey
+		while true; do
+			echo "enter apikey here: "
+			read apikey
+			if [ ${#apikey} -eq 48 ]; then
+				# save apikey in nma.sh script
+				sedregex="s/APIkey=.*/APIkey=\"$apikey\"/g"
+				sed -i $sedregex $nmash
+				break
+			else
+				echo "apikey must be 48 chars."
+			fi
+		done
+	fi
+}
 
 # parses folder page
 # outputs name of newest zip on synergye.codefi.re
@@ -90,7 +114,13 @@ parseCurrs() {
 # parses file containing previous newest zips
 # populates prevs[]
 # no arguments
+# saves empty = number of lines in $text file
 parsePrevs() {
+	# create $text file
+	if [ ! -f $text ]; then
+		touch $text
+	fi
+
 	# loops through lines in $text file
 	i=0
 	while read -r line; do
@@ -99,10 +129,16 @@ parsePrevs() {
 		i=$(($i+1))
 	done < $text
 
+	# print lines (for first run)
+	empty=$i
+	
 	# update $size
 	if [ $size -lt $i ]; then
 		size=$i
 	fi
+
+	# empty $text file
+	cat /dev/null > $text
 }
 
 # loops through and compares current newest zips with previous newest zips
@@ -111,56 +147,67 @@ parsePrevs() {
 compareAndNotify() {
 	# loops through and compares current newest zips with previous newest zips
 	i=0
+	changes=0
 	while [ $i -lt $size ]; do
-		if [[ "${currs[$i]}" != "${prevs[$i]}" ]]; then
+		if [[ ! "${currs[$i]}" == *${prevs[$i]}* ]]; then
 			# notifies using notifymyandroid api
 			# application: folders
 			# event: currs
 			# description: url
-    		sh $nmash ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
-			notify-send "${currs[$i]}"
-			echo "$currs[$i]}"
+    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$page/${folders[$i]}" 0
+			# notifies linux on desktop with notify-send
+			notify-send "new: ${currs[$i]}"
+			# prints updated newest zip
+			echo "new: ${currs[$i]}"
+			changes=$(($changes+1))
 		fi
 		i=$(($i+1))
 	done
+	echo "$changes new zips"
 }
 
 # saves current newest zips into saved text file
 # no arguments
 save() {
-	# empties $text file
-    if [ -f $text ]; then
-    	cat /dev/null > $text
-    else
-        touch $text
-    fi
-	
+	# make sure $text exists
+	touch $text
+
 	# prints current newest zips into saved text file
 	i=0
 	while [ $i -le ${#currs[$i]} ]; do
 		echo -e "${currs[$i]}" >> $text
 		i=$(($i+1))
 	done
+
+	echo "currently saved zips:"
+	cat "$text"
+}
+
+# actually run stuff
+getCfx() {
+	getNma
+	parseCurrs
+	parsePrevs
+	# do not notify if first run
+	if [ $empty -gt 0 ]; then
+		compareAndNotify
+	else
+		echo "1ST EXECUTION"
+	fi
+	save
 }
 
 # main
 main() {
-	parseCurrs
-	parsePrevs
-	compareAndNotify
-	save
+	if [[ "$poll" == "" ]]; then
+		getCfx
+	else
+		while true; do
+			getCfx
+			sleep $poll
+		done
+	fi
 }
 
-# run main every 30 minutes
-mainLoop() {
-	while true; do
-		main
-		sleep $poll
-	done
-}
-
-# call either main (for single execution)
-# or mainLoop (for continous polling)
 main
-#mainLoop
 
