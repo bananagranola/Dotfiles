@@ -1,12 +1,17 @@
 #!/bin/bash
 
+parentSource="/home/amytcheng/Music"
+destination="$1"
+
 sources=\
 "Adele
 Angie Johnson
 Anthony Evans
 Ashley De La Rosa
+Avery Wilson
 Beyonce Knowles
 Bob Gaudio
+Bryan Keith
 Cheesa
 Chris Mann
 Daniel Levitan
@@ -30,7 +35,6 @@ Xenia"
 old_IFS=$IFS
 IFS=$'\n'
 
-destination="$1"
 if [ ! -d $destination ]; then
 	echo "destination not found."
 	exit 1
@@ -41,7 +45,6 @@ if [ "$destination" == "" ]; then
 	exit 1
 fi
 
-parentSource="/home/amytcheng/Music"
 if [ ! -d $parentSource ]; then
 	echo "source not found."
 	exit 1
