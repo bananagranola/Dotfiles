@@ -142,4 +142,13 @@ main() {
 	save
 }
 
+# run main every 30 minutes
+mainLoop() {
+	while true; do
+		main
+		sleep 30m
+	done
+}
+
 main
+#mainLoop
