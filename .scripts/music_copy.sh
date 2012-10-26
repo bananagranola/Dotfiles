@@ -18,6 +18,7 @@ Daniel Levitan
 Dia Frampton
 Kings of Leon
 Jennifer Hudson
+Josh Groban
 Leanne Mitchell
 Lindsey Pavao
 OneRepublic
