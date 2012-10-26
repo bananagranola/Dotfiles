@@ -19,10 +19,12 @@ text="$HOME/.scripts/getCfx.txt"
 
 # FINALLY CUSTOMIZE HERE
 # add a field to the array for each folder you want to check on synergye.codefi.re
-# if you change folders or their order, you might get a false positive on first execution
+# if you change/add folders or their order, delete $text file and re-execute script to repopulate it
+# otherwise, you might get a false positive on first execution
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
+folders[3]="CM10-Ace"
 
 # (OPTIONALLY) CUSTOMIZE HERE
 poll="" 	# execute once
