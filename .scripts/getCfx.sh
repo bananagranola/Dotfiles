@@ -30,25 +30,6 @@ poll="" 	# execute once
 
 # DONE CUSTOMIZING
 
-VERBOSE=1
-
-# log verbose in green
-log_verbose() {
-    if [ $VERBOSE -eq 1 ]; then
-        echo -e "\033[32m$@\033[0m"
-    fi
-}
-
-# log error in red
-log_error() {
-    echo -e "\033[31m$@\033[0m"
-}
-
-# log normal in blue
-log() {
-    echo -e "\033[34m$@\033[0m"
-}
-
 # used to store current and previous newest zips
 size=${#folders[@]}
 currs[$size]=""
@@ -67,18 +48,18 @@ nmash="$HOME/.scripts/nma.sh"
 # no arguments
 getNma() {
 	if [ ! -x $nmash ]; then
-		log_error "getNma: nma.sh not found"
-		log "retrieving nma.sh"
+		echo "nma.sh not found"
+		echo "retrieving nma.sh"
 		# retrieve nma.sh script, save it, make executable
 		wget http://storage.locked.io/files/nma.sh
 		mv nma.sh $nmash
 		chmod 755 $nmash
 		
-		log "register notifymyandroid at https://www.notifymyandroid.com/register.jsp"
-		log "then go to my account to get an api key"
+		echo "register notifymyandroid at https://www.notifymyandroid.com/register.jsp"
+		echo "then go to my account to get an api key"
 		# get apikey
 		while true; do
-			log "enter apikey here: "
+			echo "enter apikey here: "
 			read apikey
 			if [ ${#apikey} -eq 48 ]; then
 				# save apikey in nma.sh script
@@ -170,7 +151,7 @@ compareAndNotify() {
 			# notifies linux on desktop with notify-send
 			notify-send "new: ${currs[$i]}"
 			# prints updated newest zip
-			log "new: ${currs[$i]}"
+			echo "new: ${currs[$i]}"
 			changes=$(($changes+1))
 		fi
 		i=$(($i+1))
@@ -202,7 +183,7 @@ getCfx() {
 	if [ $prevsNum -gt 0 ]; then
 		compareAndNotify
 	else
-		log "1ST EXECUTION"
+		echo "1ST EXECUTION"
 	fi
 	save
 }
