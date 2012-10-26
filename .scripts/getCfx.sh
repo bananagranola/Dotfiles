@@ -19,9 +19,7 @@ text="$HOME/.scripts/getCfx.txt"
 
 # FINALLY CUSTOMIZE HERE
 # add a field to the array for each folder you want to check on synergye.codefi.re
-# note: assumes that you use the same folders between executions
-# if you change folders or their order, you might get a false positive the first time
-# you will need to initialize it once to populate the text file
+# if you change folders or their order, you might get a false positive on first execution
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
@@ -32,7 +30,25 @@ poll="" 	# execute once
 
 # DONE CUSTOMIZING
 
-# creates 2 arrays of the same length of folders
+VERBOSE=1
+
+# log verbose in green
+log_verbose() {
+    if [ $VERBOSE -eq 1 ]; then
+        echo -e "\033[32m$@\033[0m"
+    fi
+}
+
+# log error in red
+log_error() {
+    echo -e "\033[31m$@\033[0m"
+}
+
+# log normal in blue
+log() {
+    echo -e "\033[34m$@\033[0m"
+}
+
 # used to store current and previous newest zips
 size=${#folders[@]}
 currs[$size]=""
@@ -51,26 +67,24 @@ nmash="$HOME/.scripts/nma.sh"
 # no arguments
 getNma() {
 	if [ ! -x $nmash ]; then
-		echo "nma.sh not found"
-		echo "getting nma.sh"
+		log_error "getNma: nma.sh not found"
+		log "retrieving nma.sh"
 		# retrieve nma.sh script, save it, make executable
 		wget http://storage.locked.io/files/nma.sh
 		mv nma.sh $nmash
 		chmod 755 $nmash
 		
-		echo "register notifymyandroid at https://www.notifymyandroid.com/register.jsp"
-		echo "then go to my account to get an api key"
+		log "register notifymyandroid at https://www.notifymyandroid.com/register.jsp"
+		log "then go to my account to get an api key"
 		# get apikey
 		while true; do
-			echo "enter apikey here: "
+			log "enter apikey here: "
 			read apikey
 			if [ ${#apikey} -eq 48 ]; then
 				# save apikey in nma.sh script
 				sedregex="s/APIkey=.*/APIkey=\"$apikey\"/g"
 				sed -i $sedregex $nmash
 				break
-			else
-				echo "apikey must be 48 chars."
 			fi
 		done
 	fi
@@ -135,11 +149,6 @@ parsePrevs() {
 	# print lines (for first run)
 	prevsNum=$i
 	
-	# update $size
-	if [ $size -lt $i ]; then
-		size=$i
-	fi
-
 	# empty $text file
 	cat /dev/null > $text
 }
@@ -161,7 +170,7 @@ compareAndNotify() {
 			# notifies linux on desktop with notify-send
 			notify-send "new: ${currs[$i]}"
 			# prints updated newest zip
-			echo "new: ${currs[$i]}"
+			log "new: ${currs[$i]}"
 			changes=$(($changes+1))
 		fi
 		i=$(($i+1))
@@ -181,9 +190,6 @@ save() {
 		echo -e "${currs[$i]}" >> $text
 		i=$(($i+1))
 	done
-
-	echo "currently saved zips:"
-	cat "$text"
 }
 
 # actually run stuff
@@ -196,7 +202,7 @@ getCfx() {
 	if [ $prevsNum -gt 0 ]; then
 		compareAndNotify
 	else
-		echo "1ST EXECUTION"
+		log "1ST EXECUTION"
 	fi
 	save
 }
