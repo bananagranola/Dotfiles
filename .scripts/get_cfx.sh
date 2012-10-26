@@ -111,6 +111,7 @@ compareAndNotify() {
 			# description: url
     		./nma.sh ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
 			notify-send "${currs[$i]}"
+			echo "$currs[$i]}"
 		fi
 		i=$(($i+1))
 	done

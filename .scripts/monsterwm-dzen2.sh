@@ -69,7 +69,7 @@ NETVAL=1
 POWERVAL=1
 SOUNDVAL=1
 DATEVAL=3
-LITHVAL=300
+CFXVAL=300
 
 cpuCounter=$CPUVAL
 dboxCounter=$DBOXVAL
@@ -84,7 +84,7 @@ else
 fi
 soundCounter=$SOUNDVAL
 dateCounter=$DATEVAL
-lithCounter=$(( $LITHVAL-10 ))
+cfxCounter=$(( $CFXVAL-10 ))
 
 while true; do
 
@@ -199,13 +199,12 @@ while true; do
         dateCounter=0
     fi
 
-    if [ $lithCounter -ge $LITHVAL ]; then
+    if [ $cfxCounter -ge $CFXVAL ]; then
         if $(ping -q -W5 -c1 google.com &> /dev/null); then
-            lith=$(/home/amytcheng/.scripts/lith.py)
-			get_cfx=$(/home/amytcheng/.scripts/get_cfx.sh)
-			lithCounter=0
+			cfx=$(/home/amytcheng/.scripts/get_cfx.sh)
+			cfxCounter=0
         else
-            lithCounter=$(( $lithCounter-$INTERVAL ))
+            cfxCounter=$(( $cfxCounter-$INTERVAL ))
         fi
     fi
 
@@ -227,7 +226,7 @@ while true; do
     fi
     soundCounter=$(( $soundCounter+1 ))
     dateCounter=$(( $dateCounter+1 ))
-    lithCounter=$(( $lithCounter+1 ))
+    cfxCounter=$(( $cfxCounter+1 ))
 
     sleep $INTERVAL
 done | dzen2 -l 5 -ta $ALIGN -sa $ALIGN -x $XPOS -h $HEIGHT -fn $FONT -bg $BG -fg $FG -e '' & 
