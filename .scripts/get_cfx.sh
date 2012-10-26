@@ -30,6 +30,13 @@ folders[2]="Ace-TestBuilds"
 # change the $text value to a text file used to save previous newest zip
 text="$HOME/.scripts/get_cfx.txt"
 
+# (OPTIONALLY) CUSTOMIZE HERE
+# if you want this script to run automatically
+# comment main and
+# uncomment mainLoop at the bottom
+# and change the $poll below to your polling interval
+poll="30m"
+
 
 # creates 2 arrays of the same length of folders
 # used to store current and previous newest zips
@@ -148,9 +155,12 @@ main() {
 mainLoop() {
 	while true; do
 		main
-		sleep 30m
+		sleep $poll
 	done
 }
 
+# call either main (for single execution)
+# or mainLoop (for continous polling)
 main
 #mainLoop
+
