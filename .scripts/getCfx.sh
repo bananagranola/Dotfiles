@@ -38,6 +38,9 @@ size=${#folders[@]}
 currs[$size]=""
 prevs[$size]=""
 
+# store number of previous files in $text
+prevsNum=0
+
 # some hardcoded string variables
 nma="https://www.notifymyandroid.com/publicapi/notify"
 page="synergye.codefi.re"
@@ -101,7 +104,7 @@ parseCurr () {
 }
 
 # parses filenames using parseCurr()
-# populates currs[]
+# currs[]: populated 
 # no arguments
 parseCurrs() {
 	i=0
@@ -112,9 +115,9 @@ parseCurrs() {
 }
 
 # parses file containing previous newest zips
-# populates prevs[]
+# prevs[]: populated
+# prevsNum: save number of lines/zips in $text file (used to determine first run)
 # no arguments
-# saves empty = number of lines in $text file
 parsePrevs() {
 	# create $text file
 	if [ ! -f $text ]; then
@@ -130,7 +133,7 @@ parsePrevs() {
 	done < $text
 
 	# print lines (for first run)
-	empty=$i
+	prevsNum=$i
 	
 	# update $size
 	if [ $size -lt $i ]; then
@@ -184,12 +187,13 @@ save() {
 }
 
 # actually run stuff
+# no arguments
 getCfx() {
 	getNma
 	parseCurrs
 	parsePrevs
 	# do not notify if first run
-	if [ $empty -gt 0 ]; then
+	if [ $prevsNum -gt 0 ]; then
 		compareAndNotify
 	else
 		echo "1ST EXECUTION"
@@ -197,7 +201,8 @@ getCfx() {
 	save
 }
 
-# main
+# main driver
+# no arguments
 main() {
 	if [[ "$poll" == "" ]]; then
 		getCfx
