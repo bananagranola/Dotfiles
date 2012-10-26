@@ -6,25 +6,26 @@
 # gets the relevant pages at synergye.codefi.re
 # extracts the filenames and finds the newest ones
 # compares the current newest files to the previous newest files from a text file
+# notifies you with notifymyandroid
 # saves the current newest files to a text file
 
-# CUSTOMIZE HERE
+# SET UP NOTIFYMYANDROID
 # register at https://www.notifymyandroid.com/register.jsp 
 # go to "my account" and get an api key
-# put the api key in a text file named nma_api.txt and put it in a folder containing this script
-# alternatively, comment the first line, uncomment the second line and hardcode it here
-apikey="$(cat nma_api.txt)"
-#apikey="XXXXX"
+# download nma.sh from http://storage.locked.io/files/nma.sh
+# save nma.sh to the folder containing this script
+# pop the apikey into nma.sh
 
-# CUSTOMIZE HERE TOO
+# CUSTOMIZE HERE
 # add a field to the array for each folder you want to check on synergye.codefi.re
-# note: assumes that you use the same folders between executions.
-# if you change folders or their order, you might get a false positive the first time.
+# note: assumes that you use the same folders between executions
+# if you change folders or their order, you might get a false positive the first time
+# you will need to initialize it once to populate the text file
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
 
-# AND FINALLY CUSTOMIZE HERE (OPTIONAL)
+# (OPTIONALLY) CUSTOMIZE HERE
 # name of file used to save previous newest zip
 text="get_cfx.txt"
 
@@ -105,6 +106,9 @@ compareAndNotify() {
 	while [ $i -lt $size ]; do
 		if [[ "${currs[$i]}" != "${prevs[$i]}" ]]; then
 			# notifies using notifymyandroid api
+			# application: folders
+			# event: currs
+			# description: url
     		./nma.sh ${folders[$i]} ${currs[$i]} $page/${folders[$i]} 0
 			notify-send "${currs[$i]}"
 		fi
@@ -131,8 +135,11 @@ save() {
 }
 
 # main
-parseCurrs
-parsePrevs
-compareAndNotify
-save
+main() {
+	parseCurrs
+	parsePrevs
+	compareAndNotify
+	save
+}
 
+main
