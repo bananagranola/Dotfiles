@@ -24,7 +24,7 @@ text="$HOME/.scripts/getCfx.txt"
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
-folders[3]="CM10-Ace"
+#folders[3]="CM10-Ace"
 
 # (OPTIONALLY) CUSTOMIZE HERE
 poll="" 	# execute once
