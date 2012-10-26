@@ -201,7 +201,7 @@ while true; do
 
     if [ $cfxCounter -ge $CFXVAL ]; then
         if $(ping -q -W5 -c1 google.com &> /dev/null); then
-			cfx=$(/home/amytcheng/.scripts/get_cfx.sh)
+			cfx=$(/home/amytcheng/.scripts/getCfx.sh)
 			cfxCounter=0
         else
             cfxCounter=$(( $cfxCounter-$INTERVAL ))
