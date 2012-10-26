@@ -1,4 +1,3 @@
 codefireX-Ace: cm-cfX-20121024-OFFICIAL-ace.zip
 KangBang-Ace-Kernels: KangBang-Kernel-v0.8.zip
 Ace-TestBuilds: cm-cfX-20121023-OFFICIAL-ace.zip
-CM10-Ace: cm-10-20121025-UNOFFICIAL-ace.zip

@@ -2,48 +2,38 @@
 
 # getCfx.sh
 # by bananagranola @ http://forum.xda-developers.com/member.php?u=4733042 
-
 # gets the relevant pages at synergye.codefi.re
 # extracts the filenames and finds the newest ones
 # compares the current newest files to the previous newest files from a text file
 # notifies you with notifymyandroid
-# saves the current newest files to a text file
+# saves the current newest files to the text file
 
 # CUSTOMIZE HERE
 # location of notifymyandroid script
 nmash="$HOME/.scripts/nma.sh"
-
-# AND CUSTOMIZE HERE
 # location of persistent text file containing newest zips
 text="$HOME/.scripts/getCfx.txt"
-
-# FINALLY CUSTOMIZE HERE
 # add a field to the array for each folder you want to check on synergye.codefi.re
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
-#folders[3]="CM10-Ace"
-
-# (OPTIONALLY) CUSTOMIZE HERE
+# optionally set polling interval
 poll="" 	# execute once
 #poll="30m"	# poll continuously, in date format
-
 # DONE CUSTOMIZING
 
-# used to store current and previous newest zips
-size=${#folders[@]}
+# variables storing current and previous newest zips
 currs[$size]=""
 prevs[$size]=""
-
-# store number of previous files in $text
+# variable storing size of folders array
+size=${#folders[@]}
+# variable storing number of previous files in $text
 prevsNum=0
 
-# some hardcoded string variables
-nma="https://www.notifymyandroid.com/publicapi/notify"
-page="synergye.codefi.re"
-nmash="$HOME/.scripts/nma.sh"
+# variables storing hardcoded strings
+cfxUrl="http://synergye.codefi.re"
 
 # retrieves nma.sh script
 # asks for apikey
@@ -78,8 +68,8 @@ getNma() {
 # used in parseCurrs()
 # $1: foldername on synergye.codefi.re; ie: codefireX-Ace
 parseCurr () {
-	# retrieve folder page
-	page="$(wget -q -O - $page/$1)"
+	# retrieve raw page
+	page="$(wget -q -O - $cfxUrl/$1)"
 	latest=""
 
 	# loop through lines in page
@@ -145,13 +135,13 @@ compareAndNotify() {
 	changes=0
 	while [ $i -lt $size ]; do
 		if [[ ! "${currs[$i]}" == *${prevs[$i]}* ]]; then
-			# notifies using notifymyandroid api
+			# notifies notifymyandroid of updated newest zip
 			# application: folders
 			# event: currs
 			# description: url
-    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$page/${folders[$i]}" 0
-			# notifies linux on desktop with notify-send
-			notify-send "new: ${currs[$i]}"
+    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
+			# notifies linux desktop of updated newest zip
+			notify-send "new: ${currs[%i]}"
 			# prints updated newest zip
 			echo "new: ${currs[$i]}"
 			changes=$(($changes+1))
