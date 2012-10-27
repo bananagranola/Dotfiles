@@ -7,7 +7,7 @@
 # compares the current newest files to the previous newest files from a text file
 # notifies you with notifymyandroid
 # saves the current newest files to the text file
-# depends: curl
+# depends: curl, internet connection
 
 # CUSTOMIZE HERE ----- #
 # location of notifymyandroid script
@@ -44,6 +44,7 @@ getNma() {
 		echo "NMA.SH NOT FOUND; RETRIEVING NMA.SH"
 		# retrieve nma.sh script, save it, make executable
 		curl http://storage.locked.io/files/nma.sh > $nmash
+		
 		chmod 755 $nmash
 		
 		echo "REGISTER @ https://www.notifymyandroid.com/register.jsp"
