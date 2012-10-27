@@ -7,8 +7,9 @@
 # compares the current newest files to the previous newest files from a text file
 # notifies you with notifymyandroid
 # saves the current newest files to the text file
+# depends: curl
 
-# CUSTOMIZE HERE
+# CUSTOMIZE HERE ----- #
 # location of notifymyandroid script
 nmash="$HOME/.scripts/nma.sh"
 # location of persistent text file containing newest zips
@@ -22,7 +23,7 @@ folders[2]="Ace-TestBuilds"
 # optionally set polling interval
 poll="" 	# execute once
 #poll="30m"	# poll continuously, in date format
-# DONE CUSTOMIZING
+# DONE CUSTOMIZING --- #
 
 # variables storing current and previous newest zips
 currs[$size]=""
@@ -40,18 +41,16 @@ cfxUrl="http://synergye.codefi.re"
 # no arguments
 getNma() {
 	if [ ! -x $nmash ]; then
-		echo "nma.sh not found"
-		echo "retrieving nma.sh"
+		echo "NMA.SH NOT FOUND; RETRIEVING NMA.SH"
 		# retrieve nma.sh script, save it, make executable
-		wget http://storage.locked.io/files/nma.sh
-		mv nma.sh $nmash
+		curl http://storage.locked.io/files/nma.sh > $nmash
 		chmod 755 $nmash
 		
-		echo "register notifymyandroid at https://www.notifymyandroid.com/register.jsp"
-		echo "then go to my account to get an api key"
+		echo "REGISTER @ https://www.notifymyandroid.com/register.jsp"
+		echo "MY ACCOUNT -> API KEY"
 		# get apikey
 		while true; do
-			echo "enter apikey here: "
+			echo "ENTER APIKEY HERE: "
 			read apikey
 			if [ ${#apikey} -eq 48 ]; then
 				# save apikey in nma.sh script
@@ -63,40 +62,32 @@ getNma() {
 	fi
 }
 
-# parses folder page
-# outputs name of newest zip on synergye.codefi.re
-# used in parseCurrs()
+# parses webpages and finds current newest zips
+# currs[]: populated
 # $1: foldername on synergye.codefi.re; ie: codefireX-Ace
-parseCurr () {
-	# retrieve raw page
-	page="$(wget -q -O - $cfxUrl/$1)"
+parseCurrs () {
 	latest=""
 
-	# loop through lines in page
-	for line in $page; do
-		# find lines with downloadable zips
-		if [[ $line == *download=* ]]; then
-			# extract zip name
-			regex=".*$1.\(.*zip\).*"
-			filename=$(expr match "$line" $regex)
-			# save newest zip
-			if [[ "$filename" > "$latest" ]]; then
-				latest=$filename
-			fi
-		fi
-	done
-
-	# output filename: newest zip
-	echo "$1: $latest"
-}
-
-# parses filenames using parseCurr()
-# currs[]: populated 
-# no arguments
-parseCurrs() {
+	# loop through webpages
 	i=0
 	while [ $i -lt $size ]; do
-		currs[$i]=$(parseCurr ${folders[$i]})
+		# retrieve raw page
+		echo "RETRIEVING ${folders[$i]}"
+		page="$(curl $cfxUrl/${folders[$i]})"
+		# loop through lines in page
+		for line in $page; do
+			# find lines with downloadable zips
+			if [[ $line == *download=* ]]; then
+				# extract zip name
+				regex=".*${folders[$i]}.\(.*zip\).*"
+				filename=$(expr match "$line" $regex)
+				# save newest zip
+				if [[ "$filename" > "$latest" ]]; then
+					latest=$filename
+				fi
+			fi
+		done
+		currs[$i]="${folders[$i]}: $latest"
 		i=$(($i+1))
 	done
 }
@@ -139,16 +130,16 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
+    		#sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
 			# notifies linux desktop of updated newest zip
-			notify-send "new: ${currs[%i]}"
+			notify-send "NEW ${currs[$i]}"
 			# prints updated newest zip
-			echo "new: ${currs[$i]}"
+			echo "NEW ${currs[$i]}"
 			changes=$(($changes+1))
 		fi
 		i=$(($i+1))
 	done
-	echo "$changes new zips"
+	echo "$changes NEW"
 }
 
 # saves current newest zips into saved text file
@@ -175,7 +166,7 @@ getCfx() {
 	if [ $prevsNum -gt 0 ]; then
 		compareAndNotify
 	else
-		echo "1ST EXECUTION"
+		echo "FIRST EXECUTION; NO NOTIFICATIONS"
 	fi
 	save
 }

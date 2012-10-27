@@ -1,3 +1,6 @@
+retrieving http://synergye.codefi.re/codefireX-Ace
 codefireX-Ace: cm-cfX-20121024-OFFICIAL-ace.zip
+retrieving http://synergye.codefi.re/KangBang-Ace-Kernels
 KangBang-Ace-Kernels: KangBang-Kernel-v0.8.zip
+retrieving http://synergye.codefi.re/Ace-TestBuilds
 Ace-TestBuilds: cm-cfX-20121023-OFFICIAL-ace.zip
