@@ -130,7 +130,7 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		#sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
+    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
 			# notifies linux desktop of updated newest zip
 			notify-send "NEW ${currs[$i]}"
 			# prints updated newest zip
@@ -139,7 +139,7 @@ compareAndNotify() {
 		fi
 		i=$(($i+1))
 	done
-	echo "$changes NEW"
+	echo "$changes/$size NEW"
 }
 
 # saves current newest zips into saved text file
