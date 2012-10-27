@@ -67,11 +67,10 @@ getNma() {
 # currs[]: populated
 # $1: foldername on synergye.codefi.re; ie: codefireX-Ace
 parseCurrs () {
-	latest=""
-
 	# loop through webpages
 	i=0
 	while [ $i -lt $size ]; do
+		latest=""
 		# retrieve raw page
 		echo "RETRIEVING ${folders[$i]}"
 		page="$(curl $cfxUrl/${folders[$i]})"
@@ -140,7 +139,7 @@ compareAndNotify() {
 		fi
 		i=$(($i+1))
 	done
-	echo "$changes/$size NEW"
+	echo "$(date): $changes/$size NEW"
 }
 
 # saves current newest zips into saved text file
@@ -166,10 +165,12 @@ getCfx() {
 	# do not notify if first run
 	if [ $prevsNum -gt 0 ]; then
 		compareAndNotify
+		save
 	else
 		echo "FIRST EXECUTION; NO NOTIFICATIONS"
+		save
+		cat $text
 	fi
-	save
 }
 
 # main driver
