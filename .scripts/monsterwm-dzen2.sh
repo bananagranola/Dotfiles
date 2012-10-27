@@ -69,7 +69,6 @@ NETVAL=1
 POWERVAL=1
 SOUNDVAL=1
 DATEVAL=3
-CFXVAL=300
 
 cpuCounter=$CPUVAL
 dboxCounter=$DBOXVAL
@@ -84,7 +83,6 @@ else
 fi
 soundCounter=$SOUNDVAL
 dateCounter=$DATEVAL
-cfxCounter=$(( $CFXVAL-10 ))
 
 while true; do
 
@@ -199,15 +197,6 @@ while true; do
         dateCounter=0
     fi
 
-    if [ $cfxCounter -ge $CFXVAL ]; then
-        if $(ping -q -W5 -c1 google.com &> /dev/null); then
-			cfx=$(/home/amytcheng/.scripts/getCfx.sh)
-			cfxCounter=0
-        else
-            cfxCounter=$(( $cfxCounter-$INTERVAL ))
-        fi
-    fi
-
     STATUS="$cpuLabel: $cpu | $dboxLabel: $dbox | $gmailLabel: $gmail | $musicLabel: $music | "
     if ! $DESKTOP; then
         STATUS+="$netLabel: $net | $powerLabel: $power | "
@@ -226,7 +215,6 @@ while true; do
     fi
     soundCounter=$(( $soundCounter+1 ))
     dateCounter=$(( $dateCounter+1 ))
-    cfxCounter=$(( $cfxCounter+1 ))
 
     sleep $INTERVAL
 done | dzen2 -l 5 -ta $ALIGN -sa $ALIGN -x $XPOS -h $HEIGHT -fn $FONT -bg $BG -fg $FG -e '' & 

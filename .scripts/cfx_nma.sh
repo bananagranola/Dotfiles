@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# getCfx.sh
+# cfx_nma.sh
 # by bananagranola @ http://forum.xda-developers.com/member.php?u=4733042 
 # gets the relevant pages at synergye.codefi.re
 # extracts the filenames and finds the newest ones
@@ -13,7 +13,7 @@
 # location of notifymyandroid script
 nmash="$HOME/.scripts/nma.sh"
 # location of persistent text file containing newest zips
-text="$HOME/.scripts/getCfx.txt"
+text="$HOME/.scripts/cfx_nma.txt"
 # add a field to the array for each folder you want to check on synergye.codefi.re
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
@@ -158,7 +158,7 @@ save() {
 
 # actually run stuff
 # no arguments
-getCfx() {
+cfx_nma() {
 	getNma
 	parseCurrs
 	parsePrevs
@@ -177,10 +177,10 @@ getCfx() {
 # no arguments
 main() {
 	if [[ "$poll" == "" ]]; then
-		getCfx
+		cfx_nma
 	else
 		while true; do
-			getCfx
+			cfx_nma
 			sleep $poll
 		done
 	fi
