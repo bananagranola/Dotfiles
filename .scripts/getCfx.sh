@@ -167,7 +167,7 @@ getCfx() {
 		compareAndNotify
 		save
 	else
-		echo "FIRST EXECUTION; NO NOTIFICATIONS"
+		echo "$(date): FIRST EXECUTION; NO NOTIFICATIONS"
 		save
 		cat $text
 	fi
