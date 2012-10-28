@@ -10,8 +10,6 @@
 # depends: curl, internet connection
 
 # CUSTOMIZE HERE ----- #
-# notiymyandroid api
-apikey="e0e5d265dee9dc4c872900c531c62583bac7e9816f951202"
 # location of notifymyandroid script
 nmash="$HOME/.scripts/nma.sh"
 # location of persistent text file containing newest zips
@@ -45,8 +43,24 @@ getNma() {
 	if [ ! -x $nmash ]; then
 		echo "NMA.SH NOT FOUND; RETRIEVING NMA.SH"
 		# retrieve nma.sh script, save it, make executable
-		curl https://raw.github.com/moepi/nomyan/master/nomyan.sh > $nmash
+		curl http://storage.locked.io/files/nma.sh > $nmash
+		
 		chmod 755 $nmash
+		
+		echo "REGISTER @ https://www.notifymyandroid.com/register.jsp"
+		echo "MY ACCOUNT -> API KEY"
+		# get apikey
+		while true; do
+			echo "ENTER APIKEY HERE: "
+			read apikey
+			if [ ${#apikey} -eq 48 ]; then
+				# save apikey in nma.sh script
+				sedregex="s/APIkey=.*/APIkey=\"$apikey\"/g"
+				sed -i $sedregex $nmash
+				sed -i  "s/ping -c.*/ping -w 5 google.com/g" $nmash
+				break
+			fi
+		done
 	fi
 }
 
@@ -117,7 +131,7 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" -k "$apikey"
+    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
 			# notifies linux desktop of updated newest zip
 			notify-send "NEW ${currs[$i]}"
 			# prints updated newest zip
