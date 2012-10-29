@@ -56,7 +56,7 @@ getNma() {
 		echo "GET APIKEY FROM MY ACCOUNT -> GENERATE KEY"
 		read line
 		touch $apikey
-		echo line > $apikey
+		echo $line > $apikey
 	fi
 }
 
