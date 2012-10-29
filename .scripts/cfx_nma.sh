@@ -13,8 +13,8 @@
 # location of apikey file
 apikey="$HOME/.scripts/nma.key"
 # location of notifymyandroid perl script
-nmash="$HOME/.scripts/nma.pl"
-# location of persistent text file containing newest zips
+nmapl="$HOME/.scripts/nma.pl"
+# location of persistent save file containing newest zips
 text="$HOME/.scripts/cfx_nma.txt"
 # add a field to the array for each folder you want to check on synergye.codefi.re
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
@@ -42,13 +42,13 @@ cfxUrl="http://synergye.codefi.re"
 # asks for apikey
 # no arguments
 getNma() {
-	if [ ! -x $nmash ]; then
+	if [ ! -x $nmapl ]; then
 		echo "NMA.PL NOT FOUND; RETRIEVING NMA.PL"
 		# retrieve nma.pl script, save it, make executable
-		curl http://storage.locked.io/files/nma.pl > $nmash
-		chmod 755 $nmash
+		curl http://storage.locked.io/files/nma.pl > $nmapl
+		chmod 755 $nmapl
 		# change https protocol to http for portability
-		sed -i s/https/http/g $nmash
+		sed -i s/https/http/g $nmapl
 	fi
 
 	if [ ! -f $apikey ]; then
@@ -127,7 +127,7 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		perl $nmash -apikeyfile="$apikey" \
+    		perl $nmapl -apikeyfile="$apikey" \
 				-application="${folders[$i]}" \
 				-event="${currs[$i]}" \
 				-notification="$cfxUrl/${folders[$i]}" \
