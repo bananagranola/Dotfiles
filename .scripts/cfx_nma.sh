@@ -10,8 +10,10 @@
 # depends: curl, internet connection
 
 # CUSTOMIZE HERE ----- #
-# location of notifymyandroid script
-nmash="$HOME/.scripts/nma.sh"
+# location of apikey file
+apikey="$HOME/.scripts/nma.key"
+# location of notifymyandroid perl script
+nmash="$HOME/.scripts/nma.pl"
 # location of persistent text file containing newest zips
 text="$HOME/.scripts/cfx_nma.txt"
 # add a field to the array for each folder you want to check on synergye.codefi.re
@@ -41,26 +43,20 @@ cfxUrl="http://synergye.codefi.re"
 # no arguments
 getNma() {
 	if [ ! -x $nmash ]; then
-		echo "NMA.SH NOT FOUND; RETRIEVING NMA.SH"
-		# retrieve nma.sh script, save it, make executable
-		curl http://storage.locked.io/files/nma.sh > $nmash
-		
+		echo "NMA.PL NOT FOUND; RETRIEVING NMA.PL"
+		# retrieve nma.pl script, save it, make executable
+		curl http://storage.locked.io/files/nma.pl > $nmash
 		chmod 755 $nmash
-		
-		echo "REGISTER @ https://www.notifymyandroid.com/register.jsp"
-		echo "MY ACCOUNT -> API KEY"
-		# get apikey
-		while true; do
-			echo "ENTER APIKEY HERE: "
-			read apikey
-			if [ ${#apikey} -eq 48 ]; then
-				# save apikey in nma.sh script
-				sedregex="s/APIkey=.*/APIkey=\"$apikey\"/g"
-				sed -i $sedregex $nmash
-				sed -i  "s/ping -c.*/ping -w 5 google.com/g" $nmash
-				break
-			fi
-		done
+		# change https protocol to http for portability
+		sed -i s/https/http/g $nmash
+	fi
+
+	if [ ! -f $apikey ]; then
+		echo "REGISTER AT http://www.notifymyandroid.com/"
+		echo "GET APIKEY FROM MY ACCOUNT -> GENERATE KEY"
+		read line
+		touch $apikey
+		echo line > $apikey
 	fi
 }
 
@@ -131,7 +127,11 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		sh $nmash "${folders[$i]}" "${currs[$i]}" "$cfxUrl/${folders[$i]}" 0
+    		perl $nmash -apikeyfile="$apikey" \
+				-application="${folders[$i]}" \
+				-event="${currs[$i]}" \
+				-notification="$cfxUrl/${folders[$i]}" \
+				-priority=0
 			# notifies linux desktop of updated newest zip
 			notify-send "NEW ${currs[$i]}"
 			# prints updated newest zip
