@@ -12,6 +12,7 @@ Avery Wilson
 Beyonce Knowles
 Bob Gaudio
 Bryan Keith
+Carrie Underwood
 Cheesa
 Chris Mann
 Daniel Levitan
