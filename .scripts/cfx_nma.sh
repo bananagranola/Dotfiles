@@ -23,8 +23,8 @@ folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
 # set polling interval in date format; if blank, executes once
-poll=""
-#poll="30m"
+#poll=""
+poll="30m"
 # -- DONE CUSTOMIZING -- #
 
 # variables storing current and previous newest zips
