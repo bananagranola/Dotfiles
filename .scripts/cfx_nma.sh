@@ -21,7 +21,7 @@ text="$HOME/.scripts/cfx_nma.sav"
 # otherwise, you might get a false positive on first execution
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
-folders[2]="Ace-TestBuilds"
+#folders[2]="Ace-TestBuilds"
 # set polling interval in date format; if blank, executes once
 #poll=""
 poll="30m"
@@ -133,7 +133,9 @@ compareAndNotify() {
 				-notification="$cfxUrl/${folders[$i]}" \
 				-priority=0
 			# notifies linux desktop of updated newest zip
-			notify-send "NEW ${currs[$i]}"
+			if [[ "$(uname -o)" == "*GNU/Linux*" ]]; then
+				notify-send "NEW ${currs[$i]}"
+			fi
 			# prints updated newest zip
 			echo "NEW ${currs[$i]}"
 			changes=$(($changes+1))
