@@ -9,23 +9,23 @@
 # saves the current newest files to the text file
 # depends: curl, internet connection
 
-# CUSTOMIZE HERE ----- #
-# location of apikey file
+# --- CUSTOMIZE HERE --- #
+# location of apikey text file
 apikey="$HOME/.scripts/nma.key"
 # location of notifymyandroid perl script
 nmapl="$HOME/.scripts/nma.pl"
-# location of persistent save file containing newest zips
-text="$HOME/.scripts/cfx_nma.txt"
+# location of persistent text file
+text="$HOME/.scripts/cfx_nma.sav"
 # add a field to the array for each folder you want to check on synergye.codefi.re
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
 folders[2]="Ace-TestBuilds"
-# optionally set polling interval
-poll="" 	# execute once
-#poll="30m"	# poll continuously, in date format
-# DONE CUSTOMIZING --- #
+# set polling interval in date format; if blank, executes once
+poll=""
+#poll="30m"
+# -- DONE CUSTOMIZING -- #
 
 # variables storing current and previous newest zips
 currs[$size]=""

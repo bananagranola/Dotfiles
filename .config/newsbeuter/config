@@ -7,7 +7,7 @@ googlereader-login				"amezster@gmail.com"
 googlereader-passwordfile		"/home/amytcheng/.scripts/pass.txt"
 googlereader-show-special-feeds	no
 history-limit					0
-max-items						10
+max-items						50
 notify-format					"newsbeuter: %f unread feeds"
 notify-program 					"notify-send"
 refresh-on-startup				no
