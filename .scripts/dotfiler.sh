@@ -62,10 +62,10 @@ for src_dotfile in $dotfiles; do
 			# parent folder creation error check
 			if [ $? -eq 0 ]; then
 				if [[ $mkdir_output != " " && $mkdir_output != "" ]]; then
-				log "DOTFILER: $mkdir_output FOLDER(S) CREATED"
+				log "DOTFILER CREATED FOLDERS: $mkdir_output"
 			fi
 			else
-				log_error "DOTFILER: $mkdir_output FOLDER CREATION FAILED"
+				log_error "DOTFILER FAILED CREATING FOLDERS: $mkdir_output"
 			fi
 
 			# symlink the file
@@ -74,16 +74,16 @@ for src_dotfile in $dotfiles; do
 			ln_output="$(ln --interactive --symbolic --verbose "$src_dotfile" "$HOME/$dest_dotfile")"
 			# symlink error check
 			if [ $? -eq 0 ]; then
-				log "DOTFILER: $ln_output LINKED"
+				log "DOTFILER LINKED: $ln_output"
 			else
-				log_error "DOTFILER: $dest_dotfile LINKING FAILED"
+				log_error "DOTFILER FAILED LINKING: $dest_dotfile"
 			fi
 
 		else
-			log_verbose "DOTFILER: $dest_dotfile IGNORED"
+			log_verbose "DOTFILER IGNORED: $dest_dotfile"
 		fi
 	else
-		log_verbose "DOTFILER: $dest_dotfile ALREADY LINKED"
+		log_verbose "DOTFILER ALREADY LINKED: $dest_dotfile"
 	fi
 done
 
@@ -94,9 +94,9 @@ for dangler in $danglers; do
 	rm $dangler
 	# remove danglers error check
 	if [ $? -eq 0 ]; then
-		log "DOTFILER: $dangler DANGLER REMOVED"
+		log "DOTFILER REMOVED DANGLER: $dangler"
 	else
-		log_error "DOTFILER: $dangler DANGLER REMOVE FAILED"
+		log_error "DOTFILER FAILED REMOVING DANGLER: $dangler"
 	fi
 done
 log_verbose "DOTFILER: DONE CHECKING DANGLING SYMLINKS"
