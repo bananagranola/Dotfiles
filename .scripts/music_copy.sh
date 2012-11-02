@@ -16,6 +16,7 @@ Carrie Underwood
 Cheesa
 Chris Mann
 Daniel Levitan
+De'Borah
 Dia Frampton
 Kings of Leon
 Jennifer Hudson
