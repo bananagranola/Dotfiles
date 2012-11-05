@@ -3,6 +3,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# set up ccache
+export USE_CCACHE=1
+
 # bash completion
 . /etc/bash_completion.d/git
 [ -r /etc/bash_completion.d/netcfg ] && . /etc/bash_completion.d/netcfg
