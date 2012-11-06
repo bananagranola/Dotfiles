@@ -159,7 +159,7 @@ save() {
 	done
 }
 
-# actually run stuff
+# run functions
 # no arguments
 cfx_nma() {
 	getNma
@@ -189,5 +189,6 @@ main() {
 	fi
 }
 
+# actually run stuff
 main
 
