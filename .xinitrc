@@ -16,9 +16,9 @@ monsterwm)
 	exec /home/amytcheng/.scripts/monsterwm.sh
 	;;
 openbox)
-	conky &
+	#conky &
 	fbpanel &
-	exec dbus-launch ck-launch-session openbox
+	exec openbox
     ;;
 *)
 	exec goomwwm
