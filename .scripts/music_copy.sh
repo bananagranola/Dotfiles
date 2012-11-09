@@ -5,6 +5,7 @@ destination="$1"
 
 sources=\
 "Adele
+Amanda Brown
 Angie Johnson
 Anthony Evans
 Ashley De La Rosa
