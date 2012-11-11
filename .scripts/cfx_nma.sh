@@ -9,23 +9,23 @@
 # saves the current newest files to the text file
 # depends: curl, internet connection
 
-# --- CUSTOMIZE HERE --- #
-# location of apikey text file
+# CUSTOMIZE HERE ----- #
+# location of apikey file
 apikey="$HOME/.scripts/nma.key"
 # location of notifymyandroid perl script
-nmapl="$HOME/.scripts/nma.pl"
-# location of persistent text file
-text="$HOME/.scripts/cfx_nma.sav"
+nmash="$HOME/.scripts/nma.pl"
+# location of persistent text file containing newest zips
+text="$HOME/.scripts/cfx_nma.txt"
 # add a field to the array for each folder you want to check on synergye.codefi.re
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
 folders[0]="codefireX-Ace"
 folders[1]="KangBang-Ace-Kernels"
-#folders[2]="Ace-TestBuilds"
-# set polling interval in date format; if blank, executes once
-#poll=""
-poll="30m"
-# -- DONE CUSTOMIZING -- #
+folders[2]="Ace-TestBuilds"
+# optionally set polling interval
+#poll="" 	# execute once
+poll="10m"	# poll continuously, in date format
+# DONE CUSTOMIZING --- #
 
 # variables storing current and previous newest zips
 currs[$size]=""
@@ -42,13 +42,13 @@ cfxUrl="http://synergye.codefi.re"
 # asks for apikey
 # no arguments
 getNma() {
-	if [ ! -x $nmapl ]; then
+	if [ ! -x $nmash ]; then
 		echo "NMA.PL NOT FOUND; RETRIEVING NMA.PL"
 		# retrieve nma.pl script, save it, make executable
-		curl http://storage.locked.io/files/nma.pl > $nmapl
-		chmod 755 $nmapl
+		curl http://storage.locked.io/files/nma.pl > $nmash
+		chmod 755 $nmash
 		# change https protocol to http for portability
-		sed -i s/https/http/g $nmapl
+		sed -i s/https/http/g $nmash
 	fi
 
 	if [ ! -f $apikey ]; then
@@ -69,7 +69,6 @@ parseCurrs () {
 	while [ $i -lt $size ]; do
 		latest=""
 		# retrieve raw page
-		echo "RETRIEVING ${folders[$i]}"
 		page="$(curl --silent --show-error $cfxUrl/${folders[$i]})"
 		# loop through lines in page
 		for line in $page; do
@@ -85,6 +84,7 @@ parseCurrs () {
 			fi
 		done
 		currs[$i]="${folders[$i]}: $latest"
+		echo "${folders[$i]}: $latest"
 		i=$(($i+1))
 	done
 }
@@ -127,17 +127,13 @@ compareAndNotify() {
 			# application: folders
 			# event: currs
 			# description: url
-    		perl $nmapl -apikeyfile="$apikey" \
+    		perl $nmash -apikeyfile="$apikey" \
 				-application="${folders[$i]}" \
 				-event="${currs[$i]}" \
 				-notification="$cfxUrl/${folders[$i]}" \
 				-priority=0
-			# notifies linux desktop of updated newest zip
-			if [[ "$(uname -o)" == "*GNU/Linux*" ]]; then
-				notify-send "NEW ${currs[$i]}"
-			fi
 			# prints updated newest zip
-			echo "NEW ${currs[$i]}"
+			echo -e "${currs[$i]} NEWER THAN \n${prevs[$i]}"
 			changes=$(($changes+1))
 		fi
 		i=$(($i+1))
@@ -159,7 +155,7 @@ save() {
 	done
 }
 
-# run functions
+# actually run stuff
 # no arguments
 cfx_nma() {
 	getNma
@@ -189,6 +185,5 @@ main() {
 	fi
 }
 
-# actually run stuff
 main
 
