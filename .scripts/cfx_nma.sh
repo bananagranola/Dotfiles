@@ -70,7 +70,7 @@ parseCurrs () {
 		latest=""
 		# retrieve raw page
 		echo "RETRIEVING ${folders[$i]}"
-		page="$(curl $cfxUrl/${folders[$i]})"
+		page="$(curl --silent --show-error $cfxUrl/${folders[$i]})"
 		# loop through lines in page
 		for line in $page; do
 			# find lines with downloadable zips
@@ -142,7 +142,7 @@ compareAndNotify() {
 		fi
 		i=$(($i+1))
 	done
-	echo "$(date): $changes/$size NEW"
+	echo -e "$(date): $changes/$size NEW\n"
 }
 
 # saves current newest zips into saved text file
@@ -170,7 +170,7 @@ cfx_nma() {
 		compareAndNotify
 		save
 	else
-		echo "$(date): FIRST EXECUTION; NO NOTIFICATIONS"
+		echo -e "$(date): FIRST EXECUTION; NO NOTIFICATIONS\n"
 		save
 		cat $text
 	fi
