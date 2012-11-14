@@ -3,6 +3,9 @@ bind-key LEFT					quit
 bind-key o 						open-in-browser-and-mark-read
 
 browser							"$BROWSER %u > /dev/null 2>&1 &"
+cleanup-on-quit					yes
+display-article-progress		yes
+feed-sort-order					firsttag
 googlereader-login				"amezster@gmail.com"
 googlereader-passwordfile		"/home/amytcheng/.scripts/pass.txt"
 googlereader-show-special-feeds	no
@@ -10,9 +13,9 @@ history-limit					0
 max-items						50
 notify-format					"newsbeuter: %f unread feeds"
 notify-program 					"notify-send"
-refresh-on-startup				no
+refresh-on-startup				yes
 reload-only-visible-feeds		yes
-reload-threads					5
+reload-threads					10
 show-read-feeds					yes
 urls-source						"googlereader"
 
