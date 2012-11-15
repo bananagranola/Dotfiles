@@ -4,6 +4,7 @@ set background=dark " dark/light
 let g:solarized_termtrans=1 " enable transparency
 colorscheme solarized " set colorscheme
 "colorscheme darkburn
+set t_Co=256
 
 " non-console font
 set guifont=Consolas:h9:cANSI
