@@ -1,7 +1,8 @@
 # .xinitrc, run by startx
 
 #conky &
-/home/amytcheng/.scripts/dropbox.sh &
+dropboxd &
+/home/amytcheng/.scripts/grive_monitor.sh &
 /home/amytcheng/.scripts/randombackground.sh &
 twmnd &
 urxvtd -f -o -q &

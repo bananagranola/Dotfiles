@@ -4,7 +4,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # set path to include ~/bin
-PATH=~/bin:$PATH
+PATH=~/.bin:$PATH
 
 # prompt setup
 autoload -U promptinit
