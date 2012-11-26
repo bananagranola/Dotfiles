@@ -46,6 +46,8 @@ export WINDOWS="/media/windows7/Users/amytcheng/"
 # command-line calculator
 calc() { awk "BEGIN { print $*}" ;}
 
+alias sudo='sudo '
+
 # follow vim exit
 alias :q='exit'
 
