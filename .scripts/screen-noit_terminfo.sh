@@ -10,4 +10,4 @@ infocmp screen-256color | sed \
 	-e 's/ \?sitm=[^,]*,//' \
 	-e 's/ \?ritm=[^,]*,//' > /tmp/terminfo
 tic /tmp/terminfo
-sed 's/default-terminal \".*\"/default-terminal \"screen-noit\"/g' .tmux.conf
+sed -i 's/default-terminal \".*\"/default-terminal \"screen-noit\"/g' .tmux.conf
