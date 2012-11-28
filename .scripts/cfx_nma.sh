@@ -27,7 +27,7 @@ folders[1]="$cfxUrl/KangBang-Ace-Kernels"
 folders[2]="$cfxUrl42/codefireX-Ace"
 # optionally set polling interval
 #poll="" 	# execute once
-poll="10m"	# poll continuously, in date format
+poll="30m"	# poll continuously, in date format
 # DONE CUSTOMIZING --- #
 
 # variables storing current and previous newest zips
