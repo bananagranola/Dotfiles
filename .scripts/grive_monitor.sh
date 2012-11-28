@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# run once on start
+cd $HOME/Drive && grive && cd -
+
+# watch for file changes and run grive if changes detected
 while inotifywait --recursive \
 	--event modify \
 	--event move \
