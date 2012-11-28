@@ -11,7 +11,7 @@
 DOTFILES_DIR="$HOME/.dotfiles/"
 DOTFILES_DIR_LENGTH=${#DOTFILES_DIR}
 
-VERBOSE=0
+VERBOSE=1
 
 # log verbose in green
 log_verbose() {

@@ -50,8 +50,9 @@
 	Alt + r
 
 # Terminal Emulator
-"urxvtc -e zsh -c tmux -2 -q has-session && exec tmux attach-session -d || exec tmux new-session"
-    m:0x8 + c:28
+#"urxvtc -e zsh -c tmux -2 -q has-session && exec tmux attach-session -d || exec tmux new-session"
+"urxvtc"
+	m:0x8 + c:28
     Alt + t
 
 # Web Browser
