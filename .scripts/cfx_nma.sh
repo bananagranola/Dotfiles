@@ -9,6 +9,9 @@
 # saves the current newest files to the text file
 # depends: curl, internet connection
 
+cfxUrl="http://synergye.codefi.re"
+cfxUrl42="http://downloads.codefi.re/synergy"
+
 # CUSTOMIZE HERE ----- #
 # location of apikey file
 apikey="$HOME/.scripts/nma.key"
@@ -16,12 +19,12 @@ apikey="$HOME/.scripts/nma.key"
 nmash="$HOME/.scripts/nma.pl"
 # location of persistent text file containing newest zips
 text="$HOME/.scripts/cfx_nma.txt"
-# add a field to the array for each folder you want to check on synergye.codefi.re
+# add a field to the array for each folder you want to check, using cfxUrl and cfxUrl42 variables above
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
-folders[0]="codefireX-Ace"
-folders[1]="KangBang-Ace-Kernels"
-folders[2]="Ace-TestBuilds"
+folders[0]="$cfxUrl/codefireX-Ace"
+folders[1]="$cfxUrl/KangBang-Ace-Kernels"
+folders[2]="$cfxUrl42/codefireX-Ace"
 # optionally set polling interval
 #poll="" 	# execute once
 poll="10m"	# poll continuously, in date format
@@ -34,9 +37,6 @@ prevs[$size]=""
 size=${#folders[@]}
 # variable storing number of previous files in $text
 prevsNum=0
-
-# variables storing hardcoded strings
-cfxUrl="http://synergye.codefi.re"
 
 # retrieves nma.sh script
 # asks for apikey
@@ -69,22 +69,27 @@ parseCurrs () {
 	while [ $i -lt $size ]; do
 		latest=""
 		# retrieve raw page
-		page="$(curl --silent --show-error $cfxUrl/${folders[$i]})"
+		page="$(curl --silent --show-error ${folders[$i]})"
 		# loop through lines in page
 		for line in $page; do
 			# find lines with downloadable zips
-			if [[ $line == *download=* ]]; then
+			if [[ $line == *[A-Z][a-z][a-z]-[0-9][0-9]-[0-9][0-9]* ]]; then
+				# extract rom name
+				folder=$(echo ${folders[$i]} | cut -d "/" -f4)
+				if [[ $folder == "synergy" ]]; then
+					folder=$(echo ${folders[$i]} | cut -d '/' -f5)
+				fi
 				# extract zip name
-				regex=".*${folders[$i]}.\(.*zip\).*"
+				regex=".*$folder.\(.*zip\).*"
 				filename=$(expr match "$line" $regex)
 				# save newest zip
 				if [[ "$filename" > "$latest" ]]; then
-					latest=$filename
+					latest="$folder: $filename"
 				fi
 			fi
 		done
-		currs[$i]="${folders[$i]}: $latest"
-		echo "${folders[$i]}: $latest"
+		currs[$i]="$latest"
+		echo "$latest"
 		i=$(($i+1))
 	done
 }
