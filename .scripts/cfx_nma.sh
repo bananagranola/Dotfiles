@@ -2,7 +2,7 @@
 
 # cfx_nma.sh
 # by bananagranola @ http://forum.xda-developers.com/member.php?u=4733042 
-# gets the relevant pages at synergye.codefi.re
+# gets the relevant pages at synergye.codefi.re or downloads.codefi.re/synergy
 # extracts the filenames and finds the newest ones
 # compares the current newest files to the previous newest files from a text file
 # notifies you with notifymyandroid
@@ -74,6 +74,8 @@ parseCurrs () {
 		for line in $page; do
 			# find lines with downloadable zips
 			if [[ $line == *[A-Z][a-z][a-z]-[0-9][0-9]-[0-9][0-9]* ]]; then
+				# extract date of upload
+				date=$(echo $line | sed 's/.*\([A-Z][a-z][a-z]-[0-9][0-9]-[0-9][0-9]\).*/\1/')
 				# extract rom name
 				folder=$(echo ${folders[$i]} | cut -d "/" -f4)
 				if [[ $folder == "synergy" ]]; then
@@ -84,7 +86,7 @@ parseCurrs () {
 				filename=$(expr match "$line" $regex)
 				# save newest zip
 				if [[ "$filename" > "$latest" ]]; then
-					latest="$folder: $filename"
+					latest="($date) $folder: $filename"
 				fi
 			fi
 		done
@@ -191,4 +193,3 @@ main() {
 }
 
 main
-
