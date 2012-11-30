@@ -84,9 +84,10 @@ parseCurrs () {
 				# extract zip name
 				regex=".*$folder.\(.*zip\).*"
 				filename=$(expr match "$line" $regex)
+				filename="$folder: $filename"
 				# save newest zip
 				if [[ "$filename" > "$latest" ]]; then
-					latest="($date) $folder: $filename"
+					latest="$filename"
 				fi
 			fi
 		done
