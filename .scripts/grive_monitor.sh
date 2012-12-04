@@ -15,5 +15,5 @@ while inotifywait --recursive \
 	--exclude .~lock.*
 do
 	cd $HOME/Drive
-	grive
+	grive > ~/.grive.log
 done
