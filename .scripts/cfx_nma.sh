@@ -138,7 +138,7 @@ compareAndNotify() {
     		perl $nmash -apikeyfile="$apikey" \
 				-application="${folders[$i]}" \
 				-event="${currs[$i]}" \
-				-notification="$cfxUrl/${folders[$i]}" \
+				-notification="${folders[$i]}" \
 				-priority=0
 			# prints updated newest zip
 			echo -e "${currs[$i]} NEWER THAN \n${prevs[$i]}"
