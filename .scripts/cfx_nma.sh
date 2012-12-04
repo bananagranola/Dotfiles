@@ -176,7 +176,6 @@ cfx_nma() {
 	else
 		echo -e "$(date): FIRST EXECUTION; NO NOTIFICATIONS\n"
 		save
-		cat $text
 	fi
 }
 

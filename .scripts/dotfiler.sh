@@ -79,8 +79,8 @@ for src_dotfile in $dotfiles; do
 				log_error "DOTFILER FAILED LINKING: $dest_dotfile"
 			fi
 
-		else
-			log_verbose "DOTFILER IGNORED: $dest_dotfile"
+		#else
+			#log_verbose "DOTFILER IGNORED: $dest_dotfile"
 		fi
 	else
 		log_verbose "DOTFILER ALREADY LINKED: $dest_dotfile"
