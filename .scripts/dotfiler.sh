@@ -80,7 +80,7 @@ for src_dotfile in $dotfiles; do
 			fi
 
 		else
-			log_verbose "DOTFILER IGNORED: $dest_dotfile"
+			#log_verbose "DOTFILER IGNORED: $dest_dotfile"
 		fi
 	else
 		log_verbose "DOTFILER ALREADY LINKED: $dest_dotfile"
