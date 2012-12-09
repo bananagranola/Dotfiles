@@ -32,6 +32,7 @@ static const AppRule rules[] = { \
     /*  class     desktop  follow  float */
 	{ "Gxmessage",        0,    True,   True  },
     { "Lxappearance",     0,    True,   True  }, 
+	{ "Steam",            0,    True,   True  },
 	{ "Xfburn",           0,    True,   True, },
 	{ "Xscreensaver-demo",0,    True,   True, },
 };
