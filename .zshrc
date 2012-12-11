@@ -51,6 +51,11 @@ alias sudo='sudo '
 # follow vim exit
 alias :q='exit'
 
+# convenient killer
+killer() {
+	ps -e | grep $1 | cut -c1-5 | xargs kill -9
+}
+
 # convenient image viewer script aliases
 alias meh='/home/amytcheng/.scripts/meh.sh'
 alias sxiv='/home/amytcheng/.scripts/sxiv.sh'
