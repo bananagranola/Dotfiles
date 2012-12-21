@@ -5,7 +5,7 @@
 	Alt + b
 
 # Chat Client
-"urxvtc -title centerim -e centerim"
+"urxvtc -title mcabber -e mcabber"
 	m:0x8 + c:54
 	Alt + c
 
