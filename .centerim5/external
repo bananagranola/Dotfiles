@@ -1,8 +1,0 @@
-%action 
-event msg
-proto all
-status all
-options stdin
-%exec
-msg=$(cat)
-notify-send "$msg"
