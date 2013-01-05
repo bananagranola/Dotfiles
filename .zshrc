@@ -6,6 +6,9 @@ SAVEHIST=1000
 # set path to include ~/bin
 PATH=~/.bin:$PATH
 
+# ccache
+export USE_CCACHE=1
+
 # prompt setup
 autoload -U promptinit
 promptinit 
