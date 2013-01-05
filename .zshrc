@@ -62,6 +62,10 @@ killer() {
 	ps -e | grep $1 | cut -c1-5 | xargs kill -9
 }
 
+# tar compression
+alias uptar='tar -acf'
+alias untar='tar -xvf'
+
 # convenient image viewer script aliases
 alias meh='/home/amytcheng/.scripts/meh.sh'
 alias sxiv='/home/amytcheng/.scripts/sxiv.sh'

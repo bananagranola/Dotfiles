@@ -5,7 +5,7 @@
 	Alt + b
 
 # Chat Client
-"urxvtc -title centerim -e centerim"
+"urxvtc -title mcabber -e mcabber"
 	m:0x8 + c:54
 	Alt + c
 
@@ -20,7 +20,7 @@
 	Mod4 + Escape
 
 # File Manager
-"urxvtc -title ranger -e ranger"
+"urxvtc -title vifm -e vifm"
     m:0x8 + c:41
     Alt + f 
 
