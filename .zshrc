@@ -9,6 +9,9 @@ PATH=~/.bin:$PATH
 # ccache
 export USE_CCACHE=1
 
+# don't kill background processes
+setopt no_hup
+
 # prompt setup
 autoload -U promptinit
 promptinit 
