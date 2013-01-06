@@ -3,25 +3,35 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# set up ccache
-export USE_CCACHE=1
-
 # set path to include ~/bin
 PATH=~/.bin:$PATH
 
-# defaults
+# ccache
+export USE_CCACHE=1
+
+# default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/dwb"
+export BROWSER="/usr/bin/firefox -new-window"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
 # command-line calculator
 calc() { awk "BEGIN { print $*}" ;}
 
+alias sudo='sudo '
+
 # follow vim exit
 alias :q='exit'
 
+# convenient killer
+killer() {
+    ps -e | grep $1 | cut -c1-5 | xargs kill -9
+}
+
+# tar compression
+alias uptar='tar -acf'
+alias untar='tar -xvf'
+
 # convenient image viewer script aliases
-alias meh='/home/amytcheng/.scripts/meh.sh'
 alias sxiv='/home/amytcheng/.scripts/sxiv.sh'
 
 # prettify
@@ -39,3 +49,5 @@ alias gcom='cd ~/.dotfiles && git commit --verbose && cd -'
 alias gdif='cd ~/.dotfiles && git diff && cd -'
 alias gpul='cd ~/.dotfiles && git pull --verbose origin master && cd -'
 alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master && cd -'
+alias df='cd /home/amytcheng/.scripts && ./dotfiler.sh && cd -'
+alias gup='gpul ; gadd ; gcom ; gpus ; df'
