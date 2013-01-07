@@ -152,7 +152,7 @@ command vgrep vim "+grep %a"
 " program.
 
 " Pdf
-filetype *.pdf zathura %f,apvlv %f,xpdf %f
+filetype *.pdf,*.ashx zathura %f &,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
@@ -283,6 +283,9 @@ nmap O :!gvim %f<cr>
 " Mappings for faster renaming
 nmap R cw<c-a>
 
+" Mapping for quit
+nmap q :quit<cr>
+
 " Opening console in current directory
 nmap ,t :!urxvtc &<cr>
 
@@ -293,3 +296,4 @@ nmap <f5> :copy<cr>
 nmap <f6> :move<cr>
 nmap <f7> :mkdir<space>
 nmap <f8> :delete<cr>
+
