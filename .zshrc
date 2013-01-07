@@ -3,9 +3,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# set path to include ~/bin
-PATH=~/.bin:$PATH
-
 # prompt setup
 autoload -U promptinit
 promptinit 
@@ -20,6 +17,9 @@ setopt extendedglob
 # completion menu style
 setopt auto_menu
 setopt correct
+
+# don't kill background processes
+setopt no_hup
 
 # disable beep
 unsetopt beep
@@ -37,6 +37,12 @@ bindkey "^[[4~" end-of-line
 # page up/down cycles command history
 bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
+
+# set path to include ~/bin
+PATH=~/.bin:$PATH
+
+# ccache
+export USE_CCACHE=1
 
 # default variables
 export EDITOR="/usr/bin/vim"
@@ -61,7 +67,6 @@ alias uptar='tar -acf'
 alias untar='tar -xvf'
 
 # convenient image viewer script aliases
-alias meh='/home/amytcheng/.scripts/meh.sh'
 alias sxiv='/home/amytcheng/.scripts/sxiv.sh'
 
 # prettify
@@ -81,3 +86,6 @@ alias gpul='cd ~/.dotfiles && git pull --verbose origin master && cd -'
 alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master && cd -'
 alias df='cd /home/amytcheng/.scripts && ./dotfiler.sh && cd -'
 alias gup='gpul ; gadd ; gcom ; gpus ; df'
+
+# mtp
+alias mmtp='mtpfs -o allow_other /media/gnex'
