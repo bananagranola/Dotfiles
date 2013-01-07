@@ -51,3 +51,5 @@ alias gpul='cd ~/.dotfiles && git pull --verbose origin master && cd -'
 alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master && cd -'
 alias df='cd /home/amytcheng/.scripts && ./dotfiler.sh && cd -'
 alias gup='gpul ; gadd ; gcom ; gpus ; df'
+
+alias mmtp='mtpfs -o allow_other /media/gnex'
