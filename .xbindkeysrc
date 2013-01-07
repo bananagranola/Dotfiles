@@ -20,7 +20,7 @@
 	Mod4 + Escape
 
 # File Manager
-"urxvtc -title vifm -e vifm"
+"urxvtc -title vifm -e vifm ~/ ~/Dropbox/School/"
     m:0x8 + c:41
     Alt + f 
 
