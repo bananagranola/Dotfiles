@@ -24,7 +24,7 @@ set trash
 
 " This is how many directories to store in the directory history.
 
-set history=100
+set history=0
 
 " Follow links on l or Enter.
 
@@ -269,8 +269,8 @@ fileview */ tree %f
 " Like in previous versions of vifm
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,dirstack,registers,bookmarks
+set vifminfo=dhistory,savedirs,state,tui,
+    \dirstack,registers,bookmarks
 
 " Sample mappings
 
