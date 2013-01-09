@@ -24,7 +24,7 @@ text="$HOME/.scripts/cfx_nma.txt"
 # otherwise, you might get a false positive on first execution
 folders[0]="$cfxUrl/codefireX-Ace"
 folders[1]="$cfxUrl/KangBang-Ace-Kernels"
-folders[2]="$cfxUrl42/codefireX-Ace"
+folders[2]="$cfxUrl42/codefireX-Maguro"
 # optionally set polling interval
 #poll="" 	# execute once
 poll="30m"	# poll continuously, in date format
