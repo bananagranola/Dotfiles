@@ -56,12 +56,12 @@ Plugin {
         button {
             icon = file-manager
             tooltip = File Manager
-            action = urxvtc -e ranger
+            action = urxvtc -e vifm
         }
         button {
             icon = web-browser
             tooltip = Web Browser
-            action = dwb
+            action = firefox
         }
         button {
             icon = terminal

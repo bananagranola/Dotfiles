@@ -6,34 +6,19 @@ destination="$1"
 sources=\
 "Adele
 Amanda Brown
-Angie Johnson
-Anthony Evans
-Ashley De La Rosa
-Avery Wilson
-Beyonce Knowles
 Bob Gaudio
-Bryan Keith
 Carrie Underwood
 Cheesa
 Chris Mann
 Daniel Levitan
-De'Borah
-Dia Frampton
 Kings of Leon
-Jennifer Hudson
 Josh Groban
 Leanne Mitchell
-Lindsey Pavao
 OneRepublic
-Orlando Napier
-Pip
 The Piano Guys, John Schmidt & Steven Sharp Nelson
 The Script
-Tony Lucca
 Tony Vincent
 Trevin Hunt
-Various Artists/Dirty Dancing
-Various Artists/Moulin Rouge
 Xenia"
 
 old_IFS=$IFS

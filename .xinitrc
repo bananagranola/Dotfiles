@@ -1,5 +1,7 @@
 # .xinitrc, run by startx
 
+. /etc/X11/xinit/xinitrc.d/* &
+
 #conky &
 dropboxd &
 /home/amytcheng/.scripts/grive_monitor.sh &
