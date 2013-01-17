@@ -22,6 +22,7 @@ text="$HOME/.scripts/cfx_nma.txt"
 # add a field to the array for each folder you want to check, using cfxUrl and cfxUrl42 variables above
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
+#folders[0]="$cfxUrl/codefireX-Ace"
 folders[0]="$cfxUrl42/codefireX-Maguro"
 # optionally set polling interval
 #poll="" 	# execute once
