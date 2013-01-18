@@ -1,6 +1,5 @@
 bind-key RIGHT					open
 bind-key LEFT					quit
-bind-key o 						open-in-browser-and-mark-read
 
 browser							"$BROWSER %u > /dev/null 2>&1 &"
 cleanup-on-quit					yes
@@ -19,7 +18,6 @@ reload-threads					10
 show-read-feeds					yes
 urls-source						"googlereader"
 
-color 		article					white black invis
 color 		listfocus				black white bold
 color 		info					white black bold
 
