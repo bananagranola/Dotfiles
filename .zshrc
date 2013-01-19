@@ -39,7 +39,7 @@ bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
 
 # set path to include ~/bin
-PATH=~/.bin:$PATH
+PATH=~/.bin:/opt/android-sdk/platform-tools:$PATH
 
 # ccache
 export USE_CCACHE=1
