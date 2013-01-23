@@ -4,6 +4,7 @@
 
 conky &
 dropboxd &
+fbpanel &
 /home/amytcheng/.scripts/grive_monitor.sh &
 /home/amytcheng/.scripts/randombackground.sh &
 twmnd &
@@ -15,11 +16,10 @@ xscreensaver &
 
 case $1 in
 echinus)
-	fbpanel &
 	exec echinus
+	;;
 
 openbox)
-	fbpanel &
 	exec openbox
     ;;
 *)
