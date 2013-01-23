@@ -23,7 +23,7 @@ openbox)
 	exec openbox
     ;;
 *)
-	exec openbox
+	exec echinus
 	;;
 esac
 

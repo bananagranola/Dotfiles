@@ -80,7 +80,8 @@ ${top_mem name 2} $alignr ${top_mem mem 2}%
 ${top_mem name 3} $alignr ${top_mem mem 3}%
 
 NETWORK $hr
-${wireless_essid wlan0} $alignr ${addr wlan0}
+SSID: $alignr ${wireless_essid wlan0}
+IP: $alignr ${addr wlan0}
 ${downspeedgraph wlan0}
 DLS: ${downspeed wlan0}/s $alignr ${totaldown wlan0}
 ${upspeedgraph wlan0}
