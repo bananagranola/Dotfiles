@@ -24,7 +24,7 @@ openbox)
 	exec openbox
     ;;
 *)
-	exec goomwwm
+	exec openbox
 	;;
 esac
 

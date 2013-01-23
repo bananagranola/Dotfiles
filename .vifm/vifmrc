@@ -135,7 +135,7 @@ command vgrep vim "+grep %a"
 " The %a macro is ignored.  To use a % you must put %%.
 
 " Pdf
-filetype *.pdf zathura %f,apvlv %f,xpdf %f
+filetype *.pdf zathura %f 2> /dev/null &,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
@@ -224,7 +224,7 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 " Office files
-filextype *.doc,*.docx,*.xsl,*.xslx libreoffice %f &
+filextype *.doc,*.docx,*.xsl,*.xslx,*.odt,*.odg libreoffice %f 2> /dev/null &
 fileview *.docx, docx2txt.pl %f -
 
 " Qt projects
