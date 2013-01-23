@@ -2,7 +2,7 @@
 
 . /etc/X11/xinit/xinitrc.d/* &
 
-conky &
+conky --config $HOME/.conkyrc.ATC-Linny &
 dropboxd &
 fbpanel &
 /home/amytcheng/.scripts/grive_monitor.sh &

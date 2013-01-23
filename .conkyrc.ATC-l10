@@ -13,8 +13,8 @@ draw_outline no
 draw_shades yes
 use_xft yes
 xftfont termsyn:size=7
-gap_x 20 30
-gap_y 30 30
+gap_x 10 0
+gap_y 20 0
 minimum_size 200 100
 net_avg_samples 2
 no_buffers yes
@@ -78,16 +78,12 @@ TOP CPU $hr
 ${top name 1}$alignr${top cpu 1}%
 ${top name 2}$alignr${top cpu 2}%
 ${top name 3}$alignr${top cpu 3}%
-#${top name 4}$alignr${top cpu 4}%
-#${top name 5}$alignr${top cpu 5}%
 
-TOP MEMORY $hr
-${top_mem name 1} $alignr ${top_mem mem 1}%
-${top_mem name 2} $alignr ${top_mem mem 2}%
-${top_mem name 3} $alignr ${top_mem mem 3}%
-#${top_mem name 4} $alignr ${top_mem mem 4}%
-#${top_mem name 5} $alignr ${top_mem mem 5}%
-
+#TOP MEMORY $hr
+#${top_mem name 1} $alignr ${top_mem mem 1}%
+#${top_mem name 2} $alignr ${top_mem mem 2}%
+#${top_mem name 3} $alignr ${top_mem mem 3}%
+#
 NETWORK $hr
 IP Address: $alignr ${addr eth0}
 ${downspeedgraph eth0}
