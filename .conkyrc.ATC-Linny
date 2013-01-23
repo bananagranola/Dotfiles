@@ -74,13 +74,13 @@ ${top name 1}$alignr${top cpu 1}%
 ${top name 2}$alignr${top cpu 2}%
 ${top name 3}$alignr${top cpu 3}%
 
-#TOP MEMORY $hr
-#${top_mem name 1} $alignr ${top_mem mem 1}%
-#${top_mem name 2} $alignr ${top_mem mem 2}%
-#${top_mem name 3} $alignr ${top_mem mem 3}%
-#
+TOP MEMORY $hr
+${top_mem name 1} $alignr ${top_mem mem 1}%
+${top_mem name 2} $alignr ${top_mem mem 2}%
+${top_mem name 3} $alignr ${top_mem mem 3}%
+
 NETWORK $hr
-IP Address: $alignr ${addr wlan0}
+${wireless_essid wlan0} $alignr ${addr wlan0}
 ${downspeedgraph wlan0}
 DLS: ${downspeed wlan0}/s $alignr ${totaldown wlan0}
 ${upspeedgraph wlan0}
