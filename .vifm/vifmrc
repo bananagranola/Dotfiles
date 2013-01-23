@@ -24,7 +24,7 @@ set trash
 
 " This is how many directories to store in the directory history.
 
-set history=0
+set history=100
 
 " Follow links on l or Enter.
 
@@ -104,6 +104,7 @@ set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
+mark b ~/bin/
 mark h ~/
 
 " :com[mand] command_name action
@@ -133,26 +134,8 @@ command vgrep vim "+grep %a"
 " The command macros %f, %F, %d, %F may be used in the commands.
 " The %a macro is ignored.  To use a % you must put %%.
 
-" For automated FUSE mounts, you must register an extension with :file[x]type
-" in one of following formats:
-"
-" :filetype extensions FUSE_MOUNT|some_mount_command using %SOURCE_FILE and %DESTINATION_DIR variables
-" %SOURCE_FILE and %DESTINATION_DIR are filled in by vifm at runtime.
-" A sample line might look like this:
-" :filetype *.zip,*.jar,*.war,*.ear FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR
-"
-" :filetype extensions FUSE_MOUNT2|some_mount_command using %PARAM and %DESTINATION_DIR variables
-" %PARAM and %DESTINATION_DIR are filled in by vifm at runtime.
-" A sample line might look like this:
-" :filetype *.ssh FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
-" %PARAM value is filled from the first line of file (whole line).
-" Example first line for SshMount filetype: root@127.0.0.1:/
-"
-" You can also add %CLEAR if you want to clear screen before running FUSE
-" program.
-
 " Pdf
-filetype *.pdf,*.ashx zathura %f 2> /dev/null &,apvlv %f,xpdf %f
+filetype *.pdf zathura %f,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
@@ -241,7 +224,7 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 " Office files
-filextype *.doc,*.docx,*.xls,*.xlsx,*.odt,*.odg,*.csv libreoffice %f 2> /dev/null &
+filextype *.doc,*.docx,*.xsl,*.xslx libreoffice %f &
 fileview *.docx, docx2txt.pl %f -
 
 " Qt projects
@@ -253,24 +236,30 @@ filextype */
         \ Thunar %f &,
 fileview */ tree %f
 
-" Open all other files with default system programs (you can also remove all
-" :file[x]type commands above to ensure they don't interfere with system-wide
-" settings).  By default all unknown files are opened with 'vi[x]cmd'
-" uncommenting one of lines below will result in ignoring 'vi[x]cmd' option
-" for unknown file types.
-" For *nix:
-" filetype * xdg-open
-" For OS X:
-" filetype * open
-" For Windows:
-" filetype * start, explorer
+" For automated FUSE mounts, you must register an extension with FILETYPE=..
+" in one of following formats:
+"
+" :filetype extensions FUSE_MOUNT|some_mount_command using %SOURCE_FILE and %DESTINATION_DIR variables
+" %SOURCE_FILE and %DESTINATION_DIR are filled in by vifm at runtime.
+" A sample line might look like this:
+" :filetype *.zip,*.jar,*.war,*.ear FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR
+"
+" :filetype extensions FUSE_MOUNT2|some_mount_command using %PARAM and %DESTINATION_DIR variables
+" %PARAM and %DESTINATION_DIR are filled in by vifm at runtime.
+" A sample line might look like this:
+" :filetype *.ssh FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
+" %PARAM value is filled from the first line of file (whole line).
+" Example first line for SshMount filetype: root@127.0.0.1:/
+"
+" You can also add %CLEAR if you want to clear screen before running FUSE
+" program.
 
 " What should be saved automatically between vifm runs
 " Like in previous versions of vifm
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
-set vifminfo=dhistory,savedirs,state,tui,
-    \dirstack,registers,bookmarks
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+    \phistory,dirstack,registers,bookmarks
 
 " Sample mappings
 
@@ -280,14 +269,30 @@ nmap w :view<cr>
 nmap o :!gvim --remote-tab-silent %f<cr>
 nmap O :!gvim %f<cr>
 
-" Mappings for faster renaming
-nmap R cw<c-a>
+" Open file in the background using its default program
+nmap gb :file &<cr>l
 
-" Mapping for quit
-nmap q :quit<cr>
+" Yank current directory path into the clipboard
+nmap yd :!echo %d | xclip %i<cr>
+
+" Yank current file path into the clipboard
+nmap yf :!echo %c:p | xclip %i<cr>
+
+" Mappings for faster renaming
+nmap I cw<c-a>
+nmap cc cw<c-u>
+nmap A cw<c-w>
 
 " Opening console in current directory
-nmap ,t :!urxvtc &<cr>
+nmap ,t :!xterm &<cr>
+
+" Opening vim to edit .vifmrc
+nmap ,c :execute ':!vim $MYVIFMRC' | restart<cr>
+" Opening gvim to edit .vifmrc
+nmap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
+
+" Toggle wrap setting on ,w key
+nmap ,w :set wrap!<cr>
 
 " Example of standard two-panel file managers mappings
 nmap <f3> :!less %f<cr>
@@ -296,4 +301,3 @@ nmap <f5> :copy<cr>
 nmap <f6> :move<cr>
 nmap <f7> :mkdir<space>
 nmap <f8> :delete<cr>
-
