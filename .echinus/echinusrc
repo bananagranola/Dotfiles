@@ -1,0 +1,99 @@
+Echinus*selected.border: #262626
+Echinus*selected.button: #d3d7cf
+Echinus*selected.bg: #262626
+Echinus*selected.fg: #d3d7cf
+
+Echinus*normal.border: #262626
+Echinus*normal.button: #262626
+Echinus*normal.bg: #262626
+Echinus*normal.fg: #b0b4ac
+
+Echinus*border: 1
+
+Echinus*button.iconify.pixmap: iconify.xbm
+Echinus*button.maximize.pixmap: max.xbm
+Echinus*button.close.pixmap: close.xbm
+
+Echinus*sloppy: 1
+Echinus*opacity: 0.8
+Echinus*decoratetiled: 0
+Echinus*hidebastards: 0
+Echinus*mwfact: 0.6
+Echinus*nmaster: 1
+
+Echinus*font: termsyn
+Echinus*modkey: W
+
+Echinus*deflayout: t
+
+Echinus*tags.number: 4
+Echinus*tags.name0: one
+Echinus*tags.name1: two
+Echinus*tags.name2: three
+Echinus*tags.name3: four
+
+Echinus*tags.layout0: t
+Echinus*tags.layout1: t
+Echinus*tags.layout2: t
+Echinus*tags.layout3: f
+
+Echinus*togglestruts: W + b
+Echinus*togglemonitor: W + grave
+Echinus*focusnext: W + j
+Echinus*focusprev: W + k
+Echinus*viewprevtag: W + Tab
+Echinus*viewlefttag: WS + Left
+Echinus*viewrighttag: WS + Right
+Echinus*quit: WS + q
+Echinus*restart: WC + q = echinus
+Echinus*killclient: A + F4
+Echinus*togglefloating: W + space
+Echinus*zoom: W + Return
+
+Echinus*view0: W + 1
+Echinus*view1: W + 2
+Echinus*view2: W + 3
+Echinus*view3: W + 4
+
+Echinus*tag0: WS + 1
+Echinus*tag1: WS + 2
+Echinus*tag2: WS + 3
+Echinus*tag3: WS + 4
+
+Echinus*toggletag0: CWS + 1
+Echinus*toggletag1: CWS + 2
+Echinus*toggletag2: CWS + 3
+Echinus*toggletag3: CWS + 4
+
+Echinus*toggleview0: CW + 1
+Echinus*toggleview1: CW + 1
+Echinus*toggleview2: CW + 1
+Echinus*toggleview3: CW + 1
+
+Echinus*focusview6: W + s
+
+Echinus*setlayoutm: W + m
+Echinus*setlayoutf: W + f
+Echinus*setlayouti: W + i
+Echinus*setlayoutt: W + t
+Echinus*setlayoutb: W + b
+
+Echinus*moveright: W + d = 5
+Echinus*moveleft: W + a = -5
+Echinus*moveup: W + w = 0 -5
+Echinus*movedown: W + s = 0 5
+Echinus*resizedecx: WS + a = 0 0 -5 0
+Echinus*resizedecy: WS + s = 0 0 0 -5
+Echinus*resizeincx: WS + d = 0 0 5 0
+Echinus*resizeincy: WS + w = 0 0 0 5
+
+Echinus*spawn0: W + t = urxvtc
+
+Echinus*decmwfact: W + h = -0.05
+Echinus*incmwfact: W + l = +0.05
+Echinus*decnmaster: WS + j = -1
+Echinus*incnmaster: WS + k = +1
+
+Echinus*command: urxvtc
+
+Echinus*rule0: Exit NULL 1 1

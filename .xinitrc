@@ -2,7 +2,7 @@
 
 . /etc/X11/xinit/xinitrc.d/* &
 
-#conky &
+conky &
 dropboxd &
 /home/amytcheng/.scripts/grive_monitor.sh &
 /home/amytcheng/.scripts/randombackground.sh &
@@ -14,12 +14,11 @@ xsetroot -cursor_name left_ptr &
 xscreensaver &
 
 case $1 in
-monsterwm)
-	/home/amytcheng/.scripts/monsterwm-dzen2.sh &
-	exec /home/amytcheng/.scripts/monsterwm.sh
-	;;
+echinus)
+	fbpanel &
+	exec echinus
+
 openbox)
-	#conky &
 	fbpanel &
 	exec openbox
     ;;
