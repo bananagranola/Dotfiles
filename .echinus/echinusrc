@@ -10,12 +10,12 @@ Echinus*normal.fg: #b0b4ac
 
 Echinus*border: 1
 
-Echinus*button.iconify.pixmap: iconify.xbm
-Echinus*button.maximize.pixmap: max.xbm
-Echinus*button.close.pixmap: close.xbm
+Echinus*button.iconify.pixmap: /usr/share/examples/echinus/iconify.xbm
+Echinus*button.maximize.pixmap: /usr/share/examples/echinus/max.xbm
+Echinus*button.close.pixmap: /usr/share/examples/echinus/close.xbm
 
 Echinus*attachaside: 1
-Echinus*sloppy: 1
+Echinus*sloppy: 2
 Echinus*opacity: 0.8
 Echinus*decoratetiled: 0
 Echinus*hidebastards: 0
