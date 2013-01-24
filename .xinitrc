@@ -6,6 +6,7 @@
 dropboxd &
 fbpanel &
 /home/amytcheng/.scripts/grive_monitor.sh &
+nm-applet &
 /home/amytcheng/.scripts/randombackground.sh &
 twmnd &
 urxvtd -f -o -q &
