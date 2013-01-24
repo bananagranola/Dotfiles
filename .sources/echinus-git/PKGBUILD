@@ -21,7 +21,7 @@ _gitname=echinus
 
 build() {
   cd "$srcdir"
-  #msg "Connecting to GIT server..."
+  msg "Connecting to GIT server..."
 
   #if [[ -d "$_gitname" ]]; then
   #  cd "$_gitname" && git pull origin
