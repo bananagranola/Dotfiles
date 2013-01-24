@@ -43,8 +43,8 @@ GMAIL $hr
 $alignr ${execpi 300 python2 ~/.scripts/gmail.py -c}
 
 SOUND $hr
-$alignr ${exec amixer sget 'Master' | egrep -o -m 1 'off|\bon\b' | tr -d '\n'} ${exec amixer sget 'Master' | egrep -o -m 1 '[0-9]%|[0-9][0-9]%|[0-9][0-9][0-9]%'}
-$alignr ${exec ~/.scripts/music_nowplaying.sh}
+Volume: $alignr ${exec amixer sget 'Master' | egrep -o -m 1 'off|\bon\b' | tr -d '\n'} ${exec amixer sget 'Master' | egrep -o -m 1 '[0-9]%|[0-9][0-9]%|[0-9][0-9][0-9]%'}
+Music: $alignr ${exec ~/.scripts/music_nowplaying.sh}
 
 SYSTEM $hr
 $sysname $kernel $alignr $machine

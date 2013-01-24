@@ -43,8 +43,8 @@ GMAIL $hr
 $alignr ${execpi 300 python2 ~/.scripts/gmail.py -c}
 
 SOUND $hr
-$alignr ${exec amixer sget 'Master' | egrep -o -m 1 'off|\bon\b' | tr -d '\n'} ${exec amixer sget 'Master' | egrep -o -m 1 '[0-9]%|[0-9][0-9]%|[0-9][0-9][0-9]%'}
-$alignr ${exec ~/.scripts/music_nowplaying.sh}
+Volume: $alignr ${exec amixer sget 'Master' | egrep -o -m 1 'off|\bon\b' | tr -d '\n'} ${exec amixer sget 'Master' | egrep -o -m 1 '[0-9]%|[0-9][0-9]%|[0-9][0-9][0-9]%'}
+Music: $alignr ${exec ~/.scripts/music_nowplaying.sh}
 
 SYSTEM $hr
 $sysname $kernel $alignr $machine
@@ -79,12 +79,16 @@ TOP CPU $hr
 ${top name 1}$alignr${top cpu 1}%
 ${top name 2}$alignr${top cpu 2}%
 ${top name 3}$alignr${top cpu 3}%
+${top name 4}$alignr${top cpu 4}%
+${top name 5}$alignr${top cpu 5}%
 
-#TOP MEMORY $hr
-#${top_mem name 1} $alignr ${top_mem mem 1}%
-#${top_mem name 2} $alignr ${top_mem mem 2}%
-#${top_mem name 3} $alignr ${top_mem mem 3}%
-#
+TOP MEMORY $hr
+${top_mem name 1} $alignr ${top_mem mem 1}%
+${top_mem name 2} $alignr ${top_mem mem 2}%
+${top_mem name 3} $alignr ${top_mem mem 3}%
+${top_mem name 4} $alignr ${top_mem mem 4}%
+${top_mem name 5} $alignr ${top_mem mem 5}%
+
 NETWORK $hr
 IP Address: $alignr ${addr eth0}
 ${downspeedgraph eth0}

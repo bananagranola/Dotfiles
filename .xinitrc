@@ -10,6 +10,7 @@ nm-applet &
 /home/amytcheng/.scripts/randombackground.sh &
 twmnd &
 urxvtd -f -o -q &
+volti &
 xbindkeys &
 xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
