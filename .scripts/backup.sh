@@ -8,13 +8,16 @@ HOME="/home/amytcheng"
 rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Music/" "$EXTERNAL/Music/"
 
 # move Music folder from external hard drive to Windows partition
-#rsync --archive --compress --delete --human-readable --progress --verbose "$EXTERNAL/Music/" "$WINDOWS/Music/"
+rsync --archive --compress --delete --human-readable --progress --verbose "$EXTERNAL/Music/" "$WINDOWS/Music/"
 
 # back up Images folder from Windows partition to external hard drive
-#rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Pictures/" "$EXTERNAL/Images/"
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Pictures/" "$EXTERNAL/Images/"
+
+# back up School folder from Windows partition to external hard drive
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/School/" "$EXTERNAL/School/"
 
 # back up latest Dotfiles git from home to external hard drive
-#git archive -o "$EXTERNAL/home/Dotfiles.tar.gz" HEAD
+git archive -o "$EXTERNAL/home/Dotfiles.tar.gz" HEAD
 
 # back up entire hard drive image to external hard drive
 #dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c > "$EXTERNAL/$HOSTNAME.gz"
