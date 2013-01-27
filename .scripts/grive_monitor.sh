@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# run once on start
-( until ping -q -W5 -c1 google.com &> /dev/null; do
-	cd $HOME/Drive && grive && cd -
-done ) &
+sleep 30s
+cd $HOME/Drive && grive && cd -
 
 # watch for file changes and run grive if changes detected
 while inotifywait --recursive \
