@@ -84,7 +84,8 @@ alias gcom='cd ~/.dotfiles && git commit --verbose && cd -'
 alias gdif='cd ~/.dotfiles && git diff && cd -'
 alias gpul='cd ~/.dotfiles && git pull --verbose origin master && cd -'
 alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master && cd -'
-alias gup='gpul ; gadd ; gcom ; gpus ; df'
+alias dfr='cd ~/.scripts && ./dotfiler.sh && cd -'
+alias gup='gpul ; gadd ; gcom ; gpus ; dfr'
 
 # mount android-mtp
 alias mmtp='jmtpfs -o allow_other /media/android-mtp'
