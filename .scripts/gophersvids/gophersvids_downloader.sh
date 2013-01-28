@@ -50,7 +50,7 @@ while true; do
 		echo "$(date). SLEEPING: $poll"
 		sleep $poll	
 	else
-		echo "ERROR: latest gophersvidsfile not saved! restarting!"
+		echo "ERROR: restarting!"
 	fi
 
 done
