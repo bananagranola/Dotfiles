@@ -14,11 +14,11 @@ cfxUrl42="http://downloads.codefi.re/synergy"
 
 # CUSTOMIZE HERE ----- #
 # location of apikey file
-apikey="$HOME/.scripts/nma.key"
+apikey="$HOME/.scripts/cfx/nma.key"
 # location of notifymyandroid perl script
-nmash="$HOME/.scripts/nma.pl"
+nmash="$HOME/.scripts/cfx/nma.pl"
 # location of persistent text file containing newest zips
-text="$HOME/.scripts/cfx_nma.txt"
+text="$HOME/.scripts/cfx/cfx_nma.txt"
 # add a field to the array for each folder you want to check, using cfxUrl and cfxUrl42 variables above
 # if you change/add folders or their order, delete $text file and re-execute script to repopulate it
 # otherwise, you might get a false positive on first execution
