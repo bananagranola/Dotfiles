@@ -36,15 +36,8 @@ show_graph_scale no
 show_graph_range no
 
 TEXT
-#$alignc ${time %r}
-#$alignc ${time %A, %D}
-#
-GMAIL $hr 
-$alignr ${execpi 300 python2 ~/.scripts/gmail.py -c}
 
-SOUND $hr
-Volume: $alignr ${exec amixer sget 'Master' | egrep -o -m 1 'off|\bon\b' | tr -d '\n'} ${exec amixer sget 'Master' | egrep -o -m 1 '[0-9]%|[0-9][0-9]%|[0-9][0-9][0-9]%'}
-Music: $alignr ${exec ~/.scripts/music_nowplaying.sh}
+$alignc ${time %r} | $alignc ${time %A, %D}
 
 SYSTEM $hr
 $sysname $kernel $alignr $machine
@@ -87,6 +80,9 @@ ${downspeedgraph wlan0}
 DLS: ${downspeed wlan0}/s $alignr ${totaldown wlan0}
 ${upspeedgraph wlan0}
 ULS: ${upspeed wlan0}/s $alignr ${totalup wlan0}
+
+MUSIC $hr
+$alignr ${exec ~/.scripts/music_nowplaying.sh}
 
 $hr
 HOTKEYS				$alignr VOLUME
