@@ -36,7 +36,7 @@ show_graph_scale no
 show_graph_range no
 
 TEXT
-$alignc ${time %r} | $alignc ${time %A, %D}
+$alignc ${time %r} | ${time %A, %D}
 
 SYSTEM $hr
 $sysname $kernel $alignr $machine
