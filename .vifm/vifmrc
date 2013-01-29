@@ -282,9 +282,10 @@ nmap yf :!echo %c:p | xclip %i<cr>
 nmap I cw<c-a>
 nmap cc cw<c-u>
 nmap A cw<c-w>
+nmap R cw<c-a>
 
 " Opening console in current directory
-nmap ,t :!xterm &<cr>
+nmap ,t :!urxvt &<cr>
 
 " Opening vim to edit .vifmrc
 nmap ,c :execute ':!vim $MYVIFMRC' | restart<cr>
