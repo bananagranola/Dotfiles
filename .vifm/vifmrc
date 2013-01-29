@@ -301,3 +301,5 @@ nmap <f5> :copy<cr>
 nmap <f6> :move<cr>
 nmap <f7> :mkdir<space>
 nmap <f8> :delete<cr>
+
+nmap q :quit<cr>

@@ -93,3 +93,4 @@ alias mmtp='jmtpfs -o allow_other /media/android-mtp'
 # cp and mv utilities with progressbars
 alias cp='acp -g'
 alias mv='amv -g'
+alias rsync='rsync --archive --compress --human-readable --progress --verbose'
