@@ -15,7 +15,6 @@ amixer set Master on 1% &
 dropboxd &
 fbpanel &
 /home/amytcheng/.scripts/grive_monitor.sh &
-nm-applet &
 /home/amytcheng/.scripts/randombackground.sh &
 slimebattery &
 twmnd &
@@ -25,6 +24,8 @@ xbindkeys &
 xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
 xscreensaver &
+
+nm-applet &
 
 case $1 in
 echinus)
