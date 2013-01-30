@@ -38,6 +38,10 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
 
+# delete deletes
+bindkey    "^[[3~"          delete-char
+bindkey    "^[3;5~"         delete-char
+
 # set path to include ~/bin
 PATH=~/.bin:/opt/android-sdk/platform-tools:$PATH
 
