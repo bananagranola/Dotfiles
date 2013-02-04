@@ -172,7 +172,7 @@ filetype *.o nm %f | less
 " Image
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in sxiv}
-        \ sxiv,
+        \ bash /home/amytcheng/.scripts/sxiv.sh %c &,
         \ {View in gpicview}
         \ gpicview %c,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /dev/null

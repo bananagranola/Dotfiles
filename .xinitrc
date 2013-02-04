@@ -25,7 +25,7 @@ xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
 xscreensaver &
 
-nm-applet &
+nm-applet --sm-disable &
 
 case $1 in
 echinus)
