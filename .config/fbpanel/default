@@ -13,7 +13,7 @@ Global {
     autohide = false
     heightWhenHidden = 2
     roundcorners = false
-    roundcornersradius = 7
+    roundcornersradius = 1
     layer = above
     MaxElemHeight = 10
     setlayer = true
