@@ -19,12 +19,11 @@ slimebattery &
 twmnd &
 urxvtd -f -o -q &
 volumeicon &
+wicd-client --tray &
 xbindkeys &
 xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
 xscreensaver &
-
-nm-applet --sm-disable &
 
 case $1 in
 echinus)
