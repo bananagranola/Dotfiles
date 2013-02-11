@@ -1,14 +1,5 @@
 # .xinitrc, run by startx
 
-. /etc/X11/xinit/xinitrc.d/* &
-
-# gnome-keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-export GPG_AGENT_INFO
-export GNOME_KEYRING_CONTROL
-export GNOME_KEYRING_PID
-
 amixer set Master on 1% &
 /home/amytcheng/.scripts/conky.sh &
 dropboxd &
@@ -27,7 +18,7 @@ xscreensaver &
 
 case $1 in
 echinus)
-	exec echinus
+	exec dbus-launch echinus
 	;;
 
 openbox)
