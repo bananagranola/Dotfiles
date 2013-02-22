@@ -11,6 +11,7 @@ twmnd &
 urxvtd -f -o -q &
 volumeicon &
 xbindkeys &
+xcalib -co 70 -a &
 xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
 xscreensaver &

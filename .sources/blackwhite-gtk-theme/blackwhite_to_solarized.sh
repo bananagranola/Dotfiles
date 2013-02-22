@@ -2,7 +2,7 @@
 
 BWDIR="$1"
 
-# base 03 (dark)
+# base 03
 grep -rl '#000000' "$BWDIR" | xargs sed -i 's/#000000/#002B36/g'
 
 # base 02
@@ -32,7 +32,7 @@ grep -rl '#dfdbd2' "$BWDIR" | xargs sed -i 's/#dfdbd2/#93A1A1/g'
 grep -rl '#E0E0E0' "$BWDIR" | xargs sed -i 's/#E0E0E0/#EEE8D5/g'
 grep -rl '#e0e0e0' "$BWDIR" | xargs sed -i 's/#e0e0e0/#EEE8D5/g'
 
-# base 3 (light)
+# base 3
 grep -rl '#F0F0F0' "$BWDIR" | xargs sed -i 's/#F0F0F0/#FDF6E3/g'
 grep -rl '#f0f0f0' "$BWDIR" | xargs sed -i 's/#f0f0f0/#FDF6E3/g'
 grep -rl '#F4F4F4' "$BWDIR" | xargs sed -i 's/#F4F4F4/#FDF6E3/g'
