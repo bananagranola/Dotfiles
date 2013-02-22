@@ -38,6 +38,10 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
 
+# delete deletes
+bindkey    "^[[3~"          delete-char
+bindkey    "^[3;5~"         delete-char
+
 # set path to include ~/bin
 PATH=~/.bin:/opt/android-sdk/platform-tools:$PATH
 
@@ -46,7 +50,7 @@ export USE_CCACHE=1
 
 # default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/firefox -new-window"
+export BROWSER="/usr/bin/firefox"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
 # command-line calculator
@@ -90,7 +94,7 @@ alias gup='gpul ; gadd ; gcom ; gpus ; dfr'
 # mount android-mtp
 alias mmtp='jmtpfs -o allow_other /media/android-mtp'
 
-# cp and mv utilities with progressbars
+# cp, mv, and rsync utilities with progressbars
 alias cp='acp -g'
 alias mv='amv -g'
 alias rsync='rsync --archive --compress --human-readable --progress --verbose'

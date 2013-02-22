@@ -155,7 +155,7 @@ set roster_no_leading_space = 1
 #       will not create it.
 # Note: these options, except 'max_history_age' and 'max_history_blocks',
 # are used at startup time.
-set logging = 1
+set logging = 0
 #set load_logs = 1
 #set logging_dir = ~/.mcabber/histo/
 #set logging_ignore_status = 1

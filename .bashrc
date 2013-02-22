@@ -52,3 +52,11 @@ alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master &&
 alias df='cd /home/amytcheng/.scripts && ./dotfiler.sh && cd -'
 alias gup='gpul ; gadd ; gcom ; gpus ; df'
 
+# mount android-mtp
+alias mmtp='jmtpfs -o allow_other /media/android-mtp'
+
+# cp, mv, and rsync utilities with progressbars
+alias cp='acp -g'
+alias mv='amv -g'
+alias rsync='rsync --archive --compress --human-readable --progress --verbose'
+
