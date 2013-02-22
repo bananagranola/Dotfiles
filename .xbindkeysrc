@@ -49,7 +49,7 @@
     Alt + t
 
 # Web Browser
-"firefox"
+"dwb"
     m:0x8 + c:25
     Alt + w 
 

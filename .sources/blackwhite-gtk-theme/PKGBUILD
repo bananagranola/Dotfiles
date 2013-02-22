@@ -3,7 +3,7 @@
 pkgname=blackwhite-gtk-theme
 pkgver=1
 pkgrel=1
-pkgdesc="BlackWhite GTK2 and GTK3 theme by lyrae"
+pkgdesc="Flat, simple BlackWhite GTK2/GTK3/Openbox theme by lyrae"
 url="http://gnome-look.org/content/show.php/?content=153054"
 license=('GPL3')
 arch=('any')
