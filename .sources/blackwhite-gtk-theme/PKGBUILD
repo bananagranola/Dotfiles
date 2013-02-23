@@ -9,12 +9,14 @@ license=('GPL3')
 arch=('any')
 noextract=('blackwhite_gtk3_by_thrynk-d59dyyh.zip')
 makedepends=('unzip')
-source=("http://www.deviantart.com/download/318099257/blackwhite_gtk3_by_thrynk-d59dyyh.zip")
-md5sums=('583da41af7f316e15c97fe724c720d3d')
+source=("http://www.deviantart.com/download/318099257/blackwhite_gtk3_by_thrynk-d59dyyh.zip" "blackwhite_to_solarized.sh" )
+md5sums=('583da41af7f316e15c97fe724c720d3d'
+         '89656ea0ceb692bd574bf094b03ff229')
 
 package() {
 	unzip "$srcdir/blackwhite_gtk3_by_thrynk-d59dyyh.zip"
 	mkdir -p "$pkgdir/usr/share/themes"
+	sh blackwhite_to_solarized.sh "$srcdir/BlackWhite/BlackWhite"
 	cp -r "$srcdir/BlackWhite/BlackWhite/" "$pkgdir/usr/share/themes/"
 
 	find "$pkgdir" -type d -exec chmod 755 "{}" \;
