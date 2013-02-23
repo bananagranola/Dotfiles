@@ -1,0 +1,51 @@
+http://localhost:631/ CUPS
+https://www.dropbox.com/home#::: Dropbox
+http://springpad.com/#!/amytcheng Springpad
+javascript:(function(){SP_HOST='//springpad.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=SP_HOST+'/public/clipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){var%20u=SP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document&&document.title||'');try{window.open(u,'sp_popout','width=630,height=600');}catch(e){window.location=u;}}})(); Springit
+http://www.stumbleupon.com/to/stumble/go/?clientid=bookmarklet&client_type=bookmark&version=1.0 StumbleUpon
+ttps://login.yahoo.com/config/mail?.intl=us YahooMail
+http://yelp.com/ Yelp
+
+https://onlineaccess.mycreditcard.cc/anntaylor?Action=AccountSummary.jsp AnnTaylor Bills
+http://www.centurylink.com CenturyLink Bills
+https://www.onlinecreditcenter6.com/consumergen2/login.do?subActionId=1000&clientId=gap&langId=en&accountType=plcc GapCard Bills
+https://www.wellsfargo.com/ WellsFargo Bills
+
+http://www.foodily.com/ Foodily Food
+http://www.gojee.com/ Gojee Food
+http://punchfork.com/ Punchfork Food
+http://www.tastespotting.com/ Tastespotting Food
+http://www.yummly.com/ Yummly Food
+
+https://www.google.com/calendar/render?pli=1 Calendar Google
+https://drive.google.com/#my-drive Drive Google
+http://mail.google.com/mail/#inbox GMail Google
+http://www.google.com/reader/ Reader Google
+
+https://bbs.archlinux.org/index.php Arch Nerd
+https://bitbucket.org/ BitBucket Nerd
+https://github.com/ GitHub Nerd
+http://forum.xda-developers.com/usercp.php XDA Nerd
+https://tuxreview.wordpress.com/wp-admin/index.php WordPress Nerd
+
+https://courses.law.washington.edu/KnudsenS/B585ab_Wi13/ NaturalResourcesLaw School Classes
+https://courses.law.washington.edu/LachmanA/B510fghij_Wi13/ ProblemsinProfessionalResponsibility School Classes
+http://lawschool.westlaw.com/manage/homepage.aspx?courseid=146331 ProblemsInProfessionalResponsibilityTWEN School Classes
+https://a.next.westlaw.com/Browse/Home/SecondarySources/RestatementsPrinciplesoftheLaw/RestatementoftheLawTheLawGoverningLawyers?transitionType=Default&contextData=(sc.Default)&firstPage=true&CobaltRefresh=68501 ProblemsInProfessionalResponsibility LawGoverningLawyers School Classes 
+http://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/model_rules_of_professional_conduct_table_of_contents.html ProblemsinProfessionalResponsibility ModelRules School Classes
+http://m.socrative.com/student/#waitingForTeacher ProblemsinProfessionalResponsibility SocrativeStudent School Classes
+https://courses.law.washington.edu/HatfieldM/A519ab_Wi13/ TransmissionofWealth School Classes
+https://courses.law.washington.edu/CohanM/E529a_AuWiSp13/ TribalCourtPublicDefenseClinic School Classes
+http://www.codepublishing.com/wa/Tulalip/ TribalCourtPublicDefenseClinic TulalipCodes School Classes
+http://lib.law.washington.edu/ GallagherLawLibrary School Resources
+http://uwifap.wordpress.com/ IFAP School Resources
+http://www.lexisnexis.com/lawschool/research/default.aspx?ORIGINATION_CODE=00092&signoff=off LexisNexus School Resources
+http://myuw.washington.edu/ MyUW School Resources
+https://law-uwashington-csm.symplicity.com/students/ Symplicity School Resources
+http://www.law.washington.edu/ UWLaw School Resources
+http://lawschool.westlaw.com/desktopdefault.aspx Westlaw School Resources
+
+http://www.facebook.com/ Facebook Social
+http://www.goodreads.com/ GoodReads Social
+http://www.reddit.com/ Reddit Social
+http://www.twitter.com/ Twitter Social
