@@ -11,7 +11,7 @@ noextract=('blackwhite_gtk3_by_thrynk-d59dyyh.zip')
 makedepends=('unzip')
 source=("http://www.deviantart.com/download/318099257/blackwhite_gtk3_by_thrynk-d59dyyh.zip" "blackwhite_to_solarized.sh" )
 md5sums=('583da41af7f316e15c97fe724c720d3d'
-         '89656ea0ceb692bd574bf094b03ff229')
+         'ef50876b38769aa2e9fb72edce6b48bc')
 
 package() {
 	unzip "$srcdir/blackwhite_gtk3_by_thrynk-d59dyyh.zip"
