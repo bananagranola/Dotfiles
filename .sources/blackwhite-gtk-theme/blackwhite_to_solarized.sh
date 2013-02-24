@@ -52,17 +52,17 @@ grep -rl '#16778f' "$BWDIR" | xargs sed -i 's/#16778f/#268BD2/g'
 grep -rl '#3168A0' "$BWDIR" | xargs sed -i 's/#3168A0/#268BD2/g' 
 grep -rl '#3168a0' "$BWDIR" | xargs sed -i 's/#3168a0/#268BD2/g'
 
-# cyan
-grep -rl '#6C9EAB' "$BWDIR" | xargs sed -i 's/#6C9EAB/#2AA198/g'
-grep -rl '#6c9eab' "$BWDIR" | xargs sed -i 's/#6c9eab/#2AA198/g'
-grep -rl '#90B1C0' "$BWDIR" | xargs sed -i 's/#90B1C0/#2AA198/g'
-grep -rl '#90b1c0' "$BWDIR" | xargs sed -i 's/#90b1c0/#2AA198/g'
-grep -rl '#8FB0BF' "$BWDIR" | xargs sed -i 's/#8fb0bf/#2AA198/g'
-grep -rl '#8fb0bf' "$BWDIR" | xargs sed -i 's/#8fb0bf/#2AA198/g'
+# green
+grep -rl '#6C9EAB' "$BWDIR" | xargs sed -i 's/#6C9EAB/#859900/g'
+grep -rl '#6c9eab' "$BWDIR" | xargs sed -i 's/#6c9eab/#859900/g'
+grep -rl '#90B1C0' "$BWDIR" | xargs sed -i 's/#90B1C0/#859900/g'
+grep -rl '#90b1c0' "$BWDIR" | xargs sed -i 's/#90b1c0/#859900/g'
+grep -rl '#8FB0BF' "$BWDIR" | xargs sed -i 's/#8fb0bf/#859900/g'
+grep -rl '#8fb0bf' "$BWDIR" | xargs sed -i 's/#8fb0bf/#859900/g'
 
-# yellow
-grep -rl '#776C58' "$BWDIR" | xargs sed -i 's/#776C58/#B58900/g'
-grep -rl '#776c58' "$BWDIR" | xargs sed -i 's/#776c58/#B58900/g'
+# cyan
+grep -rl '#776C58' "$BWDIR" | xargs sed -i 's/#776C58/#2AA198/g'
+grep -rl '#776c58' "$BWDIR" | xargs sed -i 's/#776c58/#2AA198/g'
 
 # violet
 grep -rl '#7F318D' "$BWDIR" | xargs sed -i 's/#7F318D/#6C71C4/g'

@@ -7,10 +7,10 @@ fbpanel &
 /home/amytcheng/.scripts/grive_monitor.sh &
 /home/amytcheng/.scripts/randombackground.sh &
 slimebattery &
+sxhkd &
 twmnd &
 urxvtd -f -o -q &
 volumeicon &
-xbindkeys &
 xcalib -co 70 -a &
 xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
