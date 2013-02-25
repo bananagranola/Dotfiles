@@ -3,22 +3,22 @@ alt + b
 	/home/amytcheng/.scripts/randombackground.sh
 
 alt + c
-	urxvtc -title mcabber -e mcabber
+	st -title mcabber -e mcabber
 
 alt + e
-	urxvtc -title mutt -e mutt
+	st -title mutt -e mutt
 
 super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
-	urxvtc -title vifm -e vifm ~/ ~/Dropbox/School/
+	st -title vifm -e vifm ~/ ~/Dropbox/School/
 
 alt + m
-	urxvtc -title mocp -e mocp
+	st -title mocp -e mocp
 
 alt + n
-	urxvtc -title newsbeuter -e newsbeuter
+	st -title newsbeuter -e newsbeuter
 
 alt + p
 	scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Downloads'

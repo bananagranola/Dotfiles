@@ -88,14 +88,14 @@ Echinus*resizedecy: WS + s = 0 0 0 -5
 Echinus*resizeincx: WS + d = 0 0 5 0
 Echinus*resizeincy: WS + w = 0 0 0 5
 
-Echinus*spawn0: WS + Return = urxvtc
+Echinus*spawn0: WS + Return = st
 
 Echinus*decmwfact: W + h = -0.05
 Echinus*incmwfact: W + l = +0.05
 Echinus*decnmaster: WS + j = -1
 Echinus*incnmaster: WS + k = +1
 
-Echinus*command: urxvtc
+Echinus*command: st
 
 Echinus*rule0: Exit NULL 1 1
 Echinus*rule1: wicd-client.py NULL 1 1
