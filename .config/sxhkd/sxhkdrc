@@ -27,7 +27,7 @@ alt + r
 	/home/amytcheng/.scripts/dmenu.sh
 
 alt + t
-	st
+	st -e tmux
 
 alt + w
 	dwb
