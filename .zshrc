@@ -53,6 +53,12 @@ export EDITOR="/usr/bin/vim"
 export BROWSER="/usr/bin/dwb"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
+# zsh compatibility with st
+function zle-line-init () { echoti smkx }
+function zle-line-finish () { echoti rmkx }
+zle -N zle-line-init
+zle -N zle-line-finish
+
 # command-line calculator
 calc() { awk "BEGIN { print $*}" ;}
 
