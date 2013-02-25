@@ -50,7 +50,7 @@ export USE_CCACHE=1
 
 # default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/firefox"
+export BROWSER="/usr/bin/dwb"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
 # command-line calculator
