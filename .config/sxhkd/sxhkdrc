@@ -27,7 +27,7 @@ alt + r
 	/home/amytcheng/.scripts/dmenu.sh
 
 alt + t
-	urxvtc
+	st -o $HOME
 
 alt + w
 	dwb
