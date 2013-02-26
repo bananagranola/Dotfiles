@@ -9,7 +9,6 @@ fbpanel &
 slimebattery &
 sxhkd &
 twmnd &
-std -f -o -q &
 volumeicon &
 xcalib -co 70 -a &
 xrdb ~/.Xresources.solarized
