@@ -3,7 +3,7 @@
 
 pkgname=st-git
 epoch=1
-pkgver=20130224
+pkgver=20130225
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://git.suckless.org/st/'
@@ -16,6 +16,9 @@ provides=('st')
 conflicts=('st')
 replaces=('st-hg')
 
+source=('https://github.com/bananagranola/dotfiles/raw/master/.sources/st-git/config.h')
+md5sums=('11bdc9a83cc53fd9088bfa31854a4626')
+
 _gitroot='http://git.suckless.org/st/'
 _gitname='st'
 
@@ -25,15 +28,8 @@ build() {
 	( cd "${_gitname}" && git pull origin ) || git clone "${_gitroot}" "${_gitname}"
 	rm -fr build; cp -a "${_gitname}" build; cd build
 
-	# sed '/char font/s/".*"/"Fixed:pixelsize=13:style=SemiCondensed"/' -i config.def.h
+	mv "${srcdir}/config.h" .
 
-	if [ -e $startdir/config.h ]; then 
-		msg "use custom config.h"
-		cp $startdir/config.h .
-	else
-		msg "use default config.h"
-	fi
- 	
 	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
