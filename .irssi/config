@@ -34,6 +34,7 @@ channels = (
     name = "#codefirex";
 	chatnet = "fn";
 	autojoin = "yes";
+  }
   {
 	name = "#linuxchix";
 	chatnet = "fn";
