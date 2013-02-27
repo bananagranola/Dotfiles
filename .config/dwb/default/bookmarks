@@ -2,8 +2,8 @@ http://localhost:631/ CUPS
 https://www.dropbox.com/home#::: Dropbox
 http://springpad.com/#!/amytcheng Springpad
 javascript:(function(){SP_HOST='//springpad.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=SP_HOST+'/public/clipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){var%20u=SP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document&&document.title||'');try{window.open(u,'sp_popout','width=630,height=600');}catch(e){window.location=u;}}})(); Springit
-http://www.stumbleupon.com/to/stumble/go/?clientid=bookmarklet&client_type=bookmark&version=1.0 StumbleUpon
-ttps://login.yahoo.com/config/mail?.intl=us YahooMail
+http://www.stumbleupon.com/home StumbleUpon
+https://login.yahoo.com/config/mail?.intl=us YahooMail
 http://yelp.com/ Yelp
 
 https://onlineaccess.mycreditcard.cc/anntaylor?Action=AccountSummary.jsp AnnTaylor Bills
