@@ -1,9 +1,9 @@
 #!/bin/sh
 FONT="-*-termsyn-medium-*-*-*-11-*-*-*-*-*-*-1"
 NB="#002b36"
-NF="#859900"
-SB="#93a1a1"
-SF="#268bd2"
+NF="#93a1a1"
+SB="#586e75"
+SF="#fdf6e3"
 
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 if [ -d "$cachedir" ]; then
