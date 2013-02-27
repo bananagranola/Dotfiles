@@ -1,12 +1,12 @@
-Echinus*selected.border: #262626
-Echinus*selected.button: #d3d7cf
-Echinus*selected.bg: #262626
-Echinus*selected.fg: #d3d7cf
+Echinus*selected.border: #002b36
+Echinus*selected.button: #eee8d5
+Echinus*selected.bg: #002b36
+Echinus*selected.fg: #eee8d5
 
-Echinus*normal.border: #262626
-Echinus*normal.button: #262626
-Echinus*normal.bg: #262626
-Echinus*normal.fg: #b0b4ac
+Echinus*normal.border: #002b36
+Echinus*normal.button: #eee8d5
+Echinus*normal.bg: #002b36
+Echinus*normal.fg: #eee8d5
 
 Echinus*border: 1
 
