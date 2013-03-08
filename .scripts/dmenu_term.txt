@@ -1,3 +1,4 @@
+irssi
 mcabber
 mocp
 mutt

@@ -134,8 +134,11 @@ command vgrep vim "+grep %a"
 " The command macros %f, %F, %d, %F may be used in the commands.
 " The %a macro is ignored.  To use a % you must put %%.
 
+" Text
+filetype *.txt,*.otl st -e vim %f 2> /dev/null &
+
 " Pdf
-filetype *.pdf zathura %f 2> /dev/null &,apvlv %f,xpdf %f
+filetype *.pdf,*.ashx zathura %f 2> /dev/null &,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript

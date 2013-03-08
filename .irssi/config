@@ -6,40 +6,27 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "no";
-  }
+  },
   {
     address = "irc.linuxchix.org";
-	chatnet = "lc";
-	port = 6667;
-	use_ssl = "no";
-	ssl_verify = "no";
-	autoconnect = "no";
+    chatnet = "lc";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
   }
 );
 
 chatnets = {
-  fn = { 
-	type = "IRC"; 
-	nick = "bananagranola"; 
-  };
+  fn = { type = "IRC"; nick = "bananagranola"; };
+  lc = { type = "IRC"; };
 };
 
 channels = (
-  { 
-	name = "#htc-ace"; 
-    chatnet = "fn"; 
-	autojoin = "yes"; 
-  }
-  {
-    name = "#codefirex";
-	chatnet = "fn";
-	autojoin = "yes";
-  }
-  {
-	name = "#linuxchix";
-	chatnet = "fn";
-	autojoin = "yes";
-  }
+  { name = "#htc-ace"; chatnet = "fn"; autojoin = "no"; },
+  { name = "#codefirex"; chatnet = "fn"; autojoin = "no"; },
+  { name = "#AceRoot"; chatnet = "Fn"; autojoin = "yes"; },
+  { name = "#linuxchix"; chatnet = "lc"; autojoin = "yes"; }
 );
 
 aliases = {
