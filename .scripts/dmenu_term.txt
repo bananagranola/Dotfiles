@@ -3,6 +3,7 @@ mcabber
 mocp
 mutt
 newsbeuter
+pianobar
 ranger
 turses
 vifm
