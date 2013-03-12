@@ -126,8 +126,8 @@ Plugin {
 Plugin {
     type = tclock
     config {
-        ClockFmt = [%-l:%M %P]
-        TooltipFmt = [%-l:%M %P] [%A %x]
+        ClockFmt = [%I.%M.%S%P]
+        TooltipFmt = [%I.%M.%S%P] [%Y.%m.%d]
         Action = /home/amycheng/.scripts/exit.sh 
         ShowCalendar = false
         ShowTooltip = true
