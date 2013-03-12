@@ -13,4 +13,4 @@ rsync --archive --compress --delete --human-readable --progress --verbose "$WIND
 
 # back up School folder from Windows partition to external hard drive
 rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/School/" "$SERVER:School/"
-
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Documents/text.kdb" "$SERVER:School/"

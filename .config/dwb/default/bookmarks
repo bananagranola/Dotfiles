@@ -1,8 +1,9 @@
 http://localhost:631/ CUPS
 https://www.dropbox.com/home#::: Dropbox
-http://springpad.com/#!/amytcheng Springpad
-javascript:(function(){SP_HOST='//springpad.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=SP_HOST+'/public/clipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){var%20u=SP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document&&document.title||'');try{window.open(u,'sp_popout','width=630,height=600');}catch(e){window.location=u;}}})(); Springit
+http://www.readability.com/bananagranola/latest Readability
+javascript:(%28function%28%29%7Bwindow.baseUrl%3D%27http%3A//www.readability.com%27%3Bwindow.readabilityToken%3D%27EmTkLf74MbpDnxz7TJAFTp7nCAYaYGCR9PMY8bwW%27%3Bvar%20s%3Ddocument.createElement%28%27script%27%29%3Bs.setAttribute%28%27type%27%2C%27text/javascript%27%29%3Bs.setAttribute%28%27charset%27%2C%27UTF-8%27%29%3Bs.setAttribute%28%27src%27%2CbaseUrl%2B%27/bookmarklet/save.js%27%29%3Bdocument.documentElement.appendChild%28s%29%3B%7D%29%28%29) ReadLater
 http://www.stumbleupon.com/home StumbleUpon
+http://my.xmarks.com/ Xmarks
 https://login.yahoo.com/config/mail?.intl=us YahooMail
 http://yelp.com/ Yelp
 
@@ -16,6 +17,8 @@ http://www.gojee.com/ Gojee Food
 http://punchfork.com/ Punchfork Food
 http://www.tastespotting.com/ Tastespotting Food
 http://www.yummly.com/ Yummly Food
+http://www.ziplist.com/mylist Ziplist
+javascript:(function(){ZL_HOST='http://www.ziplist.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=ZL_HOST+'/javascripts/recipe_scrape.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=ZL_HOST+'/meta_recipe?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})(); Ziplist Clip
 
 https://www.google.com/calendar/render?pli=1 Calendar Google
 https://drive.google.com/#my-drive Drive Google

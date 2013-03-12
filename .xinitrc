@@ -12,7 +12,6 @@ volumeicon &
 xcalib -co 70 -a &
 xrdb ~/.Xresources.solarized
 xsetroot -cursor_name left_ptr &
-xscreensaver &
 
 case $1 in
 echinus)
