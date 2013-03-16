@@ -23,9 +23,8 @@ chatnets = {
 };
 
 channels = (
-  { name = "#htc-ace"; chatnet = "fn"; autojoin = "no"; },
-  { name = "#codefirex"; chatnet = "fn"; autojoin = "no"; },
-  { name = "#AceRoot"; chatnet = "Fn"; autojoin = "yes"; },
+  { name = "#AceRoot"; chatnet = "fn"; autojoin = "yes"; },
+  { name = "#archlinux-women"; chatnet = "fn"; autojoin = "no"; },
   { name = "#linuxchix"; chatnet = "lc"; autojoin = "yes"; }
 );
 

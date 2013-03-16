@@ -6,11 +6,11 @@ SERVER="192.168.1.15"
 HOME="/home/amytcheng"
 
 # back up Music folder from Windows partition to external hard drive
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Music/" "$SERVER:Music/"
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Music/" "$EXTERNAL/Music/"
 
 # back up Images folder from Windows partition to external hard drive
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Pictures/" "$SERVER:Images/"
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Pictures/" "$EXTERNAL/Images/"
 
 # back up School folder from Windows partition to external hard drive
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/School/" "$SERVER:School/"
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Documents/text.kdb" "$SERVER:School/"
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/School/" "$EXTERNAL/School/"
+rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Documents/text.kdb" "$EXTERNAL/home/"

@@ -17,8 +17,6 @@ http://www.gojee.com/ Gojee Food
 http://punchfork.com/ Punchfork Food
 http://www.tastespotting.com/ Tastespotting Food
 http://www.yummly.com/ Yummly Food
-http://www.ziplist.com/mylist Ziplist
-javascript:(function(){ZL_HOST='http://www.ziplist.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=ZL_HOST+'/javascripts/recipe_scrape.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=ZL_HOST+'/meta_recipe?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})(); Ziplist Clip
 
 https://www.google.com/calendar/render?pli=1 Calendar Google
 https://drive.google.com/#my-drive Drive Google
