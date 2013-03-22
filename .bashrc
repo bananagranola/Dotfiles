@@ -8,6 +8,7 @@ PATH=~/.bin:$PATH
 
 # ccache
 export USE_CCACHE=1
+export CCACHE_DIR=/home/amytcheng/.ccache
 
 # default variables
 export EDITOR="/usr/bin/vim"

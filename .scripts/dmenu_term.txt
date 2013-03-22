@@ -1,3 +1,4 @@
+elinks
 irssi
 mcabber
 mocp

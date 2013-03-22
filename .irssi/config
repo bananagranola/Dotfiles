@@ -23,7 +23,7 @@ chatnets = {
 };
 
 channels = (
-  { name = "#AceRoot"; chatnet = "fn"; autojoin = "yes"; },
+  { name = "#AceRoot"; chatnet = "fn"; autojoin = "no"; },
   { name = "#archlinux-women"; chatnet = "fn"; autojoin = "no"; },
   { name = "#linuxchix"; chatnet = "lc"; autojoin = "yes"; }
 );
