@@ -12,9 +12,9 @@ md5sums=('583da41af7f316e15c97fe724c720d3d'
          '825a2f042887536f5c0db53dbe469b75')
 
 package() {
-	unzip "$srcdir/blackwhite_gtk3_by_thrynk-d59dyyh.zip"
+	unzip -o "$srcdir/blackwhite_gtk3_by_thrynk-d59dyyh.zip"
 	mkdir -p "$pkgdir/usr/share/themes"
-	sh blackwhite_to_solarized.sh "$srcdir/BlackWhite/BlackWhite"
+	#sh blackwhite_to_solarized.sh "$srcdir/BlackWhite/BlackWhite"
 	cp -r "$srcdir/BlackWhite/BlackWhite/" "$pkgdir/usr/share/themes/"
 
 	find "$pkgdir" -type d -exec chmod 755 "{}" \;

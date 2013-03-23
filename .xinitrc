@@ -1,9 +1,7 @@
 # .xinitrc, run by startx
 
 /home/amytcheng/.scripts/conky.sh &
-dropboxd &
 fbpanel &
-/home/amytcheng/.scripts/grive_monitor.sh &
 /home/amytcheng/.scripts/randombackground.sh &
 slimebattery &
 sxhkd &
