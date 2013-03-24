@@ -71,7 +71,7 @@ aliases = {
   SBAR = "STATUSBAR";
   INVITELIST = "mode $C +I";
   Q = "QUERY";
-  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows on;set autocreate_query_level none;set autoclose_windows on;set reuse_unused_windows on;save";
+  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
   EXEMPTLIST = "mode $C +e";
   ATAG = "WINDOW SERVER";
   UNSET = "set -clear";
@@ -198,8 +198,8 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     use_status_window = "no";
-    autocreate_windows = "no";
-    autoclose_windows = "no";
+    autocreate_windows = "yes";
+    autoclose_windows = "yes";
     reuse_unused_windows = "yes";
   };
   "perl/core/scripts" = { notify_remote = "127.0.0.1"; };
