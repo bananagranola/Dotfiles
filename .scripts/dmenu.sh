@@ -1,5 +1,5 @@
 #!/bin/sh
-FONT="-*-termsyn-medium-*-*-*-11-*-*-*-*-*-*-1"
+FONT="Envy Code R-9"
 NB="#002b36"
 NF="#93a1a1"
 SB="#586e75"

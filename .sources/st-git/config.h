@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static char font[] = "termsyn:pixelsize=15:antialias=true:autohint=true";
+static char font[] = "envy code r:pixelsize=10:antialias=true:autohint=true";
 static unsigned int borderpx = 1;
 static char shell[] = "/bin/zsh";
 
