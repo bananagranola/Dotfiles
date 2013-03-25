@@ -1,5 +1,4 @@
 elinks
-irssi
 mcabber
 mocp
 mutt
@@ -9,3 +8,4 @@ ranger
 turses
 vifm
 vim
+weechat-curses
