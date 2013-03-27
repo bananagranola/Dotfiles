@@ -3,7 +3,7 @@
 if [ $1 == "MSG" ]; then
 #	if [ $2 == "IN" ]; then
 		msg=$(tail $4)
-		notify-send "$3: $msg"
+		notify-send "MCabber" "$3: $msg"
 		rm $4
 #	fi
 fi

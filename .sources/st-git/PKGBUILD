@@ -3,7 +3,7 @@
 
 pkgname=st-git
 epoch=1
-pkgver=20130225
+pkgver=20130324
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://git.suckless.org/st/'
@@ -11,13 +11,11 @@ license=('MIT')
 depends=('libxext' 'libxft')
 makedepends=('git' 'ncurses')
 arch=('i686' 'x86_64' 'armv7h')
-
 provides=('st')
 conflicts=('st')
 replaces=('st-hg')
 
-source=('https://github.com/bananagranola/dotfiles/raw/master/.sources/st-git/config.h')
-md5sums=('11bdc9a83cc53fd9088bfa31854a4626')
+source=('config.h')
 
 _gitroot='http://git.suckless.org/st/'
 _gitname='st'
@@ -41,3 +39,4 @@ package() {
 	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 	install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README"
 }
+md5sums=('34ec7be1c05175462a19368b7a92a83f')

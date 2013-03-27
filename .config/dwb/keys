@@ -1,7 +1,7 @@
 [default]
 open_url= O
-tabopen= b
-tabopen_url= B
+tabopen=
+tabopen_url=
 backopen= t
 backopen_url= T
 winopen= w

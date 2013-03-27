@@ -23,9 +23,8 @@ chatnets = {
 };
 
 channels = (
-  { name = "#htc-ace"; chatnet = "fn"; autojoin = "no"; },
-  { name = "#codefirex"; chatnet = "fn"; autojoin = "no"; },
-  { name = "#AceRoot"; chatnet = "Fn"; autojoin = "yes"; },
+  { name = "#AceRoot"; chatnet = "fn"; autojoin = "no"; },
+  { name = "#archlinux-women"; chatnet = "fn"; autojoin = "no"; },
   { name = "#linuxchix"; chatnet = "lc"; autojoin = "yes"; }
 );
 
@@ -199,8 +198,8 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     use_status_window = "no";
-    autocreate_windows = "no";
-    autoclose_windows = "no";
+    autocreate_windows = "yes";
+    autoclose_windows = "yes";
     reuse_unused_windows = "yes";
   };
   "perl/core/scripts" = { notify_remote = "127.0.0.1"; };

@@ -8,7 +8,7 @@ sxhkd &
 twmnd &
 volumeicon &
 xcalib -co 70 -a &
-xrdb ~/.Xresources.solarized
+xrdb ~/.Xresources
 xsetroot -cursor_name left_ptr &
 
 case $1 in

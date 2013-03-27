@@ -1,5 +1,5 @@
 #!/bin/sh
-FONT="-*-termsyn-medium-*-*-*-11-*-*-*-*-*-*-1"
+FONT="Envy Code R-9"
 NB="#002b36"
 NF="#93a1a1"
 SB="#586e75"
@@ -19,4 +19,4 @@ APP=$(
 		dmenu -b -f -i -fn $FONT -nb $NB -nf $NF -sb $SB -sf $SF < "$cache"
 	fi
 )
-grep -q -w "$APP" ~/.scripts/dmenu_term.txt && st -t $APP -e $APP || echo $APP | ${SHELL:-"/bin/sh"} &
+grep -q -w "$APP" ~/.scripts/dmenu.txt && st -t $APP -e $APP || echo $APP | ${SHELL:-"/bin/sh"} &

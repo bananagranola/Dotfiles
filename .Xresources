@@ -3,7 +3,7 @@
 ! vim: set fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
 ! ----------------------------------------------------------------------------
 
-*font:          -*-termsyn-medium-*-*-*-14-*-*-*-*-*-*-1
+*font:					xft:envy code r:size=10
 
 ! ----------------------------------------------------------------------------
 ! URxvt settings
@@ -25,6 +25,7 @@ URxvt*keysym.End: \033[4~
 ! source: http://github.com/altercation/solarized
 ! ----------------------------------------------------------------------------
 
+!#define S_base03		#1F1F1F
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
@@ -49,9 +50,6 @@ URxvt*keysym.End: \033[4~
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01
 *pointerColorForeground:S_base1
-
-*transparent:			true
-*tintColor:				S_base03
 
 !! black dark/light
 *color0:                S_base02
