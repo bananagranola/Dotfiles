@@ -61,7 +61,7 @@ done
 
 
 # remove dangling symlinks
-danglers=$(find -L $HOME/.* -type l)
+danglers=$(find -L "$HOME" -type l)
 for dangler in $danglers; do
 	rm $dangler
 	if [ $? -eq 0 ]; then

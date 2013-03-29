@@ -11,4 +11,3 @@ xcalib -co 70 -a &
 xrdb ~/.Xresources
 xsetroot -cursor_name left_ptr &
 
-exec dbus-session echinus & 

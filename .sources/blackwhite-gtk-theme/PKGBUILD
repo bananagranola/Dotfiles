@@ -10,15 +10,8 @@ source=("http://www.deviantart.com/download/318099257/blackwhite_gtk3_by_thrynk-
 md5sums=('583da41af7f316e15c97fe724c720d3d')
 
 package() {
-<<<<<<< HEAD
-	unzip -o "$srcdir/blackwhite_gtk3_by_thrynk-d59dyyh.zip"
-	mkdir -p "$pkgdir/usr/share/themes"
-	#sh blackwhite_to_solarized.sh "$srcdir/BlackWhite/BlackWhite"
-	cp -r "$srcdir/BlackWhite/BlackWhite/" "$pkgdir/usr/share/themes/"
-=======
 	mkdir -p "$pkgdir/usr/share/themes"
 	cp -dpr --no-preserve=ownership "$srcdir/BlackWhite/BlackWhite/" "$pkgdir/usr/share/themes/"
->>>>>>> d64a16ad2f594fafa66248873f687094a683182e
 
 	find "$pkgdir" -type d -exec chmod 755 "{}" \;
 	find "$pkgdir" -type f -exec chmod 644 "{}" \;
