@@ -38,7 +38,7 @@ Echinus*tags.layout1: t
 Echinus*tags.layout2: t
 Echinus*tags.layout3: t
 
-Echinus*togglestruts: W + b
+Echinus*togglestruts: W + p
 Echinus*togglemonitor: W + grave
 Echinus*focusnext: W + j
 Echinus*focusprev: W + k
