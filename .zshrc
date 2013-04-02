@@ -78,7 +78,6 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto --classify --human-readable'
 
 # pacman utilities
-alias pacman='pacman-color'
 alias reflect='sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias packs='pacman -Q | wc -l'
 
