@@ -1,27 +1,9 @@
 
-alt + b
-	/home/amytcheng/.scripts/randombackground.sh
-
-alt + c
-	st -t mcabber -e mcabber
-
-alt + e
-	st -t mutt -e mutt
-
 super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
 	st -t vifm -e vifm ~/ ~/Dropbox/School/
-
-alt + m
-	st -t mocp -e mocp
-
-alt + n
-	st -t newsbeuter -e newsbeuter
-
-alt + p
-	scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Downloads'
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
@@ -30,22 +12,5 @@ alt + t
 	st -e tmux
 
 alt + w
-	dwb
+	$BROWSER
 
-control + F11
-	/home/amytcheng/.scripts/music_control.sh previous
-
-control + F10
-	/home/amytcheng/.scripts/music_control.sh pause
-
-control + F9
-	/home/amytcheng/.scripts/music_control.sh next
-
-control + F2
-	amixer -q set Master 10%+
-
-control + F1
-	amixer -q set Master 10%-
-
-control + Escape
-	amixer -q set Master toggle
