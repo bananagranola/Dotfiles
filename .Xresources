@@ -25,7 +25,6 @@ URxvt*keysym.End: \033[4~
 ! source: http://github.com/altercation/solarized
 ! ----------------------------------------------------------------------------
 
-!#define S_base03		#1F1F1F
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75
