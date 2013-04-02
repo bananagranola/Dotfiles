@@ -1,5 +1,3 @@
-# .xinitrc, run by startx
-
 /home/amytcheng/.scripts/conky.sh &
 fbpanel &
 /home/amytcheng/.scripts/randombackground.sh &

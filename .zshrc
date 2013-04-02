@@ -63,26 +63,19 @@ alias :q='exit'
 
 # convenient killer
 killer() {
-	ps -e | grep $1 | cut -c1-5 | xargs kill -9
+	grep_params=" $1$"
+	ps -e | grep -E -i "$grep_params" | cut -c1-5 | xargs kill -9
 }
-
-# tar compression
-alias uptar='tar -acf'
-alias untar='tar -xvf'
-
-# convenient image viewer script aliases
-alias sxiv='/home/amytcheng/.scripts/sxiv.sh'
 
 # prettify
 alias grep='grep --color=auto'
 alias ls='ls --color=auto --classify --human-readable'
 
 # pacman utilities
-alias pacman='pacman-color'
 alias reflect='sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias packs='pacman -Q | wc -l'
 
-# git utilities
+# git dotfiles utilities
 alias gadd='cd ~/.dotfiles && git add --all --verbose && cd -'
 alias gcom='cd ~/.dotfiles && git commit --verbose && cd -'
 alias gdif='cd ~/.dotfiles && git diff && cd -'

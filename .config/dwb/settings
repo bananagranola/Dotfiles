@@ -146,3 +146,7 @@ message-delay=2
 scheme-handler=
 default-font-size=12
 enable-offline-web-application-cache=true
+private-color=#505050
+hsts=false
+passthrough-keys=webkit
+max-visible-completions=11
