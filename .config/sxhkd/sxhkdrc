@@ -12,5 +12,5 @@ alt + t
 	st -e tmux
 
 alt + w
-	$BROWSER
+	firefox
 
