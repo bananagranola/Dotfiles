@@ -19,4 +19,4 @@ APP=$(
 		dmenu -b -f -i -fn $FONT -nb $NB -nf $NF -sb $SB -sf $SF < "$cache"
 	fi
 )
-grep -q -w "$APP" ~/.scripts/dmenu.txt && st -t $APP -e $APP || echo $APP | ${SHELL:-"/bin/sh"} &
+grep -q -w "$APP" ~/.scripts/dmenu.txt && st -t $APP -e $APP || echo $APP | ${SHELL:-"/bin/zsh"} &
