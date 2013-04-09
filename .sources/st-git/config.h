@@ -9,6 +9,9 @@ static char shell[] = "/bin/zsh";
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
+/* alt screens */
+static bool allowaltscreen = true;
+
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 60;
 static unsigned int actionfps = 30;
@@ -57,6 +60,15 @@ static unsigned int defaultfg = 7;
 static unsigned int defaultbg = 0;
 static unsigned int defaultcs = 256;
 static unsigned int defaultucs = 257;
+
+/*
+ * Colors used, when the specific fg = defaultfg. So in reverse mode this 
+ * will reverse too. Another logic would only make the simple feature too 
+ * complex.
+ */
+
+static unsigned int defaultitalic = 11;
+static unsigned int defaultunderline = 7;
 
 /* Internal shortcuts. */
 #define MODKEY Mod1Mask

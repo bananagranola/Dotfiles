@@ -39,4 +39,4 @@ package() {
 	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 	install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README"
 }
-md5sums=('34ec7be1c05175462a19368b7a92a83f')
+md5sums=('beeffffca37a3cbb32b45cb36ad82735')
