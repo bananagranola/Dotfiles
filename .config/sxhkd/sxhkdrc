@@ -3,7 +3,7 @@ super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
-	st -t vifm -e vifm ~/ ~/Dropbox/School/
+	st -t vifm -e vifm $WINDOWS/My\ Documents ~/Dropbox/School/
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
@@ -13,7 +13,3 @@ alt + t
 
 alt + w
 	firefox
-<<<<<<< HEAD
-=======
-
->>>>>>> b33df1bfbaf41bfac46ac1532e426a825cf0eef4

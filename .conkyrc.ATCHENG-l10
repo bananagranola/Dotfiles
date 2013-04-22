@@ -51,7 +51,7 @@ ${cpu cpu3}% $alignr ${cpu cpu4}%
 ${cpubar cpu3 5,105} ${cpubar cpu4 5,105}
 ${cpu cpu5}% $alignr ${cpu cpu6}%
 ${cpubar cpu5 5,105} ${cpubar cpu6 5,105}
-CPU Temp1: ${execi 10 sensors it8721-isa-0290 | grep 'temp1:' | cut -c16-22} $alignr CPU Temp2: ${execi 10 sensors | grep 'temp2:' | cut -c16-22}
+CPU Temp1: ${execi 10 sensors k10temp-pci-00c3 | grep 'temp1:' | cut -c16-22} $alignr CPU Temp2: ${execi 10 sensors | grep 'temp2:' | cut -c16-22}
 $alignr GPU: ${execi 30 nvidia-settings -query GPUCoreTemp | perl -ne 'print $1 if /GPUCoreTemp.*?: (\d+)./;'}°C
 
 MEMORY $hr
