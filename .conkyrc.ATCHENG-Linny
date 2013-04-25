@@ -92,3 +92,10 @@ ULS: ${upspeed wlan0}/s $alignr ${totalup wlan0}
 MUSIC $hr
 $alignr ${exec ~/.scripts/music_nowplaying.sh}
 
+HOTKEYS $hr
+ exit:w-esc $alignr volmute:f-esc
+files:a-f $alignr voldown:f-f1 
+  run:a-r $alignr volup:f-f2 
+ term:a-t
+  web:a-w
+

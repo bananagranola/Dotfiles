@@ -1,5 +1,5 @@
 
-alignment center_right
+alignment top_right
 background no
 border_width 0
 cpu_avg_samples 2
@@ -14,7 +14,7 @@ draw_shades yes
 use_xft yes
 xftfont Envy Code R:size=8
 gap_x 10 0
-gap_y 20 0
+gap_y 0 0
 minimum_size 200 100
 net_avg_samples 2
 no_buffers yes
@@ -92,4 +92,11 @@ ULS: ${upspeed eth0}/s $alignr ${totalup eth0}
 
 MUSIC $hr
 $alignr ${exec ~/.scripts/music_nowplaying.sh}
+
+HOTKEYS $hr
+ exit:w-esc $alignr volmute:f-esc
+files:a-f $alignr voldown:f-f1 
+  run:a-r $alignr volup:f-f2 
+ term:a-t
+  web:a-w
 
