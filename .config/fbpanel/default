@@ -59,7 +59,7 @@ Plugin {
             action = st -e vifm
         }
         button {
-            icon = web-browser
+            icon = firefox
             tooltip = Web Browser
             action = firefox 
         }

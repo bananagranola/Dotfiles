@@ -37,6 +37,12 @@ show_graph_range no
 
 TEXT
 
+BATTERY $hr
+$alignr ${execi 60 acpi | cut -c12-}
+
+VOLUME $hr
+$alignr ${execi 1 amixer | grep Mono: --max-count=1 | cut -c20-}
+
 SYSTEM $hr
 $sysname $kernel $alignr $machine
 Host: $alignr $nodename
@@ -81,18 +87,4 @@ ULS: ${upspeed wlan0}/s $alignr ${totalup wlan0}
 
 MUSIC $hr
 $alignr ${exec ~/.scripts/music_nowplaying.sh}
-
-$hr
-HOTKEYS				$alignr VOLUME
-background:alt-b	$alignr down:ctrl-f1
-chat:alt-c			$alignr up:ctrl-f2
-email:alt-e			$alignr mute:ctrl-esc
-exit:win-esc
-filemanager:alt-f	$alignr MUSIC
-music:alt-m			$alignr previous:ctrl-f9
-news:alt-n			$alignr pause:ctrl-f10
-printscreen:alt-p	$alignr next:ctrl-f11
-run:alt-r
-terminal:alt-t
-web:alt-w
 
