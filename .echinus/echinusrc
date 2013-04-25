@@ -98,4 +98,3 @@ Echinus*incnmaster: WS + k = +1
 Echinus*command: st
 
 Echinus*rule0: Exit NULL 1 1
-Echinus*rule1: wicd-client.py NULL 1 1
