@@ -38,6 +38,6 @@ alias gup='gpul ; gadd ; gcom ; gpus ; dfr'
 alias mmtp='jmtpfs -o allow_other /media/android-mtp'
 
 # cp, mv, and rsync utilities with progressbars
-alias cp='acp -g'
-alias mv='amv -g'
+alias cp='acp'
+alias mv='amv'
 alias rsync='rsync --archive --compress --human-readable --progress --verbose'

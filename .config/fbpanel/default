@@ -22,7 +22,7 @@ Global {
 Plugin {
     type = space
     config {
-        size = 2
+        size = 1
     }
 }
 
@@ -46,7 +46,7 @@ Plugin {
 Plugin {
     type = space
     config {
-        size = 5
+        size = 1
     }
 }
 
@@ -59,7 +59,7 @@ Plugin {
             action = st -e vifm
         }
         button {
-            icon = firefox
+            icon = web-browser
             tooltip = Web Browser
             action = firefox 
         }
@@ -74,7 +74,7 @@ Plugin {
 Plugin {
     type = space
     config {
-        size = 5
+        size = 1
     }
 }
 
@@ -94,7 +94,7 @@ Plugin {
 Plugin {
     type = space
     config {
-        size = 5
+        size = 1
     }
 }
 
@@ -108,7 +108,7 @@ Plugin {
 Plugin {
     type = space
     config {
-        size = 5
+        size = 1
     }
 }
 
@@ -119,7 +119,7 @@ Plugin {
 Plugin {
     type = space
     config {
-        size = 5
+        size = 1
     }
 }
 

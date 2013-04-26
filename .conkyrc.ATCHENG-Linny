@@ -14,7 +14,7 @@ draw_shades yes
 use_xft yes
 xftfont envy code r:size=7
 gap_x 10 0
-gap_y 0 0
+gap_y 20 0
 minimum_size 200 100
 net_avg_samples 2
 no_buffers yes
@@ -36,12 +36,6 @@ show_graph_scale no
 show_graph_range no
 
 TEXT
-
-BATTERY $hr
-$alignr ${execi 60 acpi | cut -c12-}
-
-VOLUME $hr
-$alignr ${execi 1 amixer | grep Mono: --max-count=1 | cut -c20-}
 
 SYSTEM $hr
 $sysname $kernel $alignr $machine

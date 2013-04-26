@@ -1,4 +1,5 @@
 /home/amytcheng/.scripts/conky.sh &
+fbpanel &
 /home/amytcheng/.scripts/randombackground.sh &
 slimebattery &
 sxhkd &
