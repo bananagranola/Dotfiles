@@ -6,8 +6,8 @@ Global {
     width = 100
     height = 10
     transparent = true
-    tintcolor = #ddd7c4
-    alpha = 250
+    tintcolor = #000000
+    alpha = 100
     setdocktype = true
     setpartialstrut = true
     autohide = false

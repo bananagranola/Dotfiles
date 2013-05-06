@@ -1,8 +1,8 @@
 #/home/amytcheng/.scripts/conky.sh &
 fbpanel &
 /home/amytcheng/.scripts/randombackground.sh &
-slimebattery &
 sxhkd &
+tidybattery &
 twmnd &
 volumeicon &
 xcalib -co 70 -a &
