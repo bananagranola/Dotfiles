@@ -165,7 +165,7 @@ save() {
 # actually run stuff
 # no arguments
 cfx_nma() {
-	getNma
+	#getNma
 	parseCurrs
 	parsePrevs
 	# do not notify if first run

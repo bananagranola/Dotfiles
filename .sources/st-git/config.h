@@ -3,7 +3,7 @@
 /* appearance */
 static char font[] = "envy code r:pixelsize=13:antialias=true:autohint=true";
 static unsigned int borderpx = 1;
-static char shell[] = "/bin/zsh";
+static char shell[] = "/bin/bash";
 
 /* double-click timeout (in milliseconds) between clicks for selection */
 static unsigned int doubleclicktimeout = 300;
@@ -15,6 +15,12 @@ static bool allowaltscreen = true;
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 60;
 static unsigned int actionfps = 30;
+
+/*
+ * blinking timeout (set to 0 to disable blinking) for the terminal blinking                                 
+ * attribute.                                                                                                
+ */                                                                                                          
+static unsigned int blinktimeout = 800; 
 
 /* TERM value */
 static char termname[] = "st-256color";
