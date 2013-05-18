@@ -1,5 +1,5 @@
 #!/bin/sh
-FONT="Envy Code R-9"
+FONT="Agave-9"
 NB="#002b36"
 NF="#93a1a1"
 SB="#586e75"
