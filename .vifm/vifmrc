@@ -135,7 +135,7 @@ command vgrep vim "+grep %a"
 " The %a macro is ignored.  To use a % you must put %%.
 
 " Text
-filetype *.txt,*.otl st -e vim %f 2> /dev/null &
+filetype *.txt,*.otl termite -e vim %f 2> /dev/null &
 
 " Pdf
 filetype *.pdf,*.ashx zathura %f 2> /dev/null &,apvlv %f,xpdf %f
@@ -288,7 +288,7 @@ nmap A cw<c-w>
 nmap R cw<c-a>
 
 " Opening console in current directory
-nmap ,t :!st &<cr>
+nmap ,t :!termite &<cr>
 
 " Opening vim to edit .vifmrc
 nmap ,c :execute ':!vim $MYVIFMRC' | restart<cr>

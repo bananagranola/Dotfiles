@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static char font[] = "envy code r:pixelsize=13:antialias=true:autohint=true";
+static char font[] = "agave:pixelsize=13:antialias=true:autohint=true";
 static unsigned int borderpx = 1;
 static char shell[] = "/bin/bash";
 

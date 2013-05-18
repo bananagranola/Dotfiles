@@ -3,13 +3,13 @@ super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
-	st -t vifm -e vifm $WINDOWS/My\ Documents ~/Dropbox/School/
+	termite -e vifm $WINDOWS/My\ Documents ~/Dropbox/School/
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
 
 alt + t
-	st -e tmux
+	termite -e tmux 
 
 alt + w
 	firefox

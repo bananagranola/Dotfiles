@@ -61,12 +61,12 @@ color14 = #2aa198
 color15 = #fdf6d3
 
 [hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+font = Agave 10
+foreground = #073642
+background = #eee8d5
+padding = 2
+border = #93a1a1
+border_width = 0.5
+roundness = 2.0
 
 # vim: ft=dosini
