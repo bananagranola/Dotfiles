@@ -7,11 +7,7 @@ Global {
     height = 10
     transparent = true
     tintcolor = #000000
-<<<<<<< HEAD
     alpha = 50
-=======
-    alpha = 100
->>>>>>> c80b25d4dc0c7a5fd9d6aae16c4c99cca507b2c2
     setdocktype = true
     setpartialstrut = true
     autohide = false
