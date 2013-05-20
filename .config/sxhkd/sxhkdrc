@@ -3,7 +3,7 @@ super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
-	st -t vifm -e vifm $WINDOWS/My\ Documents ~/Dropbox/School/
+	st -t vifm -e vifm ~ ~/Dropbox/School/
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
