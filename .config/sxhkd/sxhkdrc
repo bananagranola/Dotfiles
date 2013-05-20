@@ -3,13 +3,17 @@ super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
+<<<<<<< HEAD
 	st -t vifm -e vifm ~ ~/Dropbox/School/
+=======
+	termite -e vifm $WINDOWS/My\ Documents ~/Dropbox/School/
+>>>>>>> c80b25d4dc0c7a5fd9d6aae16c4c99cca507b2c2
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
 
 alt + t
-	st -e tmux
+	termite -e tmux 
 
 alt + w
 	firefox

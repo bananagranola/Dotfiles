@@ -5,7 +5,7 @@
 		<item label="Terminal">
 			<action name="Execute">
 				<execute>
-					st
+					termite
 				</execute>
 			</action>
 		</item>

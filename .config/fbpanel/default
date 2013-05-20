@@ -7,7 +7,11 @@ Global {
     height = 10
     transparent = true
     tintcolor = #000000
+<<<<<<< HEAD
     alpha = 50
+=======
+    alpha = 100
+>>>>>>> c80b25d4dc0c7a5fd9d6aae16c4c99cca507b2c2
     setdocktype = true
     setpartialstrut = true
     autohide = false
@@ -56,7 +60,7 @@ Plugin {
         button {
             icon = file-manager
             tooltip = File Manager
-            action = st -e vifm
+            action = termite -e vifm
         }
         button {
             icon = web-browser
@@ -66,7 +70,7 @@ Plugin {
         button {
             icon = terminal
             tooltip = Terminal Emulator
-            action = st
+            action = termite
         }
     }
 }

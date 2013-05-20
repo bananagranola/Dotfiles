@@ -1,6 +1,6 @@
 " colorscheme settings
 syntax enable " enable syntax coloring
-set background=light " dark/light
+set background=dark " dark/light
 colorscheme solarized " set colorscheme
 set t_Co=256
 

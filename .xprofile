@@ -1,8 +1,12 @@
 #/home/amytcheng/.scripts/conky.sh &
 fbpanel &
 /home/amytcheng/.scripts/randombackground.sh &
+<<<<<<< HEAD
 tidybattery &
+=======
+>>>>>>> c80b25d4dc0c7a5fd9d6aae16c4c99cca507b2c2
 sxhkd &
+tidybattery &
 twmnd &
 volumeicon &
 xcalib -co 70 -a &
