@@ -32,7 +32,7 @@ alias gdif='cd ~/.dotfiles && git diff && cd -'
 alias gpul='cd ~/.dotfiles && git pull --verbose origin master && cd -'
 alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master && cd -'
 alias dfr='cd ~/.scripts && ./dotfiler.sh && cd -'
-alias gup='gpul ; gadd ; gcom ; gpus ; dfr'
+alias gup='gadd ; gpul ; gcom ; gpus ; dfr'
 
 # mount android-mtp
 alias mmtp='jmtpfs -o allow_other /media/android-mtp'
