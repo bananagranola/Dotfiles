@@ -1,4 +1,3 @@
-#/home/amytcheng/.scripts/conky.sh &
 fbpanel &
 /home/amytcheng/.scripts/randombackground.sh &
 sxhkd &
