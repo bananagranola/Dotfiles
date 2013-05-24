@@ -16,9 +16,15 @@ show-read-feeds					yes
 
 ttrss-login						"bananagranola"
 ttrss-passwordfile				"/home/amytcheng/.scripts/pass.txt"
-ttrss-url						"http://yanobs.com/reader/"
+ttrss-url						"http://bananagranola.no-ip.org:81/tt-rss/"
 urls-source						"ttrss"
 
-color 		listfocus				black white bold
-color 		info					white black bold
+color background default default
+color listnormal default default
+color listfocus black white
+color info default black
+color article default default
 
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
