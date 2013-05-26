@@ -43,7 +43,7 @@ highlight Title color: #efefef; font-weight: bold; background-color: inherit;
 highlight URL text-decoration: none; color: #9ECE9E; background: inherit; background-color: inherit;
 highlight WarningMsg color:#ffffff; background-color:#333333 !important; font-weight:bold;
 
-highlight FontFixed font-family:"agave"
+highlight FontFixed -a font-family:"agave"
 map -count -modes=n,v J <count>:tabnext<Return>
 map -count -modes=n,v K <count>:tabprevious<Return>
 map -count -modes=n,v sh <count>:set<Space>nss!=<A-Tab>

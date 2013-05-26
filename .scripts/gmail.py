@@ -33,7 +33,7 @@ _url = "https://mail.google.com/gmail/feed/atom"
 ##################   Edit here      #######################
 
 pwd = 'XXXX'                                # pwd stored in script
-_pwdfile = '/home/amytcheng/.scripts/pass.txt'  # pwd stored in a file
+_pwdfile = '/home/amytcheng/.scripts/googlepass.txt'  # pwd stored in a file
 _username = 'amezster'
 _maxmails = 5  # maximum new mails to show
 _maxwords = 3  # maximum words to show in each mail header
