@@ -15,8 +15,8 @@ reload-threads					10
 show-read-feeds					yes
 
 ttrss-login						"bananagranola"
-ttrss-url						"http://yanobs.com/reader/"
-ttrss-password					"Ra1n3r!!"
+ttrss-passwordfile				"/home/amytcheng/.scripts/pass.txt"
+ttrss-url						"http://bananagranola.no-ip.org:81/tt-rss/"
 urls-source						"ttrss"
 
 color 		listfocus				black white bold

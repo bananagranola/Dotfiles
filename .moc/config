@@ -188,15 +188,16 @@ XTerms += xterm-256colour:xterm-256color
 XTerms += rxvt:rxvt-unicode
 XTerms += rxvt-unicode-256colour:rxvt-unicode-256color
 XTerms += eterm
-XTerms+= terminal
+XTerms += terminal
+XTerms += termite
 # Theme file. This can be absolute path or relative to
 # /usr/share/moc/themes/ (depends on installation prefix) or ~/.moc/themes/
-Theme			= theme
+Theme			= black_theme
 #black_theme  darkdot_theme  example_theme  green_theme  moca_theme  
 #nightly_theme  red_theme  transparent-background  yellow_red_theme
 
 # The theme used when running on an xterm.
-XTermTheme		= theme
+XTermTheme		= black_theme
 
 # Should MOC try to autoload the default lyrics file for an audio?  (The
 # default lyrics file is a text file with the same file name as the audio

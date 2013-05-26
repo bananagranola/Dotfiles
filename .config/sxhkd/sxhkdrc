@@ -9,7 +9,7 @@ alt + r
 	/home/amytcheng/.scripts/dmenu.sh
 
 alt + t
-	termite -e tmux 
+	termite
 
 alt + w
 	firefox
