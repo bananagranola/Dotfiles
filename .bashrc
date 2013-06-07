@@ -7,8 +7,8 @@
 PATH=~/.bin:$PATH
 
 # ccache
-export USE_CCACHE=1
-export CCACHE_DIR=/home/amytcheng/.ccache
+#export USE_CCACHE=1
+#export CCACHE_DIR=/home/amytcheng/.ccache
 
 alias sudo='sudo '
 

@@ -16,14 +16,8 @@ show-read-feeds					yes
 
 ttrss-login						"bananagranola"
 ttrss-passwordfile				"/home/amytcheng/.scripts/pass.txt"
-ttrss-url						"http://bananagranola.no-ip.org:81/tt-rss/"
+ttrss-url						"https://whereami.redirectme.net:444/tt-rss/"
 urls-source						"ttrss"
-
-color background default default
-color listnormal default default
-color listfocus black white
-color info default black
-color article default default
 
 highlight article "^(Title):.*$" blue default
 highlight article "https?://[^ ]+" red default
