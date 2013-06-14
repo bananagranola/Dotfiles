@@ -1,56 +1,41 @@
 #!/bin/bash
 
-poll="240m"
+gophersvidsfolder="/mnt/data/Youtube/GophersVids"
 
-# ATCHENG-*
 gophersvidsfile="/home/amytcheng/.scripts/gophersvids/gophersvids.txt"
 parserscript="/home/amytcheng/.scripts/gophersvids/gophersvids_parser.pl"
-youtubedlscript="youtube-dl"
+youtubedlscript="/usr/bin/youtube-dl"
 
-# STCHENG-REMORA
-#gophersvidsfile=	"/home/stcheng/.scripts/gophersvids.txt"
-#parserscript=		"/home/stcheng/.scripts/gophersvids_parser.pl"
-#youtubedlscript=	"/home/stcheng/.scripts/youtube-dl.exe"
+# retrieve and parse latest gophersvids uploads
+parsed="$(perl $parserscript)"
 
-while true; do
+# check if $gophersvidsfile already exists and create it
+if [ ! -e $gophersvidsfile ]; then
+	echo "GOPHERSVIDS CREATING: $gophersvidsfile"
+	touch $gophersvidsfile
+	echo "$parsed" > $gophersvidsfile
+	echo "$(date). SLEEPING: $poll"
+	sleep $poll
+fi
 
-	# retrieve and parse latest gophersvids uploads
-	parsed="$(perl $parserscript)"
+# compare saved and new gophersvids lists
+diff=$(diff --changed-group-format='%<' --unchanged-group-format='' <(echo "$parsed") "$gophersvidsfile")
 
-	# check if $gophersvidsfile already exists and create it
-	if [ ! -e $gophersvidsfile ]; then
-		echo "CREATING: $gophersvidsfile"
-		touch $gophersvidsfile
-		echo "$parsed" > $gophersvidsfile
-		echo "$(date). SLEEPING: $poll"
-		sleep $poll
-	fi
+# parse diff for new vids
+if [[ "$diff" != "" ]]; then
+	for line in $diff; do
+		if [[ "$line" == *http* ]]; then
+			echo "GOPHERSVIDS DOWNLOADING: $title"
+			$youtubedlscript "$line" --output "$gophersvidsfolder/%(stitle)s.%(ext)s" 
+		fi
+	done
+fi
 
-	# compare saved and new gophersvids lists
-	diff=$(diff --changed-group-format='%<' --unchanged-group-format='' <(echo "$parsed") "$gophersvidsfile")
+# update $gophersvidsfile
+if [ $? -eq 0 ]; then	
+	echo "$parsed" > $gophersvidsfile
+	echo "GOPHERSVIDS COMPLETED: $(date)."
+else
+	echo "GOPHERSVIDS ERROR: oh noes!"
+fi
 
-	# parse diff for new vids
-	if [[ "$diff" != "" ]]; then
-		for line in $diff; do
-			if [[ "$line" == *http* ]]; then
-				# check vid title
-				title=$($youtubedlscript --get-title "$line")
-				if [[ ! "$title" == *Vampire* ]]; then
-					# download non-vampire vids
-					echo "DOWNLOADING: $title"
-					$youtubedlscript "$line" --output "v:/Youtube TV/%(title)s.%(ext)s"
-				fi
-			fi
-		done
-	fi
-	
-	# update $gophersvidsfile
-	if [ $? -eq 0 ]; then	
-		echo "$parsed" > $gophersvidsfile
-		echo "$(date). SLEEPING: $poll"
-		sleep $poll	
-	else
-		echo "ERROR: restarting!"
-	fi
-
-done

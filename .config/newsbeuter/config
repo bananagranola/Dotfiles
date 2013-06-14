@@ -16,7 +16,7 @@ show-read-feeds					yes
 
 ttrss-login						"bananagranola"
 ttrss-passwordfile				"/home/amytcheng/.scripts/pass.txt"
-ttrss-url						"https://whereami.redirectme.net:444/tt-rss/"
+ttrss-url						"https://whereami.redirectme.net/tt-rss/"
 urls-source						"ttrss"
 
 highlight article "^(Title):.*$" blue default
