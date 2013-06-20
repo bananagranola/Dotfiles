@@ -34,7 +34,7 @@ fi
 # update $gophersvidsfile
 if [ $? -eq 0 ]; then	
 	echo "$parsed" > $gophersvidsfile
-	echo "GOPHERSVIDS COMPLETED: $(date)."
+	echo "GOPHERSVIDS COMPLETED: $(date +'[%Y.%m.%d]@[%I.%M.%S%P]')."
 else
 	echo "GOPHERSVIDS ERROR: oh noes!"
 fi
