@@ -4,7 +4,7 @@ gophersvidsfolder="/mnt/data/Youtube/GophersVids"
 
 gophersvidsfile="/home/amytcheng/.scripts/gophersvids/gophersvids.txt"
 parserscript="/home/amytcheng/.scripts/gophersvids/gophersvids_parser.pl"
-youtubedlscript="/usr/bin/youtube-dl"
+youtubedlscript="/usr/bin/youtube-dl -q"
 
 # retrieve and parse latest gophersvids uploads
 parsed="$(perl $parserscript)"

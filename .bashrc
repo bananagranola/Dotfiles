@@ -14,7 +14,7 @@ alias sudo='sudo '
 
 # default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/dwb"
+export BROWSER="/usr/bin/chromium"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
 # prettify
@@ -42,4 +42,4 @@ alias cp='acp -g'
 alias mv='amv -g'
 alias rsync='rsync --archive --compress --human-readable --progress --verbose'
 
-fortune 
+fortune -c

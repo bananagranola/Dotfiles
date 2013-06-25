@@ -12,7 +12,7 @@ alt + t
 	termite
 
 alt + w
-	dwb
+	chromium
 
 XF86AudioRaiseVolume
 	amixer set Master 10+
