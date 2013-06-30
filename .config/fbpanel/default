@@ -61,7 +61,7 @@ Plugin {
         button {
             icon = web-browser
             tooltip = Web Browser
-            action = chromium
+            action = firefox
         }
         button {
             icon = terminal

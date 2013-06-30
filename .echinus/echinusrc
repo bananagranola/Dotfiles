@@ -97,5 +97,5 @@ Echinus*incnmaster: WS + k = +1
 
 Echinus*command: termite
 
-Echinus*rule0: Exit NULL 1 1
-Echinus*rule1: Steam NULL 1 1
+Echinus*rule0: Exit NULL 1 0
+Echinus*rule1: Steam NULL 1 0

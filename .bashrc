@@ -14,7 +14,7 @@ alias sudo='sudo '
 
 # default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/chromium"
+export BROWSER="/usr/bin/firefox"
 export WINDOWS="/media/windows7/Users/amytcheng/"
 
 # prettify

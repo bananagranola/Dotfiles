@@ -1,7 +1,7 @@
 bind-key RIGHT					open
 bind-key LEFT					quit
 
-browser							"chromium %u > /dev/null 2>&1 &"
+browser							"firefox %u > /dev/null 2>&1 &"
 cleanup-on-quit					yes
 display-article-progress		yes
 feed-sort-order					firsttag

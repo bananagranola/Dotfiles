@@ -1,11 +1,16 @@
 #!/bin/bash
 
-WINDOWS="/media/windows7/Users/amytcheng"
-EXTERNAL="/media/FreeAgent_GoFlex_Drive__"
-HOME="/home/amytcheng"
+if [ $# -lt 1 ]; then 
+    echo "No destination defined. Usage: $0 destination" >&2
+    exit 1
+elif [ $# -gt 1 ]; then
+    echo "Too many arguments. Usage: $0 destination" >&2
+    exit 1
+fi
 
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Music/" "$EXTERNAL/Music/"
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Pictures/" "$EXTERNAL/Images/"
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/School/" "$EXTERNAL/School/"
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Documents/text.kdb" "$EXTERNAL/"
-rsync --archive --compress --delete --human-readable --progress --verbose "$WINDOWS/Applications/" "$EXTERNAL/Applications/"
+START=$(date +%s)
+rsync -aAXv /* $1 --exclude dev/* --exclude proc/* --exclude sys/* --exclude tmp/* --exclude run/* --exclude mnt/* --exclude media/* --exclude lost+found --exclude var/lib/pacman/sync/* --exclude home/*
+FINISH=$(date +%s)
+echo "total time: $(( ($FINISH-$START) / 60 )) minutes, $(( ($FINISH-$START) % 60 )) seconds"
+
+touch $1/"Backup from $(date '+%A, %d %B %Y, %T')"
