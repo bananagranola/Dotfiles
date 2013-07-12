@@ -26,7 +26,7 @@
 
 import urllib             
 import feedparser         
-from optparse import OptionParser
+import os
 
 _url = "https://mail.google.com/gmail/feed/atom"
 
@@ -35,8 +35,6 @@ _url = "https://mail.google.com/gmail/feed/atom"
 pwd = 'XXXX'                                # pwd stored in script
 _pwdfile = '/home/amytcheng/.scripts/googlepass.txt'  # pwd stored in a file
 _username = 'amezster'
-_maxmails = 5  # maximum new mails to show
-_maxwords = 3  # maximum words to show in each mail header
 
 ###########################################################
 
@@ -49,15 +47,6 @@ class GmailRSSOpener(urllib.FancyURLopener):
         pwd = open(_pwdfile).read().strip()
         return (_username, pwd)
 
-def getOptions(parser):
-    parser.add_option("-c", "--count", action="store_true",dest="count", default=None,
-                      help="count")
-    parser.add_option("-m", "--mails", action="store_true",dest="mails", default=None,
-                      help="mails")
-    options, args = parser.parse_args()
-
-    return options.count, options.mails
-
 def auth():
     '''The method to do HTTPBasicAuthentication'''
     opener = GmailRSSOpener()
@@ -65,24 +54,14 @@ def auth():
     feed = f.read()
     return feed
 
-def showmail(feed, count, mails):
+def showmail(feed):
     '''Parse the Atom feed and print a summary'''
     atom = feedparser.parse(feed)
-    newmails = len(atom.entries)
-
-    if mails:
-        for i in range(min(_maxmails,newmails)):
-        
-            emailtitle = atom.entries[i].title
-            if len(emailtitle.split()) > _maxwords:
-                emailtitle = ' '.join(emailtitle.split()[:_maxwords])
-            
-            print "%s from %s" % (emailtitle, atom.entries[i].author)
-    else:
-        print "%s" % (newmails)
+    mail = len(atom.entries)
+    if (mail > 0):
+        cmd= "/usr/bin/notify-send 'GMail:' '" + str( mail ) + " unread mail(s)'"
+        os.system(cmd)
 
 if __name__ == "__main__":
-    parser = OptionParser()
-    count, mails = getOptions(parser)
     feed = auth()  
-    showmail(feed, count, mails)
+    showmail(feed)
