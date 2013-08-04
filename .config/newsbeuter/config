@@ -2,17 +2,10 @@ bind-key RIGHT					open
 bind-key LEFT					quit
 
 browser							"firefox %u > /dev/null 2>&1 &"
-cleanup-on-quit					yes
 display-article-progress		yes
 feed-sort-order					firsttag
-history-limit					0
-max-items						50
 notify-format					"newsbeuter: %f unread feeds"
 notify-program 					"notify-send"
-refresh-on-startup				yes
-reload-only-visible-feeds		yes
-reload-threads					10
-show-read-feeds					yes
 
 ttrss-login						"bananagranola"
 ttrss-passwordfile				"/home/amytcheng/.scripts/pass.txt"

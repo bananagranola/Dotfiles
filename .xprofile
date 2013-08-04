@@ -1,5 +1,5 @@
 fbpanel &
-/home/amytcheng/.scripts/randombackground.sh &
+/home/amytcheng/.scripts/background.sh &
 owncloud &
 sxhkd &
 tidybattery &
