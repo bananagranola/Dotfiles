@@ -3,7 +3,7 @@ super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
-	pcmanfm
+	thunar
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
