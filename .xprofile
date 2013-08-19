@@ -5,6 +5,7 @@ owncloud &
 sxhkd &
 tidybattery &
 volumeicon &
+wicd-client -t &
 xcalib -co 70 -a &
 xrdb ~/.Xresources &
 xsetroot -cursor_name left_ptr &
