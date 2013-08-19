@@ -1,9 +1,9 @@
 fbpanel &
 /home/amytcheng/.scripts/background.sh &
+dunst &
 owncloud &
 sxhkd &
 tidybattery &
-twmnd &
 volumeicon &
 xcalib -co 70 -a &
 xrdb ~/.Xresources &

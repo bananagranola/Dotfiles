@@ -56,7 +56,7 @@ Plugin {
         button {
             icon = file-manager
             tooltip = File Manager
-            action = termite -e vifm
+            action = pcmanfm
         }
         button {
             icon = web-browser

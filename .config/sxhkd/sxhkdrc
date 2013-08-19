@@ -3,7 +3,7 @@ super + Escape
 	/home/amytcheng/.scripts/exit.sh
 
 alt + f
-	termite -e vifm $WINDOWS/My\ Documents ~/Dropbox/School/
+	pcmanfm
 
 alt + r
 	/home/amytcheng/.scripts/dmenu.sh
