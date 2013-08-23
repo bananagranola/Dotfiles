@@ -1,3 +1,6 @@
 #!/bin/bash
 
-grep -i http Downloads/bookmarks_6_20_13.html | awk '{print $2}' | sed -e "s/^.*\"\(.*\)\".*$/\1/" > .config/dwb/default/bookmarks
+# $1: location of html
+# $2: location of dwb bookmarks
+
+grep -i http "$1" | awk '{print $2}' | sed -e "s/^.*\"\(.*\)\".*$/\1/" > "$2"
