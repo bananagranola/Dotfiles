@@ -1,10 +1,11 @@
 fbpanel &
 /home/amytcheng/.scripts/background.sh &
+dunst &
 owncloud &
 sxhkd &
 tidybattery &
-twmnd &
 volumeicon &
+wicd-client -t &
 xcalib -co 70 -a &
 xrdb ~/.Xresources &
 xsetroot -cursor_name left_ptr &
