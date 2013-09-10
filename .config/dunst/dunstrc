@@ -87,7 +87,7 @@
 
     # should a notification popped up from history be sticky or
     # timeout as if it would normally do.
-    sticky_history = yes
+    sticky_history = no
 
     # The height of a single line. If the height is smaller than the font height,
     # it will get raised to the font height.
@@ -151,17 +151,17 @@
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#222222"
     foreground = "#888888"
-    timeout = 5
+    timeout = 3
 
 [urgency_normal]
     background = "#285577"
     foreground = "#ffffff"
-    timeout = 5
+    timeout = 4
 
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"
-    timeout = 0
+    timeout = 5
 
 
 # Every section that isn't one of the above is interpreted as a rules
