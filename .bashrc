@@ -44,3 +44,8 @@ alias mmtp='jmtpfs -o allow_other /media/android-mtp'
 alias umtp='fusermount -u /media/android-mtp'
 
 fortune -c
+
+# mount samba
+alias msmbp='mount -t cifs //192.168.1.11/public /mnt/public -o username=amytcheng,credentials=/home/amytcheng/.sambacreds,workgroup=WORKGROUP,ip=192.168.1.11'
+alias msmbd='mount -t cifs //192.168.1.11/data /mnt/data -o username=amytcheng,credentials=/home/amytcheng/.sambacreds,workgroup=WORKGROUP,ip=192.168.1.11'
+
