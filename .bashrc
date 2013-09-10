@@ -20,6 +20,8 @@ export WINDOWS="/media/windows7/Users/amytcheng/"
 # prettify
 alias grep='grep --color=auto'
 alias ls='ls --color=auto --classify --human-readable'
+alias cp='cp -v'
+alias mv='mv -v'
 
 # pacman utilities
 alias reflect='sudo reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
@@ -34,12 +36,11 @@ alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master &&
 alias dfr='cd ~/.scripts && ./dotfiler.sh && cd -'
 alias gup='gadd ; gpul ; gcom ; gpus ; dfr'
 
-# mount android-mtp
-alias mmtp='mtpfs -o allow_other /media/android-mtp'
-alias umtp='fusermount -u /media/android-mtp'
+# extraction utility
+alias extract='7z e'
 
-# mount samba
-alias msmbp='mount -t cifs //192.168.1.11/public /mnt/public -o username=amytcheng,credentials=/home/amytcheng/.sambacreds,workgroup=WORKGROUP,ip=192.168.1.11'
-alias msmbd='mount -t cifs //192.168.1.11/data /mnt/data -o username=amytcheng,credentials=/home/amytcheng/.sambacreds,workgroup=WORKGROUP,ip=192.168.1.11'
+# mount android-mtp
+alias mmtp='jmtpfs -o allow_other /media/android-mtp'
+alias umtp='fusermount -u /media/android-mtp'
 
 fortune -c

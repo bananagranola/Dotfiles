@@ -56,7 +56,7 @@ Plugin {
         button {
             icon = file-manager
             tooltip = File Manager
-            action = thunar
+            action = pcmanfm
         }
         button {
             icon = web-browser
