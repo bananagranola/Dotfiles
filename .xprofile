@@ -1,12 +1,1 @@
-fbpanel &
-/home/amytcheng/.scripts/background.sh &
-dunst &
-owncloud &
-sxhkd &
-tidybattery &
-volumeicon &
-wicd-client -t &
-xcalib -co 70 -a &
-xrdb ~/.Xresources &
-xsetroot -cursor_name left_ptr &
-
+exec ck-launch-session startxfce4
