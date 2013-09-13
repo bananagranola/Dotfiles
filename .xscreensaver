@@ -1,5 +1,9 @@
 # XScreenSaver Preferences File
+<<<<<<< HEAD
 # Written by xscreensaver-demo 5.15 for amytcheng on Thu Sep 12 22:41:46 2013.
+=======
+# Written by xscreensaver-demo 5.15 for amytcheng on Fri Sep 13 10:14:45 2013.
+>>>>>>> 5967f87bc1a116f7c7f3d8cb7c31fcd1f15d4922
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
