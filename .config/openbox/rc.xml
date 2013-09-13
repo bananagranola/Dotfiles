@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Mire_v2_grey</name>
+    <name>Mint</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -180,7 +180,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>960</width>
+        <width>683</width>
       </action>
       <action name="MoveToEdgeWest"/>
     </keybind>
@@ -188,7 +188,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>960</width>
+        <width>683</width>
       </action>
       <action name="MoveToEdgeEast"/>
     </keybind>
@@ -196,7 +196,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeHorz"/>
       <action name="MoveResizeTo">
-        <height>540</height>
+        <height>384</height>
       </action>
       <action name="MoveToEdgeNorth"/>
     </keybind>
@@ -204,7 +204,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeHorz"/>
       <action name="MoveResizeTo">
-        <height>540</height>
+        <height>384</height>
       </action>
       <action name="MoveToEdgeSouth"/>
     </keybind>
@@ -281,6 +281,31 @@
     <keybind key="S-W-4">
       <action name="SendToDesktop">
         <desktop>4</desktop>
+      </action>
+    </keybind>
+    <keybind key="A-w">
+      <action name="Execute">
+        <command>exo-open --launch WebBrowser</command>
+      </action>
+    </keybind>
+    <keybind key="A-t">
+      <action name="Execute">
+        <command>exo-open --launch TerminalEmulator</command>
+      </action>
+    </keybind>
+    <keybind key="A-f">
+      <action name="Execute">
+        <command>exo-open --launch FileManager</command>
+      </action>
+    </keybind>
+    <keybind key="A-r">
+      <action name="Execute">
+        <command>xfrun4</command>
+      </action>
+    </keybind>
+    <keybind key="W-Escape">
+      <action name="Execute">
+        <command>xfce4-session-logout</command>
       </action>
     </keybind>
   </keyboard>
