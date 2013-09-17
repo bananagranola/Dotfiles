@@ -3,18 +3,18 @@
 ! vim: set fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
 ! ----------------------------------------------------------------------------
 
-*font:					monospace
+!*font:					monospace
 
 ! ----------------------------------------------------------------------------
 ! URxvt settings
 ! ----------------------------------------------------------------------------i
 
-URxvt.perl-ext: 
-URxvt.perl-ext-common:
-URxvt.scrollstyle:              plain
-URxvt.scrollTtyOutput:          false
-URxvt.scrollBar_right:          true
-URxvt.visualBell:               true
+URxvt*perl-ext: 
+URxvt*perl-ext-common:
+URxvt*scrollstyle:              plain
+URxvt*scrollTtyOutput:          false
+URxvt*scrollBar_right:          true
+URxvt*visualBell:               true
 
 ! home/end keys
 URxvt*keysym.Home: \033[1~
