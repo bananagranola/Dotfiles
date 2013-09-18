@@ -40,11 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-<<<<<<< HEAD
     <name>TropicBomb</name>
-=======
-    <name>Mint</name>
->>>>>>> 5967f87bc1a116f7c7f3d8cb7c31fcd1f15d4922
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
