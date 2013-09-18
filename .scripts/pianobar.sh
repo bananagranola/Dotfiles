@@ -9,7 +9,8 @@ while read L; do
 case "$1" in
     
     songstart)
-        echo "$title by $artist" > $HOME/.config/pianobar/nowplaying
+        #echo "$title by $artist" > $HOME/.config/pianobar/nowplaying
+	notify-send "pianobar: $title by $artist"
     ;;
 
     songfinish)

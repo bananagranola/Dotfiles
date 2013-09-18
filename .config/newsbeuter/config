@@ -1,16 +1,17 @@
 bind-key RIGHT					open
 bind-key LEFT					quit
 
-browser							"firefox %u > /dev/null 2>&1 &"
-display-article-progress		yes
+auto-reload					yes
+browser						"dwb %u > /dev/null 2>&1 &"
+display-article-progress			yes
 feed-sort-order					firsttag
 notify-format					"newsbeuter: %f unread feeds"
 notify-program 					"notify-send"
 
-ttrss-login						"bananagranola"
-ttrss-passwordfile				"/home/amytcheng/.scripts/pass.txt"
-ttrss-url						"https://whereami.redirectme.net/tt-rss/"
-urls-source						"ttrss"
+ttrss-login					"bananagranola"
+ttrss-password					"a1m2y3"
+ttrss-url					"https://whereami.redirectme.net/tt-rss/"
+urls-source					"ttrss"
 
 highlight article "^(Title):.*$" blue default
 highlight article "https?://[^ ]+" red default
