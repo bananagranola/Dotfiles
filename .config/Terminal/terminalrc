@@ -17,7 +17,6 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ScrollingOnOutput=FALSE
 FontName=Monospace 10
-[Configuration]
 ColorCursor=#9393a1a1a1a1
 ColorForeground=#00002B2B3636
 ColorBackground=#fdfdf6f6e3e3
