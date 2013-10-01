@@ -17,3 +17,4 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ScrollingOnOutput=FALSE
 FontName=Monospace 10
+
