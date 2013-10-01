@@ -59,7 +59,7 @@ def showmail(feed):
     atom = feedparser.parse(feed)
     mail = len(atom.entries)
     if (mail > 0):
-        cmd= "/usr/bin/notify-send 'GMail:' '" + str( mail ) + " unread mail(s)'"
+        cmd= "/usr/bin/notify-send 'GMail:' '" + str( mail ) + " unread email(s)'"
         os.system(cmd)
 
 if __name__ == "__main__":
