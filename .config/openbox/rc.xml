@@ -300,7 +300,7 @@
     </keybind>
     <keybind key="A-r">
       <action name="Execute">
-        <command>xfrun4</command>
+        <command>dmenu_run -b</command>
       </action>
     </keybind>
     <keybind key="W-Escape">
@@ -658,10 +658,7 @@
   <!-- show the manage desktops section in the client-list-(combined-)menu -->
 </menu>
   <applications>
-    <application class="google-chrome">
-      <decor>no</decor>
-    </application>
-    <application class="Conky"> # class="XTerm"
+    <application class="Conky"> 
       <decor>no</decor>
       <maximize>yes</maximize>
       <skip_pager>yes</skip_pager>

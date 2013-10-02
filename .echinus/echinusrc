@@ -88,15 +88,16 @@ Echinus*resizedecy: WS + s = 0 0 0 -5
 Echinus*resizeincx: WS + d = 0 0 5 0
 Echinus*resizeincy: WS + w = 0 0 0 5
 
-Echinus*spawn0: WS + Return = termite
+Echinus*spawn0: A + f = exo-open --launch FileManager
+Echinus*spawn1: A + t = exo-open --launch TerminalEmulator
+Echinus*spawn2: A + w = exo-open --launch WebBrowser
+Echinus*spawn3: A + r = dmenu_run
 
 Echinus*decmwfact: W + h = -0.05
 Echinus*incmwfact: W + l = +0.05
 Echinus*decnmaster: WS + j = -1
 Echinus*incnmaster: WS + k = +1
 
-Echinus*command: termite
+Echinus*command: exo-open --launch TerminalEmulator
 
-Echinus*rule0: Exit NULL 1 0
-Echinus*rule1: Steam NULL 1 0
-Echinus*rule2: Wicd-client.py NULL 1 0
+Echinus*rule0: Wicd-client.py NULL 1 0
