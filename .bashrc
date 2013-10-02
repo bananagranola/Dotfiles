@@ -15,7 +15,7 @@ alias sudo='sudo '
 # default variables
 export EDITOR="/usr/bin/vim"
 export BROWSER="/usr/bin/exo-open --launch WebBrowser"
-export WINDOWS="/media/windows7/Users/amytcheng/"
+export WINDOWS="/mnt/windows/Users/amytcheng/"
 
 # prettify
 alias grep='grep --color=auto'
