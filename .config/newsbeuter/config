@@ -1,5 +1,10 @@
 bind-key RIGHT					open
 bind-key LEFT					quit
+bind-key j					next-unread
+bind-key k					prev-unread
+bind-key J					next
+bind-key K					prev
+bind-key o					open-in-browser-and-mark-read
 
 auto-reload					yes
 browser						"dwb %u > /dev/null 2>&1 &"
