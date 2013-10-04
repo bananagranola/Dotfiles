@@ -1,7 +1,7 @@
 " colorscheme settings
 syntax enable " enable syntax coloring
 set background=light " dark/light
-"colorscheme solarized " set colorscheme
+colorscheme darkburn " set colorscheme
 set t_Co=256
 
 " non-console font
