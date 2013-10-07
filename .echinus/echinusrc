@@ -1,12 +1,12 @@
-Echinus*normal.border: #002b36
-Echinus*normal.button: #93a1a1
-Echinus*normal.bg: #002b36
-Echinus*normal.fg: #93a1a1
+Echinus*normal.border: #262626
+Echinus*normal.button: #d3d7cf
+Echinus*normal.bg: #262626
+Echinus*normal.fg: #d3d7cf
 
-Echinus*selected.border: #93a1a1
-Echinus*selected.button: #002b36
-Echinus*selected.bg: #93a1a1
-Echinus*selected.fg: #002b36
+Echinus*selected.border: #262626
+Echinus*selected.button: #262626
+Echinus*selected.bg: #262626
+Echinus*selected.fg: #b0b4ac
 
 Echinus*border: 1
 
@@ -22,7 +22,7 @@ Echinus*hidebastards: 0
 Echinus*mwfact: 0.60
 Echinus*nmaster: 1
 
-Echinus*font: agave
+Echinus*font: monospace
 Echinus*modkey: W
 
 Echinus*deflayout: t
@@ -91,7 +91,8 @@ Echinus*resizeincy: WS + w = 0 0 0 5
 Echinus*spawn0: A + f = exo-open --launch FileManager
 Echinus*spawn1: A + t = exo-open --launch TerminalEmulator
 Echinus*spawn2: A + w = exo-open --launch WebBrowser
-Echinus*spawn3: A + r = dmenu_run
+Echinus*spawn3: A + r = dmenu_run -b
+Echinus*spawn4: W + Escape = xfce4-session-logout
 
 Echinus*decmwfact: W + h = -0.05
 Echinus*incmwfact: W + l = +0.05
