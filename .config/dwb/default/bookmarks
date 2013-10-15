@@ -38,7 +38,7 @@ https://springpad.com/#!/amytcheng Springpad
 javascript:(function(){SP_HOST='//springpad.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=SP_HOST+'/public/clipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){var%20u=SP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document&&document.title||'');try{window.open(u,'sp_popout','width=630,height=600');}catch(e){window.location=u;}}})(); Spring It
 https://my.xmarks.com/ XMarks
 https://login.yahoo.com/ Yahoo
-https://commafeed-bananagranola.rhcloud.com CommaFeed
 
-https://courses.law.washington.edu/WinnP/E544abcd_Au13/ School Privacy Law
-https://canvas.uw.edu/courses/850005 School Canvas
+http://www.ravelry.com/ Ravelry
+http://theoldreader.com/ Old Reader
+https://canvas.uw.edu/ School Canvas

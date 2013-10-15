@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dunst &
+owncloud &
+wicd-client -t &
+xfce4-panel  &
+xfce4-power-manager &
