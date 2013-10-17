@@ -22,7 +22,7 @@ Echinus*hidebastards: 0
 Echinus*mwfact: 0.60
 Echinus*nmaster: 1
 
-Echinus*font: monospace
+Echinus*font: monospace 6
 Echinus*modkey: W
 
 Echinus*deflayout: t
@@ -92,7 +92,7 @@ Echinus*spawn0: A + f = exo-open --launch FileManager
 Echinus*spawn1: A + t = exo-open --launch TerminalEmulator
 Echinus*spawn2: A + w = exo-open --launch WebBrowser
 Echinus*spawn3: A + r = dmenu_run -b
-Echinus*spawn4: W + Escape = xfce4-session-logout
+Echinus*spawn4: W + Escape = /home/amytcheng/.scripts/exit.sh
 
 Echinus*decmwfact: W + h = -0.05
 Echinus*incmwfact: W + l = +0.05
