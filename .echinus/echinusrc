@@ -22,7 +22,7 @@ Echinus*hidebastards: 0
 Echinus*mwfact: 0.60
 Echinus*nmaster: 1
 
-Echinus*font: monospace 6
+Echinus*font: monospace
 Echinus*modkey: W
 
 Echinus*deflayout: t
