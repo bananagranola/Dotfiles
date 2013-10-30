@@ -6,4 +6,4 @@ map J :tabnext<CR>
 map K :tabprevious<CR>
 map q :quitall<CR>
 "set guioptions=bCrsT
-" vim: set ft=pentadactyl:
+" vim: set ft=vimperator:
