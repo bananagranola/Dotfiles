@@ -10,6 +10,3 @@ ttrss-passwordfile				"/home/amytcheng/.scripts/password.txt"
 ttrss-url					"https://whereami.redirectme.net/tt-rss/"
 urls-source					"ttrss"
 
-highlight article "^(Title):.*$" blue default
-highlight article "https?://[^ ]+" red default
-highlight article "\\[image\\ [0-9]+\\]" green default

@@ -3,11 +3,10 @@
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
+display -window root /usr/share/images/desktop-base/login-background.svg &
 dunst &
 owncloud &
 thunar --daemon &
 wicd-client -t &
 xfce4-panel  &
 xfce4-power-manager &
-
-# background /usr/share/images/desktop-base/login-background.svg
