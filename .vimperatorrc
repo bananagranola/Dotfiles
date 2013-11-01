@@ -1,5 +1,6 @@
 map J :tabnext<CR>
 map K :tabprevious<CR>
 map q :quitall<CR>
+set autocomplete=false
 "set guioptions=bCrsT
 " vim: set ft=vimperator:
