@@ -1,12 +1,11 @@
 #!/bin/sh
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
-export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
-
 display -window root /usr/share/images/desktop-base/login-background.svg &
-dunst &
-owncloud &
+xbacklight -set 60 &
 thunar --daemon &
 wicd-client -t &
 xfce4-panel  &
 xfce4-power-manager &
+
+dunst &
+dropbox start &
