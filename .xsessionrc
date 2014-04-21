@@ -1,11 +1,11 @@
 #!/bin/sh
 
 display -window root /usr/share/images/desktop-base/login-background.svg &
-xbacklight -set 60 &
+xbacklight -set 80 &
 thunar --daemon &
 wicd-client -t &
 xfce4-panel  &
 xfce4-power-manager &
 
-dunst &
 dropbox start &
+dunst &
