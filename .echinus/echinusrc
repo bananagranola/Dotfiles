@@ -103,3 +103,4 @@ Echinus*incnmaster: WS + k = +1
 Echinus*command: exo-open --launch TerminalEmulator
 
 Echinus*rule0: Wicd-client.py NULL 1 0
+Echinus*rule1: Exit NULL 1 0

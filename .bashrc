@@ -41,4 +41,3 @@ alias umtp='fusermount -u /media/android-mtp'
 
 fortune -c
 
-

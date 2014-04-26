@@ -5,8 +5,3 @@ feed-sort-order					firsttag
 notify-format					"newsbeuter: %f unread feeds"
 notify-program 					"notify-send"
 
-ttrss-login					"bananagranola"
-ttrss-passwordfile				"/home/amytcheng/.scripts/password.txt"
-ttrss-url					"https://whereami.redirectme.net/tt-rss/"
-urls-source					"ttrss"
-

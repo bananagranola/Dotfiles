@@ -7,12 +7,10 @@ case $? in
         xdotool key "super+shift+q";;
     102)
         # shutdown
-        #sudo /sbin/shutdown -h now;;
-		systemctl poweroff;;
+        sudo /sbin/shutdown -h now;;
     103)
         # reboot
-        #sudo /sbin/reboot;;
-		systemctl reboot;;
+        sudo /sbin/reboot;;
     104)
         # cancel
         exit 0;;
