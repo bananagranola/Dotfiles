@@ -174,7 +174,7 @@ def formatyarn(match):
 reddit = praw.Reddit('redravbot by u/bananagranola')
 subreddit = reddit.get_subreddit('knitting')
 
-commented_file = open('commented.txt', 'r')
+commented_file = open('commented.txt', 'a+')
 commented = set(line.strip() for line in commented_file)
 commented_file.close()
 
@@ -206,7 +206,7 @@ for submission in subreddit.get_new(limit = 25):
 			commented.add(comment.id)
 			
 			# record commented status
-			commented_file = open('commented.txt', 'a')
+			commented_file = open('commented.txt', 'a+')
 			commented_file.write(comment.id)
 			commented_file.write("\n")
 			commented_file.close()
