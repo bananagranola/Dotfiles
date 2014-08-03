@@ -32,12 +32,7 @@ alias gpus='cd ~/.dotfiles && git push --verbose --set-upstream origin master &&
 alias dfr='cd ~/.scripts && ./dotfiler.sh && cd -'
 alias gup='gadd ; gpul ; gcom ; gpus ; dfr'
 
-# extraction utility
-alias unpack='7z x'
-
-# mount android-mtp
-alias mmtp='jmtpfs -o allow_other /media/android-mtp'
-alias umtp='fusermount -u /media/android-mtp'
+# miscellaneous utilities
+alias unofficialdeb="aptitude search '~S ~i !~ODebian !~o'"
 
 fortune -c
-

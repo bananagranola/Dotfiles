@@ -4,10 +4,10 @@ display -window root /usr/share/images/desktop-base/login-background.svg &
 dunst &
 #owncloud &
 xbacklight -set 80 &
->>>>>>> 85c4cacd593e9664295494fe30bdcb9a518c9546
 thunar --daemon &
 wicd-client -t &
 #xfce4-panel  &
 xfce4-power-manager &
+xmodmap.Xmodmap &
 
 dropbox start &
