@@ -6,15 +6,10 @@
 # set path to include ~/bin
 PATH=~/.bin:$PATH
 
-# ccache
-#export USE_CCACHE=1
-#export CCACHE_DIR=/home/amytcheng/.ccache
-
 alias sudo='sudo '
 
 # default variables
 export EDITOR="/usr/bin/vim"
-export BROWSER="/usr/bin/exo-open --launch WebBrowser"
 export WINDOWS="/mnt/windows/Users/amytcheng/"
 
 # prettify
@@ -34,5 +29,7 @@ alias gup='gadd ; gpul ; gcom ; gpus ; dfr'
 
 # miscellaneous utilities
 alias unofficialdeb="aptitude search '~S ~i !~ODebian !~o'"
+alias compresspdf='gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sOutputFile="$2" "$1"'
+alias html2dwb='grep -i http "$1" | awk '{print $2}' | sed -e "s/^.*\"\(.*\)\".*$/\1/" > "$2"'
 
 fortune -c
