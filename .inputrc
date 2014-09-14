@@ -1,5 +1,8 @@
 set bell-style none
 set show-all-if-ambiguous on
+set completion-ignore-case on
 
 "\e[5~": history-search-backward
 "\e[6~": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char

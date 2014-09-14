@@ -8,8 +8,8 @@ set t_Co=256
 set guifont=Consolas:h9:cANSI
 
 " vimoutliner and voom settings
-let &showbreak=repeat(' ', 20) " indent wrapping lines
-let g:voom_ft_modes = {'otl': 'vimoutliner'} " voom set to vimoutliner by default
+"let &showbreak=repeat(' ', 20) " indent wrapping lines
+"let g:voom_ft_modes = {'otl': 'vimoutliner'} " voom set to vimoutliner by default
 
 " indentation
 set autoindent " copy indentation from previous line

@@ -80,9 +80,7 @@ ${upspeedgraph wlan0}
 ULS: ${upspeed wlan0}/s $alignr ${totalup wlan0}
 
 HOTKEYS $hr
-exit  : w-esc
-files : a-f
-run   : a-r
-term  : a-t
-web   : a-w
-
+files $alignr a-f
+run $alignr a-r
+term $alignr a-t
+web $alignr a-w

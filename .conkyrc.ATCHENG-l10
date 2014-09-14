@@ -3,9 +3,9 @@ alignment top_right
 background no
 border_width 0
 cpu_avg_samples 2
-default_color 1F1F1F
-default_outline_color DCDCDC
-default_shade_color DCDCDC
+default_color DCDCDC
+default_outline_color 1F1F1F
+default_shade_color 1F1F1F
 double_buffer yes
 draw_borders no
 draw_graph_borders yes
@@ -87,13 +87,9 @@ DLS: ${downspeed eth0}/s $alignr ${totaldown eth0}
 ${upspeedgraph eth0}
 ULS: ${upspeed eth0}/s $alignr ${totalup eth0}
 
-MUSIC $hr
-$alignr ${exec ~/.scripts/music_nowplaying.sh}
-
 HOTKEYS $hr
-exit  : w-esc $alignr volmute : f-esc
-files : a-f $alignr voldown : f-f1 
-run   : a-r $alignr volup   : f-f2 
-term  : a-t
-web   : a-w
+files $alignr a-f
+run $alignr a-r
+term $alignr a-t
+web $alignr a-w
 
