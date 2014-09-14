@@ -15,8 +15,8 @@ let g:voom_ft_modes = {'otl': 'vimoutliner'} " voom set to vimoutliner by defaul
 set autoindent " copy indentation from previous line
 set backspace=indent,eol,start " make backspace like other apps
 set smartindent " sometimes inserts one extra level of indentation
-"set shiftwidth=4 " indent hard tabs
-"set tabstop=4 " indent hard tabs
+set shiftwidth=2 " indent hard tabs
+set tabstop=2 " indent hard tabs
 filetype plugin indent on " enable filetype indenting
 highlight MatchParen ctermbg=black " highlight matching parentheses
 
