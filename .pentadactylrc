@@ -1,9 +1,0 @@
-"1.0
-
-loadplugins '\.(js|penta)$'
-group user
-map J :tabnext<CR>
-map K :tabprevious<CR>
-map q :quit<CR>
-"set guioptions=bCrsT
-" vim: set ft=pentadactyl:

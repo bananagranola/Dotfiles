@@ -1,5 +1,5 @@
 
-alignment top_right
+alignment bottom_right
 background no
 border_width 0
 cpu_avg_samples 2
@@ -24,7 +24,7 @@ extra_newline no
 own_window yes
 own_window_argb_visual no
 own_window_argb_value 0
-own_window_type normal
+own_window_type desktop
 own_window_class Conky
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar
@@ -41,12 +41,13 @@ SYSTEM $hr
 $sysname $kernel $alignr $machine
 Host: $alignr $nodename
 Uptime: $alignr $uptime
-#File System: $alignr $fs_type
+File System: $alignr $fs_type
+Power: $alignr ${execi 10 acpi | cut -c 12-}
 
 PROCESSORS $hr
 ${cpugraph cpu0}
 ${cpu cpu1}% $alignr ${cpu cpu2}%
-${cpubar cpu1 5,105} ${cpubar cpu2 5,105}
+${cpubar cpu1 5,115} ${cpubar cpu2 5,115}
 CPU Temp: ${execi 10 sensors k10temp-pci-00c3 | grep 'temp1:' | cut -c16-19}* $alignr GPU Temp: ${execi 10 aticonfig --odgt | grep "Sensor 0" | cut -c43-47}*
 
 MEMORY $hr

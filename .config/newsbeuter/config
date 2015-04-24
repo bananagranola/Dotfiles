@@ -1,7 +1,0 @@
-auto-reload					yes
-browser						"dwb %u > /dev/null 2>&1 &"
-display-article-progress			yes
-feed-sort-order					firsttag
-notify-format					"newsbeuter: %f unread feeds"
-notify-program 					"notify-send"
-

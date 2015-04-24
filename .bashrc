@@ -28,9 +28,9 @@ alias dfr='cd ~/.scripts && ./dotfiler.sh && cd -'
 alias gup='gadd ; gpul ; gcom ; gpus ; dfr'
 
 # miscellaneous utilities
-alias unofficialdeb="aptitude search '~S ~i !~ODebian !~o'"
+alias undeb="aptitude search '~S ~i !~ODebian !~o'"
+alias notjess='aptitude search "?narrow(?installed,?not(?archive(testing)),?not(?archive(jessie)))"'
 alias compresspdf='gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sOutputFile="$2" "$1"'
 alias html2dwb='grep -i http "$1" | awk "{print $2}" | sed -e "s/^.*\"\(.*\)\".*$/\1/" > "$2"'
-alias notstable='aptitude search "?narrow(?installed,?not(?archive(stable)))"'
 
 fortune -c
